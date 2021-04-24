@@ -2,16 +2,82 @@
 <html>
 <head>
 
+    <div id="header_div">
+
+        <table id="header_table">
+
+
+
+            <tr class="table_row">
+                <td  class="table_col">   Home   </td>
+                <td class="table_col"  >  Products  </td>
+                <td  class="table_col">   Accessories   </td>
+           <td>  <img id="logo_img" src="mainUI/imgs/logo.png" alt=""> </td>
+                <td  class="table_col">   Offers   </td>
+                <td  class="table_col">   About us   </td>
+                <td  class="table_col">   Contact us  </td>
+
+
+
+
+            </tr>
+
+
+        </table>
+
+    </div>
 <style>
-    body{
-        background-image: url("mainUI/imgs/firstHeadPart.png");
+
+    #logo_img
+    {
+        height: 70px;
+        width: 200px;
     }
+ #header_div
+ {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 90px;
+
+     background-color: black;
+     opacity: 0.85;
+
+ }
+
+ #header_table
+ {
+     color: #E3DAC5;
+     margin:  0 auto  ;
+ }
+ .table_row
+ {
+     text-align:center;
+     position: absolute;
+     transform: translate(-50%,-50%);
+     left: 50%;
+     top: 50%;
+ }
+  .table_col
+  {
+      margin :0 auto;
+      width: 200px;
+  }
+    .table_col:hover {
+        color: #F2F5EB;
+    }
+
+
 </style>
+
 </head>
 
-<body onload="myf()">
-<form action="ph.html" method="get">
-    <input type="text" name="text" value="test">
-</form>
+<body >
+
+
+
+
+
 </body>
 </html>
