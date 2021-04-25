@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="mainStyle.css">
 
     <div id="header_div">
 
         <table id="header_table">
-
-
 
             <tr class="table_row">
                 <td  class="table_col">   Home   </td>
@@ -17,9 +16,6 @@
                 <td  class="table_col">   About us   </td>
                 <td  class="table_col">   Contact us  </td>
 
-
-
-
             </tr>
 
 
@@ -28,76 +24,6 @@
     </div>
 
 
-<style>
-
-    #logo_img
-    {
-        height: 70px;
-        width: 200px;
-    }
- #header_div
- {
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 90px;
-
-     background-color: black;
-     opacity: 0.9;
-
- }
-
-
- #header_table
- {
-     color: #E3DAC5;
-     margin:  0 auto  ;
- }
- .table_row
- {
-     text-align:center;
-     position: absolute;
-     transform: translate(-50%,-50%);
-     left: 50%;
-     top: 50%;
- }
-  .table_col
-  {
-      margin :0 auto;
-      width: 200px;
-  }
-    .table_col:hover {
-        color: #F2F5EB;
-    }
-
-#body_img_div
-{
-
-
-    text-align: center;
-
-
-
-    height: 1000px;
-    width: 1000px;
-
-
-
-}
-
-#body_img
-{
-    height: 100%;
-    width: 100%;
-
-}
-
-
-
-
-</style>
-
 </head>
 
 <body >
@@ -105,7 +31,92 @@
 <div id="body_img_div" >
     <img id="body_img" src="mainUI/imgs/main.jpg" alt="">
 
+</div >
+
+
+<div id="bentley_Logo_div">
+    <img id="bentley_img" src="mainUI/imgs/bentlyLogo.png" alt="">
+
+</div >
+
+
+<div style="background-color:#E4E4E4; height:170px; text-align: center; padding-top:30px;
+
+     left: 0;
+     width: 100%; ">
+<p id="bentley_Desc"  >
+
+    The Bentley Home collection has been interpreting the luxurious personality of the automobile brand since 2013.<br />
+        The silhouettes, precious materials and iconic shapes of Bentley Motors have been translated into a
+    new language intended for the home.<br />
+        Sporting a passion for technology,
+    goods can be customised in the finishes that have made the British brand unique,
+    from the most exquisite leathers to <br /> Calacatta and Valentine Grey marbles,
+    right through to the woods that echo the automotive codes</p>
+
 </div>
+
+
+<div id="top_products_div">
+    <div style="text-align: center">
+<p style="font-family:'Abel', sans-serif; font-weight: bold; font-size: 27px;   "> TOPS PRODUCTS </p>
+<p style="font-size: 15px; "> The Best of 2021 </p>
+    </div>
+
+     <table id="top_products_table">
+         <tr class="top_product_rows">
+
+         <td class="top_products_col">
+            <div >
+                <img class="top_imgs" src="mainUI/imgs/chair.png" alt="">
+             </div>
+         </td>
+
+
+             <td class="top_products_col" >
+                  <div>
+                     <img class="top_imgs" src="mainUI/imgs/chair2.jfif" alt="">
+                 </div>
+             </td>
+
+
+             <td class="top_products_col" >
+                 <div>
+                     <img class="top_imgs" src="mainUI/imgs/sofa.jpg" alt="">
+                 </div>
+             </td>
+         </tr>
+
+          <tr>
+              <td class="top_products_col">
+                  <div >
+                      <img class="top_imgs" src="mainUI/imgs/sofa2.png" alt="">
+                  </div>
+              </td>
+
+
+              <td class="top_products_col" >
+                  <div>
+                      <img class="top_imgs" src="mainUI/imgs/furniture.png" alt="">
+                  </div>
+              </td>
+
+
+              <td class="top_products_col" >
+                  <div>
+                      <img class="top_imgs" src="mainUI/imgs/redChair.png" alt="">
+                  </div>
+              </td>
+
+
+          </tr>
+
+     </table>
+
+</div>
+
+
+<button id="show_more_button">  Show more </button>
 
 </body>
 </html>
