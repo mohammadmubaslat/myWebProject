@@ -46,10 +46,9 @@ body{
 {
     margin :0 auto;
     width: 200px;
+    font-size: 15px;
 }
-.table_col:hover {
-    color: #F2F5EB;
-}
+
 
 #body_img_div
 {
@@ -169,5 +168,15 @@ background-color: white;
     font-size: 18px;
     color: #D7AE4C;
     font-weight: bold;
+}
+
+.header_link{
+    text-decoration: none ;
+    color: #D6C7A6;;
+}
+
+.header_link:hover {
+    color: #F2F5EB;
+    /*text-decoration: underline;*/
 }
 
