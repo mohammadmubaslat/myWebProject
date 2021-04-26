@@ -65,6 +65,9 @@ body{
 #bentley_Logo_div
 {
 
+    padding-top: 50px;
+    padding-bottom: 40px;
+
     margin:  0 auto  ;
     text-align: center;
 }
@@ -72,7 +75,8 @@ body{
 #bentley_img
 {
     padding-top: 30px;
-    padding-down: 30px;
+
+
     height: 200px;
     width: 350px;
 }
@@ -97,34 +101,45 @@ body{
 #top_products_div
 {
     padding-top: 50px;
+    text-align: center;
 }
 
-#top_products_table
-{
-    background-color:#F5F5F5 ;
-    margin: 0 auto;
-    border-collapse: separate;
-    border-spacing: 25px 25px;
-}
-.top_product_rows
-{
-    left: 50%;
-    top: 50%;
-}
-.top_products_col
-{
+
+.card {
+
     text-align: center;
-background-color: white;
-    border-radius: 10px;
+    width: 240px;
+    height: 270px;
+    border-radius: 7px;
+    display: block;
+
 }
+
+
+
+
+
+.card:hover
+{
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
+
+.blogcontent
+{
+    padding-bottom: 50px;
+
+
+
+}
+
+
 
 .top_imgs
 {
 
-    padding : 50px;
-    padding-top: 50px;
+    padding : 20px;
+    padding-top: 40px;
 
-    width: 230px;
+    width: 250px;
     height:220px;
     min-height:50% ;
     min-width:50% ;
@@ -132,21 +147,7 @@ background-color: white;
     max-height:90% ;
 }
 
-#show_more_button
-{
-    font-family: Hack, monospace;
-    background: #d3d3d3;
-    color: #2c2c2c;
-    cursor: pointer;
-    font-size: 2em;
-    padding: 1.5rem;
-    border: 0;
-    transition: all 0.5s;
-    border-radius: 10px;
-    width: auto;
-    position: relative;
-    min-width: 100px;
-}
+
 
 .top_products_col:hover
 {
@@ -180,3 +181,28 @@ background-color: white;
     /*text-decoration: underline;*/
 }
 
+
+
+.btn
+{
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+     margin-top: 45px;
+}
+
+#advert_div
+{
+
+    padding-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+height: 500px;
+    width: 100%;
+
+}
+
+.advert_imgs
+{
+
+}
