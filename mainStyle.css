@@ -100,25 +100,17 @@ body{
     padding-top: 50px;
 }
 
-
 #top_products_table
 {
     background-color:#F5F5F5 ;
     margin: 0 auto;
-
-
     border-collapse: separate;
     border-spacing: 25px 25px;
-
 }
 .top_product_rows
 {
-
     left: 50%;
     top: 50%;
-
-
-
 }
 .top_products_col
 {
@@ -132,7 +124,6 @@ background-color: white;
 
     padding : 50px;
     padding-top: 50px;
-
 
     width: 170px;
     height:180px;
@@ -161,9 +152,6 @@ background-color: white;
 .top_products_col:hover
 {
     box-shadow: 8px 6px 8px 6px #C4C4C4;
-
-
-
     background-color: #E9E9E9;
 }
 
