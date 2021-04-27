@@ -3,6 +3,7 @@ a{
     transition: all 0.5s;
     text-decoration: none;
     color: white;
+
 }
 img{
     width: 100%;
@@ -75,7 +76,7 @@ header h1{
     margin: 0;
 }
 .blogcontent h3 span{
-    color: #D6C7A6;
+    color: #e6a71c;
     display: block;
     font-size: 80%;
     margin-top: 5px;
@@ -94,15 +95,20 @@ header h1{
 .blogcontent .btn{
     display: block;
     padding: 5px 10px;
-    border: 1px solid black;
-    border-radius: 3px;
+    border: 1px solid #36c553;
+    background: #36c553;
+    color:white;
+    border-radius: 15px;
     font-weight: bold;
+
+
 }
 
 .blogcontent .btn:hover{
-    background: rgba(52 , 152 ,219,1);
+    background: #59dd74;
     transition: all 0.5s;
     text-decoration: none;
+
 }
 
 .blogcontent a:hover{
