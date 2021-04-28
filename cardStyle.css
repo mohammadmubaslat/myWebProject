@@ -95,19 +95,20 @@ header h1{
 .blogcontent .btn{
     display: block;
     padding: 5px 10px;
-    border: 1px solid #36c553;
-    background: #36c553;
-    color:white;
-    border-radius: 15px;
+    border: 2px solid darkgoldenrod;
+    /*background: #112855;*/
+    color:#112855;
     font-weight: bold;
 
 
 }
 
 .blogcontent .btn:hover{
-    background: #59dd74;
+    background: #8c8989;
     transition: all 0.5s;
     text-decoration: none;
+    color: white;
+    border: white;
 
 }
 
