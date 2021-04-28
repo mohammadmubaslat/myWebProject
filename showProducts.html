@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="bootstrap.css">
 
 
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="showProductsStyle.css">
 
 
@@ -19,272 +19,25 @@
 <body>
 
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm-4 col-md-3">
-            <form>
-                <div class="well">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search products...">
-                                <span class="input-group-btn">
-                  <button class="btn btn-primary" type="submit">
-                    <i class="fa fa-search"></i>
-                  </button>
-                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </form>
+<header> <a class="skip-link screen-reader-text" href="#content">Skip to content</a><div class="sticky-header"><div class="container"><div class="sticky-header-bar thnk-col-3"><div class="sticky-header-col1"> <span class="logo-content"><div class="thunk-logo"> <a href="https://themehunk.com/wp-themes/topstore/" class="custom-logo-link" rel="home"><img width="197" height="50" src="https://themehunk.com/wp-themes/topstore/wp-content/uploads/sites/129/2020/10/top-store-logo.png" class="custom-logo" alt="Top Store" srcset="https://themehunk.com/wp-themes/topstore/wp-content/uploads/sites/129/2020/10/top-store-logo.png 1x,  2x"></a></div> </span></div><div class="sticky-header-col2"><nav> <!-- Menu Toggle btn--><div class="menu-toggle" style="display: block;"> <button type="button" class="menu-btn" id="menu-btn-stk"><div class="btn"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></div> </button></div><div class="sider main  top-store-menu-hide  overcenter"><div class="menu-close"><span tabindex="0" class="menu-close-btn"></span></div><div class="menu-close"><span tabindex="0" class="menu-close-btn"></span></div><div class="menu-close"><span tabindex="0" class="menu-close-btn"></span></div><div class="menu-close"><span tabindex="0" class="menu-close-btn"></span></div><div class="menu-close"><span tabindex="0" class="menu-close-btn"></span></div><div class="sider-inner"><ul id="top-store-stick-menu" class="top-store-menu collapse hide-menu" data-menu-style="horizontal"><li id="menu-item-325" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-325"><a href="https://themehunk.com/wp-themes/topstore/"><span class="top-store-menu-link">Home</span></a></li><li id="menu-item-327" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-327"><a href="https://themehunk.com/wp-themes/topstore/shop-page/"><span class="top-store-menu-link">Shop Page</span></a></li><li id="menu-item-328" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-328"><a href="https://themehunk.com/wp-themes/topstore/product-category/accessories/"><span class="top-store-menu-link">Accessories</span></a></li><li id="menu-item-329" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-329"><a href="https://themehunk.com/wp-themes/topstore/product-category/watches/"><span class="top-store-menu-link">Watches</span></a></li><li id="menu-item-326" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-326"><a href="https://themehunk.com/wp-themes/topstore/contact-us/"><span class="top-store-menu-link">Contact Us</span></a></li></ul></div></div></nav></div><div class="sticky-header-col3"><div class="thunk-icon"><div class="header-icon"> <a class="prd-search" href="#"><i class="fa fa-search"></i></a> <a class="whishlist" href="https://themehunk.com/wp-themes/topstore/wishlist/"><i class="fa fa-heart-o" aria-hidden="true"></i></a> <span><a href="https://themehunk.com/wp-themes/topstore/my-account/"><span class="account-text">Login / Signup</span><span class="account-text">My account</span><i class="fa fa-lock" aria-hidden="true"></i></a></span><div class="cart-icon">
+    <a class="cart-contents" href="https://themehunk.com/wp-themes/topstore/cart/" title="View your shopping cart"><i class="fa fa-shopping-basket"></i> <span class="cart-content"><span class="count-item">0</span><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">£</span>0.00</bdi></span></span></a>
 
-            <!-- Filter -->
-            <form class="shop__filter">
-                <!-- Price -->
-                <h3 class="headline">
-                    <span>Price</span>
-                </h3>
-                <div class="radio">
-                    <input type="radio" name="shop-filter__price" id="shop-filter-price_1" value="" checked="">
-                    <label for="shop-filter-price_1">Under $25</label>
-                </div>
-                <div class="radio">
-                    <input type="radio" name="shop-filter__price" id="shop-filter-price_2" value="">
-                    <label for="shop-filter-price_2">$25 to $50</label>
-                </div>
-                <div class="radio">
-                    <input type="radio" name="shop-filter__price" id="shop-filter-price_3" value="">
-                    <label for="shop-filter-price_3">$50 to $100</label>
-                </div>
-                <div class="radio">
-                    <input type="radio" name="shop-filter__price" id="shop-filter-price_4" value="specify">
-                    <label for="shop-filter-price_4">Other (specify)</label>
-                </div>
-                <div class="form-group shop-filter__price">
-                    <div class="row">
-                        <div class="col-xs-4">
-                            <label for="shop-filter-price_from" class="sr-only"></label>
-                            <input id="shop-filter-price_from" type="number" min="0" class="form-control" placeholder="From" disabled="">
-                        </div>
-                        <div class="col-xs-4">
-                            <label for="shop-filter-price_to" class="sr-only"></label>
-                            <input id="shop-filter-price_to" type="number" min="0" class="form-control" placeholder="To" disabled="">
-                        </div>
-                        <div class="col-xs-4">
-                            <button type="submit" class="btn btn-block btn-default" disabled="">Go</button>
-                        </div>
-                    </div>
-                </div>
+    <div id="open-cart" class="open-cart"><div class="top-store-quickcart-dropdown">
 
-                <!-- Checkboxes -->
-                <h3 class="headline">
-                    <span>Brand</span>
-                </h3>
-                <div class="checkbox">
-                    <input type="checkbox" value="" id="shop-filter-checkbox_1" checked="">
-                    <label for="shop-filter-checkbox_1">Adidas</label>
-                </div>
-                <div class="checkbox">
-                    <input type="checkbox" value="" id="shop-filter-checkbox_2">
-                    <label for="shop-filter-checkbox_2">Calvin Klein</label>
-                </div>
-                <div class="checkbox">
-                    <input type="checkbox" value="" id="shop-filter-checkbox_3">
-                    <label for="shop-filter-checkbox_3">Columbia</label>
-                </div>
-                <div class="checkbox">
-                    <input type="checkbox" value="" id="shop-filter-checkbox_4">
-                    <label for="shop-filter-checkbox_4">Tommy Hilfiger</label>
-                </div>
-                <div class="checkbox">
-                    <input type="checkbox" value="" id="shop-filter-checkbox_5">
-                    <label for="shop-filter-checkbox_5">Not specified</label>
-                </div>
 
-                <!-- Radios -->
-                <h3 class="headline">
-                    <span>Material</span>
-                </h3>
-                <div class="radio">
-                    <input type="radio" name="shop-filter__radio" id="shop-filter-radio_1" value="" checked="">
-                    <label for="shop-filter-radio_1">100% Cotton</label>
-                </div>
-                <div class="radio">
-                    <input type="radio" name="shop-filter__radio" id="shop-filter-radio_2" value="">
-                    <label for="shop-filter-radio_2">Bamboo</label>
-                </div>
-                <div class="radio">
-                    <input type="radio" name="shop-filter__radio" id="shop-filter-radio_3" value="">
-                    <label for="shop-filter-radio_3">Leather</label>
-                </div>
-                <div class="radio">
-                    <input type="radio" name="shop-filter__radio" id="shop-filter-radio_4" value="">
-                    <label for="shop-filter-radio_4">Polyester</label>
-                </div>
-                <div class="radio">
-                    <input type="radio" name="shop-filter__radio" id="shop-filter-radio_5" value="">
-                    <label for="shop-filter-radio_5">Not specified</label>
-                </div>
+        <p class="woocommerce-mini-cart__empty-message">No products in the cart.</p>
 
-                <!-- Colors -->
-                <h3 class="headline">
-                    <span>Colors</span>
-                </h3>
-                <div class="shop-filter__color">
-                    <input type="text" id="shop-filter-color_1" value="" data-input-color="black">
-                    <label for="shop-filter-color_1" style="background-color: black;"></label>
-                </div>
-                <div class="shop-filter__color">
-                    <input type="text" id="shop-filter-color_2" value="" data-input-color="gray">
-                    <label for="shop-filter-color_2" style="background-color: gray;"></label>
-                </div>
-                <div class="shop-filter__color">
-                    <input type="text" id="shop-filter-color_3" value="" data-input-color="brown">
-                    <label for="shop-filter-color_3" style="background-color: brown;"></label>
-                </div>
-                <div class="shop-filter__color">
-                    <input type="text" id="shop-filter-color_4" value="" data-input-color="beige">
-                    <label for="shop-filter-color_4" style="background-color: beige;"></label>
-                </div>
-                <div class="shop-filter__color">
-                    <input type="text" id="shop-filter-color_5" value="" data-input-color="white">
-                    <label for="shop-filter-color_5" style="background-color: white;"></label>
-                </div>
-            </form>
-        </div>
 
-        <div class="col-sm-8 col-md-9">
-            <!-- Filters -->
-            <ul class="shop__sorting">
-                <li class="active"><a href="#">Popular</a></li>
-                <li><a href="#">Newest</a></li>
-                <li><a href="#">Bestselling</a></li>
-                <li><a href="#">Price (low)</a></li>
-                <li><a href="#">Price (high)</a></li>
-            </ul>
-
-            <div class="row">
-                <div class="col-sm-6 col-md-4">
-                    <div class="shop__thumb">
-                        <a href="#">
-                            <div class="shop-thumb__img">
-                                <img src="https://via.placeholder.com/400x400/87CEFA/000000" class="img-responsive" alt="...">
-                            </div>
-                            <h5 class="shop-thumb__title">
-                                Product Title
-                            </h5>
-                            <div class="shop-thumb__price">
-                                <span class="shop-thumb-price_old">$80.99</span>
-                                <span class="shop-thumb-price_new">$59.99</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-4">
-                    <div class="shop__thumb">
-                        <a href="#">
-                            <div class="shop-thumb__img">
-                                <img src="https://via.placeholder.com/400x400/20B2AA/000000" class="img-responsive" alt="...">
-                            </div>
-                            <h5 class="shop-thumb__title">
-                                Product Title
-                            </h5>
-                            <div class="shop-thumb__price">
-                                $59.99
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-4">
-                    <div class="shop__thumb">
-                        <a href="#">
-                            <div class="shop-thumb__img">
-                                <img src="https://via.placeholder.com/400x400/FFB6C1/000000" class="img-responsive" alt="...">
-                            </div>
-                            <h5 class="shop-thumb__title">
-                                Product Title
-                            </h5>
-                            <div class="shop-thumb__price">
-                                $59.99
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-4">
-                    <div class="shop__thumb">
-                        <a href="#">
-                            <div class="shop-thumb__img">
-                                <img src="https://via.placeholder.com/400x400/87CEFA/000000" class="img-responsive" alt="...">
-                            </div>
-                            <h5 class="shop-thumb__title">
-                                Product Title
-                            </h5>
-                            <div class="shop-thumb__price">
-                                $59.99
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-4">
-                    <div class="shop__thumb">
-                        <a href="#">
-                            <div class="shop-thumb__img">
-                                <img src="https://via.placeholder.com/400x400/FFA07A/000000" class="img-responsive" alt="...">
-                            </div>
-                            <h5 class="shop-thumb__title">
-                                Product Title
-                            </h5>
-                            <div class="shop-thumb__price">
-                                $59.99
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                    <div class="shop__thumb">
-                        <a href="#">
-                            <div class="shop-thumb__img">
-                                <img src="https://via.placeholder.com/400x400/48D1CC/000000" class="img-responsive" alt="...">
-                            </div>
-                            <h5 class="shop-thumb__title">
-                                Product Title
-                            </h5>
-                            <div class="shop-thumb__price">
-                                $59.99
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div> <!-- / .row -->
-            <!-- Pagination -->
-            <div class="row">
-                <div class="col-sm-12">
-                    <ul class="pagination pull-right">
-                        <li class="disabled"><a href="#">«</a></li>
-                        <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">»</a></li>
-                    </ul>
-
-                </div>
-            </div> <!-- / .row -->
-
-        </div> <!-- / .col-sm-8 -->
-    </div> <!-- / .row -->
-</div>
+    </div>
+    <div class="search-wrapper"><div class="container"><div class="search-close"><a class="search-close-btn"></a></div><div id="search-box" class="wow thmkfadeInDown" data-wow-duration="1s"><form action="https://themehunk.com/wp-themes/topstore/" id="search-form" class="woocommerce-product-search" method="get" target="_top"> <input id="search-text" name="s" placeholder="Search for Product" class="form-control search-autocomplete ui-autocomplete-input" value="" type="text" title="Search for:" autocomplete="off"><div class="vert-brd"></div> <select name="product_cat" id="product_cat" class="something"><option value="0" selected="selected">All Category</option><option class="level-0" value="accessories">Accessories</option><option class="level-0" value="audio">Audio</option><option class="level-0" value="headphones">Headphones</option><option class="level-0" value="computer-laptop">Computer &amp; Laptop</option><option class="level-0" value="most-popular">Most Popular</option><option class="level-0" value="on-sale">On Sale</option><option class="level-0" value="cameras">Cameras</option><option class="level-0" value="new-arrival">New Arrival</option><option class="level-0" value="smartphone">Smartphone</option><option class="level-0" value="video-games">Video Games</option><option class="level-0" value="home-appliances">Home Appliances</option><option class="level-0" value="watches">Watches</option><option class="level-0" value="smart-watch">Smart Watch</option><option class="level-0" value="speaker">Speaker</option> </select> <button id="search-button" value="Submit" type="submit"> <i class="fa fa-search" aria-hidden="true"></i> </button> <input type="hidden" name="post_type" value="product"></form></div></div></div> <!-- sticky header --><div class="top-header"><div class="container"><div class="top-header-bar thnk-col-2"><div class="top-header-col1"><div class="content-html"> Welcome to Top Store</div></div><div class="top-header-col2"><div class="content-social"><ul class="social-icon  "><li><a target="_blank" href="#"><i class="fa fa-facebook"></i></a></li><li><a target="_blank" href="#"><i class="fa fa-pinterest"></i></a></li><li><a target="_blank" href="#"><i class="fa fa-instagram"></i></a></li><li><a target="_blank" href="#"><i class="fa fa-youtube-play"></i></a></li><li><a target="_blank" href="#"> <i class="fa fa-stumbleupon"></i></a></li><li><a target="_blank" href="#"> <i class="fa fa-dribbble"></i></a></li></ul></div></div></div> <!-- end top-header-bar --></div></div> <!-- end top-header --><div class="main-header mhdrfour callto left  cnv-none"><div class="container"><div class="main-header-bar thnk-col-3"><div class="main-header-col1"> <span class="logo-content"><div class="thunk-logo"> <a href="https://themehunk.com/wp-themes/topstore/" class="custom-logo-link" rel="home"><img width="197" height="50" src="https://themehunk.com/wp-themes/topstore/wp-content/uploads/sites/129/2020/10/top-store-logo.png" class="custom-logo" alt="Top Store" srcset="https://themehunk.com/wp-themes/topstore/wp-content/uploads/sites/129/2020/10/top-store-logo.png 1x,  2x"></a></div> </span></div><div class="main-header-col2"><div id="search-box" class="wow thmkfadeInDown" data-wow-duration="1s"><form action="https://themehunk.com/wp-themes/topstore/" id="search-form" class="woocommerce-product-search" method="get" target="_top"> <input id="search-text" name="s" placeholder="Search for Product" class="form-control search-autocomplete ui-autocomplete-input" value="" type="text" title="Search for:" autocomplete="off"><div class="vert-brd"></div> <select name="product_cat" id="product_cat" class="something"><option value="0" selected="selected">All Category</option><option class="level-0" value="accessories">Accessories</option><option class="level-0" value="audio">Audio</option><option class="level-0" value="headphones">Headphones</option><option class="level-0" value="computer-laptop">Computer &amp; Laptop</option><option class="level-0" value="most-popular">Most Popular</option><option class="level-0" value="on-sale">On Sale</option><option class="level-0" value="cameras">Cameras</option><option class="level-0" value="new-arrival">New Arrival</option><option class="level-0" value="smartphone">Smartphone</option><option class="level-0" value="video-games">Video Games</option><option class="level-0" value="home-appliances">Home Appliances</option><option class="level-0" value="watches">Watches</option><option class="level-0" value="smart-watch">Smart Watch</option><option class="level-0" value="speaker">Speaker</option> </select> <button id="search-button" value="Submit" type="submit"> <i class="fa fa-search" aria-hidden="true"></i> </button> <input type="hidden" name="post_type" value="product"></form></div></div><div class="main-header-col3"><div class="thunk-icon-market"><div class="header-icon"> <a class="whishlist" href="https://themehunk.com/wp-themes/topstore/wishlist/"> <span class="th-whishlist-text">My Favourite</span> <span>Wishlist</span><i class="fa fa-heart-o" aria-hidden="true"></i></a> <span><a href="https://themehunk.com/wp-themes/topstore/my-account/"><span class="account-text">Login / Signup</span><span class="account-text">My account</span><i class="fa fa-lock" aria-hidden="true"></i></a></span></div><div class="cart-icon">
+</header>
 
 
 
 <script src="bootstrap.js"></script>
 <script src="jquery-3.6.0.min.js"></script>
+
+
 
 
 </body>
