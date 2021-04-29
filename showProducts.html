@@ -7,35 +7,156 @@
 
     <link rel="stylesheet" href="bootstrap.css">
 
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
 
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="showProductsStyle.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
 
+    <style>
 
+    /*footer*/
+    .col_white_amrc { color:#FFF;}
+    footer { width:100%; background-color:#263238; min-height:250px; padding:10px 0px 25px 0px ;}
+    .pt2 { padding-top:40px ; margin-bottom:20px ;}
+    footer p { font-size:13px; color:#CCC; padding-bottom:0px; margin-bottom:8px;}
+    .mb10 { padding-bottom:15px ;}
+    .footer_ul_amrc { margin:0px ; list-style-type:none ; font-size:14px; padding:0px 0px 10px 0px ; }
+    .footer_ul_amrc li {padding:0px 0px 5px 0px;}
+    .footer_ul_amrc li a{ color:#CCC;}
+    .footer_ul_amrc li a:hover{ color:#fff; text-decoration:none;}
+    .fleft { float:left;}
+    .padding-right { padding-right:10px; }
+
+    .footer_ul2_amrc {margin:0px; list-style-type:none; padding:0px;}
+    .footer_ul2_amrc li p { display:table; }
+    .footer_ul2_amrc li a:hover { text-decoration:none;}
+    .footer_ul2_amrc li i { margin-top:5px;}
+
+    .bottom_border { border-bottom:1px solid #323f45; padding-bottom:20px;}
+    .foote_bottom_ul_amrc {
+        list-style-type:none;
+        padding:0px;
+        display:table;
+        margin-top: 10px;
+        margin-right: auto;
+        margin-bottom: 10px;
+        margin-left: auto;
+    }
+    .foote_bottom_ul_amrc li { display:inline;}
+    .foote_bottom_ul_amrc li a { color:#999; margin:0 12px;}
+
+    .social_footer_ul { display:table; margin:15px auto 0 auto; list-style-type:none;  }
+    .social_footer_ul li { padding-left:20px; padding-top:10px; float:left; }
+    .social_footer_ul li a { color:#CCC; border:1px solid #CCC; padding:8px;border-radius:50%;}
+    .social_footer_ul li i {  width:20px; height:20px; text-align:center;}
+</style>
 </head>
 
 
 <body>
 
 
-<header> <a class="skip-link screen-reader-text" href="#content">Skip to content</a><div class="sticky-header"><div class="container"><div class="sticky-header-bar thnk-col-3"><div class="sticky-header-col1"> <span class="logo-content"><div class="thunk-logo"> <a href="https://themehunk.com/wp-themes/topstore/" class="custom-logo-link" rel="home"><img width="197" height="50" src="https://themehunk.com/wp-themes/topstore/wp-content/uploads/sites/129/2020/10/top-store-logo.png" class="custom-logo" alt="Top Store" srcset="https://themehunk.com/wp-themes/topstore/wp-content/uploads/sites/129/2020/10/top-store-logo.png 1x,  2x"></a></div> </span></div><div class="sticky-header-col2"><nav> <!-- Menu Toggle btn--><div class="menu-toggle" style="display: block;"> <button type="button" class="menu-btn" id="menu-btn-stk"><div class="btn"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></div> </button></div><div class="sider main  top-store-menu-hide  overcenter"><div class="menu-close"><span tabindex="0" class="menu-close-btn"></span></div><div class="menu-close"><span tabindex="0" class="menu-close-btn"></span></div><div class="menu-close"><span tabindex="0" class="menu-close-btn"></span></div><div class="menu-close"><span tabindex="0" class="menu-close-btn"></span></div><div class="menu-close"><span tabindex="0" class="menu-close-btn"></span></div><div class="sider-inner"><ul id="top-store-stick-menu" class="top-store-menu collapse hide-menu" data-menu-style="horizontal"><li id="menu-item-325" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-325"><a href="https://themehunk.com/wp-themes/topstore/"><span class="top-store-menu-link">Home</span></a></li><li id="menu-item-327" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-327"><a href="https://themehunk.com/wp-themes/topstore/shop-page/"><span class="top-store-menu-link">Shop Page</span></a></li><li id="menu-item-328" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-328"><a href="https://themehunk.com/wp-themes/topstore/product-category/accessories/"><span class="top-store-menu-link">Accessories</span></a></li><li id="menu-item-329" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-329"><a href="https://themehunk.com/wp-themes/topstore/product-category/watches/"><span class="top-store-menu-link">Watches</span></a></li><li id="menu-item-326" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-326"><a href="https://themehunk.com/wp-themes/topstore/contact-us/"><span class="top-store-menu-link">Contact Us</span></a></li></ul></div></div></nav></div><div class="sticky-header-col3"><div class="thunk-icon"><div class="header-icon"> <a class="prd-search" href="#"><i class="fa fa-search"></i></a> <a class="whishlist" href="https://themehunk.com/wp-themes/topstore/wishlist/"><i class="fa fa-heart-o" aria-hidden="true"></i></a> <span><a href="https://themehunk.com/wp-themes/topstore/my-account/"><span class="account-text">Login / Signup</span><span class="account-text">My account</span><i class="fa fa-lock" aria-hidden="true"></i></a></span><div class="cart-icon">
-    <a class="cart-contents" href="https://themehunk.com/wp-themes/topstore/cart/" title="View your shopping cart"><i class="fa fa-shopping-basket"></i> <span class="cart-content"><span class="count-item">0</span><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">£</span>0.00</bdi></span></span></a>
+<h1><center>Bootstrap 4 Footer</center></h1>
 
-    <div id="open-cart" class="open-cart"><div class="top-store-quickcart-dropdown">
+<!--footer starts from here-->
+<footer class="footer">
+    <div class="container bottom_border">
+        <div class="row">
+            <div class=" col-sm-4 col-md col-sm-4  col-12 col">
+                <h5 class="headin5_amrc col_white_amrc pt2">Find us</h5>
+                <!--headin5_amrc-->
+                <p class="mb10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                <p><i class="fa fa-location-arrow"></i> 9878/25 sec 9 rohini 35 </p>
+                <p><i class="fa fa-phone"></i>  +91-9999878398  </p>
+                <p><i class="fa fa fa-envelope"></i> info@example.com  </p>
 
 
-        <p class="woocommerce-mini-cart__empty-message">No products in the cart.</p>
+            </div>
 
 
+            <div class=" col-sm-4 col-md  col-6 col">
+                <h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
+                <!--headin5_amrc-->
+                <ul class="footer_ul_amrc">
+                    <li><a href="http://webenlance.com">Image Rectoucing</a></li>
+                    <li><a href="http://webenlance.com">Clipping Path</a></li>
+                    <li><a href="http://webenlance.com">Hollow Man Montage</a></li>
+                    <li><a href="http://webenlance.com">Ebay & Amazon</a></li>
+                    <li><a href="http://webenlance.com">Hair Masking/Clipping</a></li>
+                    <li><a href="http://webenlance.com">Image Cropping</a></li>
+                </ul>
+                <!--footer_ul_amrc ends here-->
+            </div>
+
+
+            <div class=" col-sm-4 col-md  col-6 col">
+                <h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
+                <!--headin5_amrc-->
+                <ul class="footer_ul_amrc">
+                    <li><a href="http://webenlance.com">Remove Background</a></li>
+                    <li><a href="http://webenlance.com">Shadows & Mirror Reflection</a></li>
+                    <li><a href="http://webenlance.com">Logo Design</a></li>
+                    <li><a href="http://webenlance.com">Vectorization</a></li>
+                    <li><a href="http://webenlance.com">Hair Masking/Clipping</a></li>
+                    <li><a href="http://webenlance.com">Image Cropping</a></li>
+                </ul>
+                <!--footer_ul_amrc ends here-->
+            </div>
+
+
+            <div class=" col-sm-4 col-md  col-12 col">
+                <h5 class="headin5_amrc col_white_amrc pt2">Follow us</h5>
+                <!--headin5_amrc ends here-->
+
+                <ul class="footer_ul2_amrc">
+                    <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Lorem Ipsum is simply dummy text of the printing...<a href="#">https://www.lipsum.com/</a></p></li>
+                    <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Lorem Ipsum is simply dummy text of the printing...<a href="#">https://www.lipsum.com/</a></p></li>
+                    <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Lorem Ipsum is simply dummy text of the printing...<a href="#">https://www.lipsum.com/</a></p></li>
+                </ul>
+                <!--footer_ul2_amrc ends here-->
+            </div>
+        </div>
     </div>
-    <div class="search-wrapper"><div class="container"><div class="search-close"><a class="search-close-btn"></a></div><div id="search-box" class="wow thmkfadeInDown" data-wow-duration="1s"><form action="https://themehunk.com/wp-themes/topstore/" id="search-form" class="woocommerce-product-search" method="get" target="_top"> <input id="search-text" name="s" placeholder="Search for Product" class="form-control search-autocomplete ui-autocomplete-input" value="" type="text" title="Search for:" autocomplete="off"><div class="vert-brd"></div> <select name="product_cat" id="product_cat" class="something"><option value="0" selected="selected">All Category</option><option class="level-0" value="accessories">Accessories</option><option class="level-0" value="audio">Audio</option><option class="level-0" value="headphones">Headphones</option><option class="level-0" value="computer-laptop">Computer &amp; Laptop</option><option class="level-0" value="most-popular">Most Popular</option><option class="level-0" value="on-sale">On Sale</option><option class="level-0" value="cameras">Cameras</option><option class="level-0" value="new-arrival">New Arrival</option><option class="level-0" value="smartphone">Smartphone</option><option class="level-0" value="video-games">Video Games</option><option class="level-0" value="home-appliances">Home Appliances</option><option class="level-0" value="watches">Watches</option><option class="level-0" value="smart-watch">Smart Watch</option><option class="level-0" value="speaker">Speaker</option> </select> <button id="search-button" value="Submit" type="submit"> <i class="fa fa-search" aria-hidden="true"></i> </button> <input type="hidden" name="post_type" value="product"></form></div></div></div> <!-- sticky header --><div class="top-header"><div class="container"><div class="top-header-bar thnk-col-2"><div class="top-header-col1"><div class="content-html"> Welcome to Top Store</div></div><div class="top-header-col2"><div class="content-social"><ul class="social-icon  "><li><a target="_blank" href="#"><i class="fa fa-facebook"></i></a></li><li><a target="_blank" href="#"><i class="fa fa-pinterest"></i></a></li><li><a target="_blank" href="#"><i class="fa fa-instagram"></i></a></li><li><a target="_blank" href="#"><i class="fa fa-youtube-play"></i></a></li><li><a target="_blank" href="#"> <i class="fa fa-stumbleupon"></i></a></li><li><a target="_blank" href="#"> <i class="fa fa-dribbble"></i></a></li></ul></div></div></div> <!-- end top-header-bar --></div></div> <!-- end top-header --><div class="main-header mhdrfour callto left  cnv-none"><div class="container"><div class="main-header-bar thnk-col-3"><div class="main-header-col1"> <span class="logo-content"><div class="thunk-logo"> <a href="https://themehunk.com/wp-themes/topstore/" class="custom-logo-link" rel="home"><img width="197" height="50" src="https://themehunk.com/wp-themes/topstore/wp-content/uploads/sites/129/2020/10/top-store-logo.png" class="custom-logo" alt="Top Store" srcset="https://themehunk.com/wp-themes/topstore/wp-content/uploads/sites/129/2020/10/top-store-logo.png 1x,  2x"></a></div> </span></div><div class="main-header-col2"><div id="search-box" class="wow thmkfadeInDown" data-wow-duration="1s"><form action="https://themehunk.com/wp-themes/topstore/" id="search-form" class="woocommerce-product-search" method="get" target="_top"> <input id="search-text" name="s" placeholder="Search for Product" class="form-control search-autocomplete ui-autocomplete-input" value="" type="text" title="Search for:" autocomplete="off"><div class="vert-brd"></div> <select name="product_cat" id="product_cat" class="something"><option value="0" selected="selected">All Category</option><option class="level-0" value="accessories">Accessories</option><option class="level-0" value="audio">Audio</option><option class="level-0" value="headphones">Headphones</option><option class="level-0" value="computer-laptop">Computer &amp; Laptop</option><option class="level-0" value="most-popular">Most Popular</option><option class="level-0" value="on-sale">On Sale</option><option class="level-0" value="cameras">Cameras</option><option class="level-0" value="new-arrival">New Arrival</option><option class="level-0" value="smartphone">Smartphone</option><option class="level-0" value="video-games">Video Games</option><option class="level-0" value="home-appliances">Home Appliances</option><option class="level-0" value="watches">Watches</option><option class="level-0" value="smart-watch">Smart Watch</option><option class="level-0" value="speaker">Speaker</option> </select> <button id="search-button" value="Submit" type="submit"> <i class="fa fa-search" aria-hidden="true"></i> </button> <input type="hidden" name="post_type" value="product"></form></div></div><div class="main-header-col3"><div class="thunk-icon-market"><div class="header-icon"> <a class="whishlist" href="https://themehunk.com/wp-themes/topstore/wishlist/"> <span class="th-whishlist-text">My Favourite</span> <span>Wishlist</span><i class="fa fa-heart-o" aria-hidden="true"></i></a> <span><a href="https://themehunk.com/wp-themes/topstore/my-account/"><span class="account-text">Login / Signup</span><span class="account-text">My account</span><i class="fa fa-lock" aria-hidden="true"></i></a></span></div><div class="cart-icon">
-</header>
+
+
+    <div class="container">
+        <ul class="foote_bottom_ul_amrc">
+            <li><a href="http://webenlance.com">Home</a></li>
+            <li><a href="http://webenlance.com">About</a></li>
+            <li><a href="http://webenlance.com">Services</a></li>
+            <li><a href="http://webenlance.com">Pricing</a></li>
+            <li><a href="http://webenlance.com">Blog</a></li>
+            <li><a href="http://webenlance.com">Contact</a></li>
+        </ul>
+        <!--foote_bottom_ul_amrc ends here-->
+        <p class="text-center">Copyright @2017 | Designed With by <a href="#">Your Company Name</a></p>
+
+        <ul class="social_footer_ul">
+            <li><a href="http://webenlance.com"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="http://webenlance.com"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="http://webenlance.com"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="http://webenlance.com"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+        <!--social_footer_ul ends here-->
+    </div>
+
+</footer>
+
+
+
 
 
 
 <script src="bootstrap.js"></script>
 <script src="jquery-3.6.0.min.js"></script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 
 
 

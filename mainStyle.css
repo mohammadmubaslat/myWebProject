@@ -1,5 +1,4 @@
 
-
 body{
     background-color: #F5F5F5;
 }
@@ -16,13 +15,9 @@ body{
     left: 0;
     width: 100%;
     height: 90px;
-
     background-color: black;
     opacity: 0.8;
-
 }
-
-
 #header_table
 {
     color: #D6C7A6;
@@ -31,7 +26,6 @@ body{
     font-size: 13px;
     line-height: 17.6px;
     font-weight: 400;
-
     margin:  0 auto  ;
 }
 .table_row
@@ -49,25 +43,19 @@ body{
     font-size: 15px;
 }
 
-
 #body_img_div
 {
     text-align: center;
-
 }
 
 #body_img
 {
     height: 900px;
-
 }
-
 #bentley_Logo_div
 {
-
     padding-top: 50px;
     padding-bottom: 40px;
-
     margin:  0 auto  ;
     text-align: center;
 }
@@ -75,7 +63,6 @@ body{
 #bentley_img
 {
     padding-top: 30px;
-
     height: 200px;
     width: 400px;
 }
@@ -83,40 +70,30 @@ body{
 #bentley_Desc
 {
     text-align: center;
-
     display: block;
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-
     color: #000000;
     font-family: 'Abel', sans-serif;
     font-size: 18px;
     line-height: 28px;
     font-weight: 400;
 }
-
 #top_products_div
 {
     padding-top: 50px;
     text-align: center;
 }
 
-
 .card {
-
     text-align: center;
     width: 240px;
     height: 270px;
     border-radius: 7px;
     display: block;
-
 }
-
-
-
-
 
 .card:hover
 {
@@ -125,19 +102,11 @@ body{
 .blogcontent
 {
     padding-bottom: 50px;
-
-
-
 }
-
-
-
 .top_imgs
 {
-
     padding : 20px;
     padding-top: 40px;
-
     width: 250px;
     height:220px;
     min-height:50% ;
@@ -146,12 +115,9 @@ body{
     max-height:90% ;
 }
 
-
-
 .top_products_col:hover
 {
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
-
     background-color: #E9E9E9;
 }
 
@@ -169,19 +135,14 @@ body{
     color: #D7AE4C;
     font-weight: bold;
 }
-
 .header_link{
     text-decoration: none ;
     color: #D6C7A6;;
 }
-
 .header_link:hover {
     color: #F2F5EB;
     /*text-decoration: underline;*/
 }
-
-
-
 .btn-primary
 {
     color: #fff;
@@ -316,6 +277,12 @@ h2::after {
     background: #555;
     box-shadow: inset 0 2px 1px rgba(0,0,0,0.2);
 }
+
+
+
+
+
+
 
 
 
