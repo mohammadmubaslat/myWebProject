@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
 
     <style>
@@ -131,8 +133,8 @@
         }
 
         .wrapper {
-            padding: 30px;
-            max-width: 1200px;
+            padding: 0px;
+            max-width: 1400px;
             margin: auto
         }
 
@@ -296,7 +298,7 @@
             border-left: 1px solid #ccc;
             padding: 0px 10px;
             outline: none;
-            font-weight: 900
+            font-weight: 500
         }
 
         .close {
@@ -308,7 +310,7 @@
         }
 
         #sidebar {
-            width: 25%;
+            width: 20%;
             float: left
         }
 
@@ -486,9 +488,7 @@
                 float: none
             }
 
-            #products {
-                padding: 0
-            }
+
 
             .clear {
                 float: left;
@@ -523,17 +523,217 @@
         }
 
 
+        .d-lg-flex
+        {
+            padding-left: 370px;
+        }
+  .d-sm-flex
+   {
+    padding-left: 380px;
+    }
+
+
+     #sidebar
+     {
+
+       margin-top: -80px;
+     }
 
 
 
 
-   </style>
+                /*      products style  :     */
+
+
+
+        .product-grid3{font-family:Roboto,sans-serif;text-align:center;position:relative;z-index:1}
+        .product-grid3:before{content:"";height:81%;width:100%;background:#fff;border:1px solid rgba(0,0,0,.1);opacity:0;position:absolute;top:0;left:0;z-index:-1;transition:all .5s ease 0s}
+        .product-grid3:hover:before{opacity:1;height:100%}
+        .product-grid3 .product-image3{position:relative}
+        .product-grid3 .product-image3 a{display:block}
+        .product-grid3 .product-image3 img{width:100%;height:auto}
+        .product-grid3 .pic-1{opacity:1;transition:all .5s ease-out 0s}
+        .product-grid3:hover .pic-1{opacity:0}
+        .product-grid3 .pic-2{position:absolute;top:0;left:0;opacity:0;transition:all .5s ease-out 0s}
+        .product-grid3:hover .pic-2{opacity:1}
+        .product-grid3 .social{width:120px;padding:0;margin:0 auto;list-style:none;opacity:0;position:absolute;right:0;left:0;bottom:-23px;transform:scale(0);transition:all .3s ease 0s}
+        .product-grid3:hover .social{opacity:1;transform:scale(1)}
+        .product-grid3:hover .product-discount-label,.product-grid3:hover .product-new-label,.product-grid3:hover .title{opacity:0}
+        .product-grid3 .social li{display:inline-block}
+        .product-grid3 .social li a{color:#e67e22;background:#fff;font-size:18px;line-height:50px;width:50px;height:50px;border:1px solid rgba(0,0,0,.1);border-radius:50%;margin:0 2px;display:block;transition:all .3s ease 0s}
+        .product-grid3 .social li a:hover{background:#e67e22;color:#fff}
+        .product-grid3 .product-discount-label,.product-grid3 .product-new-label{background-color:#e67e22;color:#fff;font-size:17px;padding:2px 10px;position:absolute;right:10px;top:10px;transition:all .3s}
+        .product-grid3 .product-content{z-index:-1;padding:15px;text-align:left}
+        .product-grid3 .title{font-size:14px;text-transform:capitalize;margin:0 0 7px;transition:all .3s ease 0s}
+        .product-grid3 .title a{color:#414141}
+        .product-grid3 .price{color:#000;font-size:16px;letter-spacing:1px;font-weight:600;margin-right:2px;display:inline-block}
+        .product-grid3 .price span{color:#909090;font-size:14px;font-weight:500;letter-spacing:0;text-decoration:line-through;text-align:left;display:inline-block;margin-top:-2px}
+        .product-grid3 .rating{padding:0;margin:-22px 0 0;list-style:none;text-align:right;display:block}
+        .product-grid3 .rating li{color:#ffd200;font-size:13px;display:inline-block}
+        .product-grid3 .rating li.disable{color:#dcdcdc}
+        @media only screen and (max-width:1200px){.product-grid3 .rating{margin:0}
+        }
+        @media only screen and (max-width:990px){.product-grid3{margin-bottom:30px}
+            .product-grid3 .rating{margin:-22px 0 0}
+        }
+        @media only screen and (max-width:359px){.product-grid3 .rating{margin:0}
+        }
+
+        #products {
+            width: 75%;
+            padding-left: 30px;
+            margin: 0;
+            float: right;
+            padding-top: 30px;
+        }
+
+           .col-md-3
+           {
+               padding-bottom: 20px;
+           }
+
+
+
+
+        #range_div {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+
+            margin-top: 50px;
+        }
+
+        .PrixMin {
+            float: left;
+            color: #181D31;
+            font-size: 15px;
+            margin-right: 5px;
+        }
+
+        .selecteurPrix {
+            padding-top: 15px;
+        }
+
+        body {
+            font-family: sans-serif;
+            padding: 40px;
+        }
+
+        .valeurPrix {
+            position: absolute;
+            top: -59px;
+            left: 50px;
+        }
+
+        .range-slider {
+            position: relative;
+            width: 189px;
+            float: left;
+            margin-right: 5px;
+        }
+
+        .range-slider .input-range {
+            -webkit-appearance: none;
+            width: 195px;
+            height: 5px;
+            border-radius: 5px;
+            background: #ccc;
+            outline: none;
+        }
+
+        .range-slider .input-range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #181D31;
+            cursor: pointer;
+            -webkit-transition: background .15s ease-in-out;
+            transition: background .15s ease-in-out;
+        }
+
+        .range-slider .input-range::-webkit-slider-thumb:hover {
+            background: #181D31;
+        }
+
+        .range-slider .input-range:active::-webkit-slider-thumb {
+            background:#181D31;
+        }
+
+        .range-slider .input-range::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border: 0;
+            border-radius: 50%;
+            background:#181D31;
+            cursor: pointer;
+            -webkit-transition: background .15s ease-in-out;
+            transition: background .15s ease-in-out;
+        }
+
+        .range-slider .input-range::-moz-range-thumb:hover {
+            background: #181D31;
+        }
+
+        .range-slider .input-range:active::-moz-range-thumb {
+            background: #181D31;
+        }
+
+        .range-slider .range-value {
+            display: inline-block;
+            position: relative;
+            width: 83px;
+            color: #fff;
+            font-size: 15px;
+            line-height: 32px;
+            text-align: center;
+            border-radius: 3px;
+            background:#181D31;
+            padding: 5px 10px;
+            margin-left: 7px;
+        }
+
+        .range-slider .range-value:after {
+            position: absolute;
+            top: 38px;
+            left: 40px;
+            width: 0;
+            height: 0;
+            border-top: 7px solid transparent;
+            border-right: 7px solid #181D31;
+            border-bottom: 7px solid transparent;
+            content: '';
+            -webkit-transform: rotate(-90deg);
+            -moz-transform: rotate(-90deg);
+            -o-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+        }
+
+        ::-moz-range-track {
+            background: #ccc;
+            border: 0;
+        }
+
+        input::-moz-focus-inner {
+            border: 0;
+        }
+
+
+        #rating_div
+        {
+            margin-top: 50px;
+        }
+
+    </style>
 
 </head>
 <body>
 
 
 <nav id="nav_id" class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+
+    <img  style="padding-left: 20px" src="mainUI/imgs/productsLogo.png" alt="" >
     <!-- Topbar Search -->
     <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
         <div class="input-group"> <input type="text" class="form-control bg-light border-0 small" placeholder="Search for...">
@@ -623,9 +823,17 @@
 </nav>
 
 
+
+
+
+
+
+
+
+
 <div class="wrapper">
     <div class="d-md-flex align-items-md-center">
-        <div class="h3">LUXURY LIVING</div>
+
         <div class="ml-auto d-flex align-items-center views"> <span class="btn text-success"> <span class="fas fa-th px-md-2 px-1"></span><span>Grid view</span> </span> <span class="btn"> <span class="fas fa-list-ul"></span><span class="px-md-2 px-1">List view</span> </span> <span class="green-label px-md-2 px-1">428</span> <span class="text-muted">Products</span> </div>
     </div>
     <div class="d-lg-flex align-items-lg-center pt-2">
@@ -634,7 +842,7 @@
         <div class="form-inline d-flex align-items-center my-2 checkbox bg-light border mx-lg-2"> <label class="tick">Bio <input type="checkbox"> <span class="check"></span> </label> <span class="text-success px-2 count"> 72</span> </div>
         <div class="form-inline d-flex align-items-center my-2 checkbox bg-light border mx-lg-2"> <label class="tick">Czech republic <input type="checkbox"> <span class="check"></span> </label> <span class="border px-1 mx-2 mr-3 font-weight-bold count"> 12</span> <select name="country" id="country" class="bg-light">
             <option value="" hidden>Country</option>
-            <option value="India">India</option>
+
             <option value="USA">USA</option>
             <option value="Uk">UK</option>
         </select> </div>
@@ -644,10 +852,9 @@
         <div class="green-label font-weight-bold p-0 px-1 mx-sm-1 mx-0 my-sm-0 my-2">Selected Filtre <span class=" px-1 close">&times;</span> </div>
         <div class="green-label font-weight-bold p-0 px-1 mx-sm-1 mx-0">Selected Filtre <span class=" px-1 close">&times;</span> </div>
     </div>
-    <div class="filters"> <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#mobile-filter" aria-expanded="true" aria-controls="mobile-filter">Filter<span class="px-1 fas fa-filter"></span></button> </div>
     <div id="mobile-filter">
         <div class="py-3">
-            <h5 class="font-weight-bold">Categories</h5>
+            <h5 class="font-weight-bold">Bedrooms</h5>
             <ul class="list-group">
                 <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> vegetables <span class="badge badge-primary badge-pill">328</span> </li>
                 <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Fruits <span class="badge badge-primary badge-pill">112</span> </li>
@@ -665,8 +872,9 @@
                 <div class="form-inline d-flex align-items-center py-1"> <label class="tick">True Farmar Steve <input type="checkbox"> <span class="check"></span> </label> </div>
             </form>
         </div>
-        <div class="py-3">
-            <h5 class="font-weight-bold">Rating</h5>
+
+        <div  class="py-3" >
+            <h5 class="font-weight-bold" >Rating</h5>
             <form class="rating">
                 <div class="form-inline d-flex align-items-center py-2"> <label class="tick"><span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <input type="checkbox"> <span class="check"></span> </label> </div>
                 <div class="form-inline d-flex align-items-center py-2"> <label class="tick"> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="far fa-star px-1 text-muted"></span> <input type="checkbox"> <span class="check"></span> </label> </div>
@@ -676,13 +884,14 @@
             </form>
         </div>
     </div>
+
     <div class="content py-md-0 py-3">
         <section id="sidebar">
             <div class="py-3">
-                <h5 class="font-weight-bold">Categories</h5>
+                <h5 class="font-weight-bold">Bedrooms</h5>
                 <ul class="list-group">
-                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Bedroom <span class="badge badge-primary badge-pill">328</span> </li>
-                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Living <span class="badge badge-primary badge-pill">112</span> </li>
+                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Bed <span class="badge badge-primary badge-pill">328</span> </li>
+                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Mirror <span class="badge badge-primary badge-pill">112</span> </li>
                     <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Dining Accessories <span class="badge badge-primary badge-pill">32</span> </li>
                     <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Storage <span class="badge badge-primary badge-pill">48</span> </li>
                 </ul>
@@ -697,7 +906,23 @@
                     <div class="form-inline d-flex align-items-center py-1"> <label class="tick">True Farmar Steve <input type="checkbox"> <span class="check"></span> </label> </div>
                 </form>
             </div>
-            <div class="py-3">
+
+
+            <div class="py-3" id="range_div">
+                <div class="selecteurPrix">
+                    <div class="PrixMin">1 $</div>
+                    <div class="range-slider">
+                        <input class="input-range" type="range" value="5000" min="1" max="10000">
+                        <div class="valeurPrix">
+                            <span class="range-value"></span>
+
+                        </div>
+
+                    </div>    <div class="PrixMin">10000 $</div></div>
+
+            </div>
+
+            <div id="rating_div" class="py-3">
                 <h5 class="font-weight-bold">Rating</h5>
                 <form class="rating">
                     <div class="form-inline d-flex align-items-center py-2"> <label class="tick"><span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <input type="checkbox"> <span class="check"></span> </label> </div>
@@ -708,108 +933,167 @@
                 </form>
             </div>
         </section> <!-- Products Section -->
+
+
         <section id="products">
-            <div class="container py-3">
+
+
+            <div class="container">
+
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1">
-                        <div class="card"> <img class="card-img-top" src="https://www.freepnglogos.com/uploads/cucumber-png/cucumber-png-image-purepng-transparent-png-26.png">
-                            <div class="card-body">
-                                <h6 class="font-weight-bold pt-1">Product title</h6>
-                                <div class="text-muted description">Space for small product description</div>
-                                <div class="d-flex align-items-center product"> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="far fa-star"></span> </div>
-                                <div class="d-flex align-items-center justify-content-between pt-3">
-                                    <div class="d-flex flex-column">
-                                        <div class="h6 font-weight-bold">36.99 USD</div>
-                                        <div class="text-muted rebate">48.56</div>
-                                    </div>
-                                    <div class="btn btn-primary">Buy now</div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="product-grid3">
+                            <div class="product-image3">
+                                <a href="#">
+                                    <img class="pic-1" src="http://bestjquery.com/tutorial/product-grid/demo4/images/img-1.jpg">
+                                    <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo4/images/img-2.jpg">
+                                </a>
+                                <ul class="social">
+                                    <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                                <span class="product-new-label">New</span>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="title"><a href="#">Men's Blazer</a></h3>
+                                <div class="price">
+                                    $63.50
+                                    <span>$75.00</span>
                                 </div>
+                                <ul class="rating">
+                                    <li class="fa fa-star"></li>
+                                    <li class="fa fa-star"></li>
+                                    <li class="fa fa-star"></li>
+                                    <li class="fa fa-star disable"></li>
+                                    <li class="fa fa-star disable"></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 pt-md-0 pt-4">
-                        <div class="card"> <img class="card-img-top" src="https://www.freepnglogos.com/uploads/carrot-png/carrot-mint-with-turmeric-chia-equine-pure-delights-12.png">
-                            <div class="card-body">
-                                <h6 class="font-weight-bold pt-1">Product title</h6>
-                                <div class="text-muted description">Space for small product description</div>
-                                <div class="d-flex align-items-center product"> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="far fa-star"></span> </div>
-                                <div class="d-flex align-items-center justify-content-between pt-3">
-                                    <div class="d-flex flex-column">
-                                        <div class="h6 font-weight-bold">36.99 USD</div>
-                                        <div class="text-muted rebate">48.56</div>
-                                    </div>
-                                    <div class="btn btn-primary">Buy now</div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="product-grid3">
+                            <div class="product-image3">
+                                <a href="#">
+                                    <img class="pic-1" src="http://bestjquery.com/tutorial/product-grid/demo4/images/img-3.jpg">
+                                    <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo4/images/img-4.jpg">
+                                </a>
+                                <ul class="social">
+                                    <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="title"><a href="#">Women's Designer Top</a></h3>
+                                <div class="price">
+                                    $43.50
                                 </div>
+                                <ul class="rating">
+                                    <li class="fa fa-star"></li>
+                                    <li class="fa fa-star"></li>
+                                    <li class="fa fa-star"></li>
+                                    <li class="fa fa-star"></li>
+                                    <li class="fa fa-star"></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 pt-lg-0 pt-4">
-                        <div class="card"> <img class="card-img-top" src="https://www.freepnglogos.com/uploads/tomato-png/tomato-bunch-fresh-tomatoes-png-image-pngpix-24.png">
-                            <div class="card-body">
-                                <h6 class="font-weight-bold pt-1">Product title</h6>
-                                <div class="text-muted description">Space for small product description</div>
-                                <div class="d-flex align-items-center product"> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="far fa-star"></span> </div>
-                                <div class="d-flex align-items-center justify-content-between pt-3">
-                                    <div class="d-flex flex-column">
-                                        <div class="h6 font-weight-bold">36.99 USD</div>
-                                        <div class="text-muted rebate">48.56</div>
-                                    </div>
-                                    <div class="btn btn-primary">Buy now</div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="product-grid3">
+                            <div class="product-image3">
+                                <a href="#">
+                                    <img class="pic-1" src="http://bestjquery.com/tutorial/product-grid/demo4/images/img-5.jpg">
+                                    <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo4/images/img-6.jpg">
+                                </a>
+                                <ul class="social">
+                                    <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                                <span class="product-new-label">New</span>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="title"><a href="#">Men's Blazer</a></h3>
+                                <div class="price">
+                                    $63.50
+                                    <span>$75.00</span>
                                 </div>
+                                <ul class="rating">
+                                    <li class="fa fa-star"></li>
+                                    <li class="fa fa-star"></li>
+                                    <li class="fa fa-star"></li>
+                                    <li class="fa fa-star disable"></li>
+                                    <li class="fa fa-star disable"></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 pt-lg-4 pt-4">
-                        <div class="card"> <img class="card-img-top" src="https://www.freepnglogos.com/uploads/grapes-png/grapes-grape-red-transparent-png-stickpng-5.png">
-                            <div class="card-body">
-                                <h6 class="font-weight-bold pt-1">Product title</h6>
-                                <div class="text-muted description">Space for small product description</div>
-                                <div class="d-flex align-items-center product"> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="far fa-star"></span> </div>
-                                <div class="d-flex align-items-center justify-content-between pt-3">
-                                    <div class="d-flex flex-column">
-                                        <div class="h6 font-weight-bold">36.99 USD</div>
-                                        <div class="text-muted rebate">48.56</div>
-                                    </div>
-                                    <div class="btn btn-primary">Buy now</div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="product-grid3">
+                            <div class="product-image3">
+                                <a href="#">
+                                    <img class="pic-1" src="http://bestjquery.com/tutorial/product-grid/demo4/images/img-7.jpg">
+                                    <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo4/images/img-8.jpg">
+                                </a>
+                                <ul class="social">
+                                    <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                                <span class="product-new-label">New</span>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="title"><a href="#">Men's Blazer</a></h3>
+                                <div class="price">
+                                    $63.50
+                                    <span>$75.00</span>
                                 </div>
+                                <ul class="rating">
+                                    <li class="fa fa-star"></li>
+                                    <li class="fa fa-star"></li>
+                                    <li class="fa fa-star"></li>
+                                    <li class="fa fa-star disable"></li>
+                                    <li class="fa fa-star disable"></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 pt-lg-4 pt-4">
-                        <div class="card"> <img class="card-img-top" src="https://www.freepnglogos.com/uploads/cucumber-png/cucumber-png-image-purepng-transparent-png-26.png">
-                            <div class="card-body">
-                                <h6 class="font-weight-bold pt-1">Product title</h6>
-                                <div class="text-muted description">Space for small product description</div>
-                                <div class="d-flex align-items-center product"> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="far fa-star"></span> </div>
-                                <div class="d-flex align-items-center justify-content-between pt-3">
-                                    <div class="d-flex flex-column">
-                                        <div class="h6 font-weight-bold">36.99 USD</div>
-                                        <div class="text-muted rebate">48.56</div>
-                                    </div>
-                                    <div class="btn btn-primary">Buy now</div>
+
+
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="product-grid3">
+                            <div class="product-image3">
+                                <a href="#">
+                                    <img class="pic-1" src="http://bestjquery.com/tutorial/product-grid/demo4/images/img-3.jpg">
+                                    <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo4/images/img-4.jpg">
+                                </a>
+                                <ul class="social">
+                                    <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="title"><a href="#">Women's Designer Top</a></h3>
+                                <div class="price">
+                                    $43.50
                                 </div>
+                                <ul class="rating">
+                                    <li class="fa fa-star"></li>
+                                    <li class="fa fa-star"></li>
+                                    <li class="fa fa-star"></li>
+                                    <li class="fa fa-star"></li>
+                                    <li class="fa fa-star"></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 pt-lg-4 pt-4">
-                        <div class="card"> <img class="card-img-top" src="https://www.freepnglogos.com/uploads/watermelon-png/watermelon-gea-products-2.png">
-                            <div class="card-body">
-                                <h6 class="font-weight-bold pt-1">Product title</h6>
-                                <div class="text-muted description">Space for small product description</div>
-                                <div class="d-flex align-items-center product"> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="far fa-star"></span> </div>
-                                <div class="d-flex align-items-center justify-content-between pt-3">
-                                    <div class="d-flex flex-column">
-                                        <div class="h6 font-weight-bold">36.99 USD</div>
-                                        <div class="text-muted rebate">48.56</div>
-                                    </div>
-                                    <div class="btn btn-primary">Buy now</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+
+
                 </div>
             </div>
+
         </section>
+
+
     </div>
 </div>
 
@@ -818,11 +1102,26 @@
 
 
 
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" ></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" ></script>
 
 <script src="bootstrap.js"></script>
 <script src="jquery-3.6.0.min.js"></script>
+
+<script>
+
+
+    var range = $('.input-range'),
+        value = $('.range-value');
+
+    value.html(range.attr('value') + ' $');
+
+    range.on('input', function() {
+        value.html(this.value + ' $');
+    });
+</script>
+
 
 </body>
 
