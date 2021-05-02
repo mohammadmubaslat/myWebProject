@@ -10,9 +10,11 @@
 
     <link rel="stylesheet" href="bootstrap.css">
 
+
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 
     <link rel="stylesheet" href="mainStyle.css">
     <link rel="stylesheet" href="cardStyle.css">
@@ -84,12 +86,12 @@
 
         <tr class="table_row">
             <td  class="table_col"> <a class="header_link" href="#">  Home  </a>  </td>
-            <td class="table_col" >  <a class="header_link" href="#">Products </a> </td>
+            <td class="table_col" >  <a class="header_link" href="mainProducts.php">Products </a> </td>
             <td  class="table_col">  <a class="header_link" href="#">Accessories  </a>  </td>
             <td>  <img id="logo_img" src="mainUI/imgs/logo.png" alt=""> </td>
             <td  class="table_col"> <a class="header_link" href="#"> Offers </a>   </td>
             <td  class="table_col">  <a class="header_link" href="#">About us </a>   </td>
-            <td  class="table_col"> <a class="header_link" href="#">  Contact us </a>  </td>
+            <td  class="table_col"> <a class="header_link" href="contactUs.php">  Contact us </a>  </td>
 
         </tr>
 
@@ -300,6 +302,97 @@
         </div>
     </div>
 </div>
+
+
+
+
+
+
+
+<!--footer starts from here-->
+<footer class="footer">
+    <div class="container bottom_border">
+        <div class="row">
+            <div class=" col-sm-4 col-md col-sm-4  col-12 col">
+                <h5 class="headin5_amrc col_white_amrc pt2">Find us</h5>
+                <!--headin5_amrc-->
+                <p class="mb10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                <p><i class="fa fa-location-arrow"></i> Palestine </p>
+                <p><i class="fa fa-phone"></i>  +970-599999999  </p>
+                <p><i class="fa fa fa-envelope"></i> support@luxuryliving.com  </p>
+
+
+            </div>
+
+
+            <div class=" col-sm-4 col-md  col-6 col">
+                <h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
+                <!--headin5_amrc-->
+                <ul class="footer_ul_amrc">
+                    <li><a href="http://webenlance.com">Image Rectoucing</a></li>
+                    <li><a href="http://webenlance.com">Clipping Path</a></li>
+                    <li><a href="http://webenlance.com">Hollow Man Montage</a></li>
+                    <li><a href="http://webenlance.com">Ebay & Amazon</a></li>
+                    <li><a href="http://webenlance.com">Hair Masking/Clipping</a></li>
+                    <li><a href="http://webenlance.com">Image Cropping</a></li>
+                </ul>
+                <!--footer_ul_amrc ends here-->
+            </div>
+
+
+            <div class=" col-sm-4 col-md  col-6 col">
+                <h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
+                <!--headin5_amrc-->
+                <ul class="footer_ul_amrc">
+                    <li><a href="http://webenlance.com">Remove Background</a></li>
+                    <li><a href="http://webenlance.com">Shadows & Mirror Reflection</a></li>
+                    <li><a href="http://webenlance.com">Logo Design</a></li>
+                    <li><a href="http://webenlance.com">Vectorization</a></li>
+                    <li><a href="http://webenlance.com">Hair Masking/Clipping</a></li>
+                    <li><a href="http://webenlance.com">Image Cropping</a></li>
+                </ul>
+                <!--footer_ul_amrc ends here-->
+            </div>
+
+
+            <div class=" col-sm-4 col-md  col-12 col">
+                <h5 class="headin5_amrc col_white_amrc pt2">Follow us</h5>
+                <!--headin5_amrc ends here-->
+
+                <ul class="footer_ul2_amrc">
+                    <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Luxury Living<a href="#"></a></p></li>
+                    <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Luxury Living<a href="#"></a></p></li>
+                    <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Luxury Living<a href="#"></a></p></li>
+                </ul>
+                <!--footer_ul2_amrc ends here-->
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <ul class="foote_bottom_ul_amrc">
+            <li><a href="#">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="">Pricing</a></li>
+            <li><a href="http://webenlance.com">Blog</a></li>
+            <li><a href="contactUs.php">Contact</a></li>
+        </ul>
+        <!--foote_bottom_ul_amrc ends here-->
+        <p class="text-center">Copyright @2021 | Designed by Mohammad Mubaslat and Hamzeh Saleh</p>
+
+        <ul class="social_footer_ul">
+            <li><a href="http://facebook.com"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="http://twitter.com"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="http://linkedin.com"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="http://instagram.com"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+        <!--social_footer_ul ends here-->
+    </div>
+
+</footer>
+
 
 
 

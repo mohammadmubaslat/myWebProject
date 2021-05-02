@@ -22,13 +22,13 @@
     <link rel="stylesheet" href="main_Admin_Style.css">
 
 
-
-
-
+<!--    <link rel="stylesheet" type="text/css" href="../fontawesome.min.css">-->
+<!--    <link rel="stylesheet" type="text/css" href="../all.min.css">-->
+<!---->
 
 <!---->
 <!--    <link rel="stylesheet" type="text/css" href="Material+Icons.css" />-->
-<!--    <link rel="stylesheet" href="font-awesome.min.css">-->
+<!--    <link rel="stylesheet" href="font-awesome.min.css"> -->
 
 <!--    <link href="material-dashboard.css?v=2.1.0" rel="stylesheet" />-->
 <!--    <link href="black-dashboard.css" rel="stylesheet" />-->
@@ -66,7 +66,7 @@
         <nav class="navTop row">
             <div class="menuIcon fl"><span class="fa fa-bars"></span></div>
             <div class="account fr">
-                <div class="name has-submenu">John Doe<span class="fa fa-angle-down"></span></div>
+                <div class="name has-submenu">Mohammad<span class="fa fa-angle-down"></span></div>
                 <ul class="accountLinks submenu">
                     <li><a href="../IntroductionPage.php">View website</a></li>
                     <li><a href="../mainProducts.php">Log out<span class="fa fa-sign-out fr"></span></a></li>

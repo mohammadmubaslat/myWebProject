@@ -11,6 +11,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
 
+
         body{margin-top:20px;
             background: #2B2B2A;
             background: -webkit-linear-gradient(to right, #5B564D, #C0B397);
@@ -154,7 +155,17 @@
     </style>
 </head>
 
+
+
 <body>
+
+
+
+
+
+
+
+
 
 <div class="container">
     <div class="wrapper wrapper-content animated fadeInRight">

@@ -10,98 +10,72 @@ include "side_Nav_Admin.php";
 
 
 
-    <div id="add_product" class="container-fluid" >
-        <div class="row justify-content-center">
-            <div class="col-11 col-sm-9 col-md-7 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
-                <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
 
-                    <form id="msform">
-
-
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div> <br> <!-- fieldsets -->
-                        <fieldset>
-                            <div class="form-card">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h2 class="fs-title" style="padding-top: 30px;">Add Product:</h2>
-                                    </div>
-
-                                </div> <label class="fieldlabels">Product Name: *</label>
-                                <input type="email" name="email" placeholder="Full Name" />
-
-                                <label class="fieldlabels">Price: *</label>
-                                <input type="text" name="uname" placeholder="UserName" />
-
-                                <label class="fieldlabels">Password: *</label>
-                                <input type="password" name="pwd" placeholder="Password" />
-
-                                <label class="fieldlabels">Confirm Password: *</label>
-                                <input type="password" name="cpwd" placeholder="Confirm Password" />
-
-                            </div>
-
-
-                            <input  type="button" name="next" class="next action-button" value="Save" />
-
-                        </fieldset>
-                        <fieldset>
-                            <div class="form-card">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h2 class="fs-title">Personal Information:</h2>
-                                    </div>
-                                    <div class="col-5">
-                                        <h2 class="steps">Step 2 - 4</h2>
-                                    </div>
-                                </div> <label class="fieldlabels">First Name: *</label> <input type="text" name="fname" placeholder="First Name" /> <label class="fieldlabels">Last Name: *</label> <input type="text" name="lname" placeholder="Last Name" /> <label class="fieldlabels">Contact No.: *</label> <input type="text" name="phno" placeholder="Contact No." /> <label class="fieldlabels">Alternate Contact No.: *</label> <input type="text" name="phno_2" placeholder="Alternate Contact No." />
-                            </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
-                        </fieldset>
-                        <fieldset>
-                            <div class="form-card">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h2 class="fs-title">Image Upload:</h2>
-                                    </div>
-                                    <div class="col-5">
-                                        <h2 class="steps">Step 3 - 4</h2>
-                                    </div>
-                                </div> <label class="fieldlabels">Upload Your Photo:</label> <input type="file" name="pic" accept="image/*"> <label class="fieldlabels">Upload Signature Photo:</label> <input type="file" name="pic" accept="image/*">
-                            </div> <input type="button" name="next" class="next action-button" value="Submit" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
-                        </fieldset>
-                        <fieldset>
-                            <div class="form-card">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h2 class="fs-title">Finish:</h2>
-                                    </div>
-                                    <div class="col-5">
-                                        <h2 class="steps">Step 4 - 4</h2>
-                                    </div>
-                                </div> <br><br>
-                                <h2 class="purple-text text-center"><strong>SUCCESS !</strong></h2> <br>
-                                <div class="row justify-content-center">
-                                    <div class="col-3"> <img src="https://i.imgur.com/GwStPmg.png" class="fit-image"> </div>
-                                </div> <br><br>
-                                <div class="row justify-content-center">
-                                    <div class="col-7 text-center">
-                                        <h5 class="purple-text text-center">You Have Successfully Signed Up</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </form>
-                </div>
+    <form id="show_users" action="" method="POST" enctype="multipart/form-data" class="form">
+        <div class="formHeader row">
+            <h2 class="text-1 fl">Users</h2>
+            <div class="fr">
+                <button type="submit" class="btnSave bg-1 text-fff text-bold fr">SAVE</button>
             </div>
         </div>
-    </div>
+        <div class="formBody row">
+
+            <section>
+                <div class="tbl-header">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                        <tr >
+                            <th>Photo</th>
+                            <th >Full Name</th>
+                            <th >Email</th>
+                            <th>Country</th>
+                            <th>Address</th>
+                            <th>Password</th>
+                            <th>Interests</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="tbl-content">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <tbody>
+
+                        <tr>
+                            <td><img style="height: 40px; width: 40px;" src="../mainUI/imgs/chair1_1.jfif" alt="" > </td>
+                            <td>Mohammad Mubaslat</td>
+                            <td>mohammad@ll.com</td>
+                            <td>Palestine</td>
+                            <td>Tubas, Baghdad street</td>
+                            <td>1234</td>
+                            <td>Beds,Lights</td>
+                            <td>
+
+                                <a href=" "><span class="">  <i class="fas fa-user-times"></i></span></a>
+                                <a href="messages_Admin.php"><span class=""> <i class="fas fa-comment-dots"></i></span></a>
+
+
+                               </td>
+                        </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </div>
+
+</form>
 
 
 
 
 
-    <?php
+
+
+
+<?php
 
 include "footer_Admin.php";
 

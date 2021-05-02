@@ -19,8 +19,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
-
-
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css" rel="stylesheet">
     <link rel="stylesheet" href="mainProductsStyle.css">
 
 
@@ -207,38 +207,82 @@
             <div id="img_slider">
 
 
-
-                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="mainUI/imgs/cover1.jpg" class="d-block w-100" alt="...">
+                            <div class="mask flex-center">
+                                <div class="container">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-7 col-12 order-md-1 order-2">
+                                            <h4>Present your <br>
+                                                awesome product</h4>
+                                            <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
+                                                necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
+                                            <a href="#">BUY NOW</a> </div>
+                                        <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://i.imgur.com/NKvkfTT.png" class="mx-auto" alt="slide"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="mainUI/imgs/cover2.jpg" class="d-block w-100" alt="...">
+                            <div class="mask flex-center">
+                                <div class="container">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-7 col-12 order-md-1 order-2">
+                                            <h4>Present your <br>
+                                                awesome product</h4>
+                                            <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
+                                                necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
+                                            <a href="#">BUY NOW</a> </div>
+                                        <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://i.imgur.com/duWgXRs.png" class="mx-auto" alt="slide"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="mainUI/imgs/cover3.jpg" class="d-block w-100" alt="...">
+                            <div class="mask flex-center">
+                                <div class="container">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-7 col-12 order-md-1 order-2">
+                                            <h4>Present your <br>
+                                                awesome product</h4>
+                                            <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
+                                                necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
+                                            <a href="#">BUY NOW</a> </div>
+                                        <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://i.imgur.com/DGkR4OQ.png" class="mx-auto" alt="slide"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
+                    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
+                <!--slide end-->
+
 
 
 
             </div>
+
+
+
 
 
             <div id="sections_div">
 
+                <div class="sections_div_1_2_3_4">
+
+
+
+                    </div>
+
+
+
+
 
             </div>
+
+
+
 
 
             <div id="new_products_div">
@@ -391,10 +435,13 @@
 
 
 
-
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" ></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" ></script>
+
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 <script src="bootstrap.js"></script>
 <script src="jquery-3.6.0.min.js"></script>
@@ -410,6 +457,15 @@
     range.on('input', function() {
         value.html(this.value + ' $');
     });
+
+    $('#myCarousel').carousel({
+        interval: 100,
+    });
+
+
+
+
+
 
 </script>
 
