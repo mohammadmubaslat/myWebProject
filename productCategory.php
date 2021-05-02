@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -800,64 +803,64 @@
         <li class="nav-item dropdown no-arrow mx-1"> <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-bell fa-fw"></i> <span class="badge badge-danger badge-counter">3+</span> </a>
             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in">
                 <h6 class="dropdown-header"> Alerts Center </h6> <a class="dropdown-item d-flex align-items-center" href="#">
-                <div class="mr-3">
-                    <div class="icon-circle"> <i class="fa fa-file"></i> </div>
-                </div>
-                <div>
-                    <div class="small text-gray-500">March 12, 2020</div> <span class="font-weight-bold">related snippets sent</span>
-                </div>
-            </a> <a class="dropdown-item d-flex align-items-center" href="#">
-                <div class="mr-3">
-                    <div class="icon-circle"> <i class="fa fa-user"></i> </div>
-                </div>
-                <div>
-                    <div class="small text-gray-500">Feb 7, 2020</div> you updated your profile!
-                </div>
-            </a> <a class="dropdown-item d-flex align-items-center" href="#">
-                <div class="mr-3">
-                    <div class="icon-circle"> <i class="fa fa-download"></i> </div>
-                </div>
-                <div>
-                    <div class="small text-gray-500">Jan 2, 2020</div> You just downloaded 3 snippets
-                </div>
-            </a> <a class="dropdown-item text-center small text-gray-500" href="#">Show All</a>
+                    <div class="mr-3">
+                        <div class="icon-circle"> <i class="fa fa-file"></i> </div>
+                    </div>
+                    <div>
+                        <div class="small text-gray-500">March 12, 2020</div> <span class="font-weight-bold">related snippets sent</span>
+                    </div>
+                </a> <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="mr-3">
+                        <div class="icon-circle"> <i class="fa fa-user"></i> </div>
+                    </div>
+                    <div>
+                        <div class="small text-gray-500">Feb 7, 2020</div> you updated your profile!
+                    </div>
+                </a> <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="mr-3">
+                        <div class="icon-circle"> <i class="fa fa-download"></i> </div>
+                    </div>
+                    <div>
+                        <div class="small text-gray-500">Jan 2, 2020</div> You just downloaded 3 snippets
+                    </div>
+                </a> <a class="dropdown-item text-center small text-gray-500" href="#">Show All</a>
             </div>
         </li>
         <li class="nav-item dropdown no-arrow mx-1"> <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-envelope fa-fw"></i> <span class="badge badge-danger badge-counter">4</span> </a>
             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
                 <h6 class="dropdown-header"> Messages </h6> <a class="dropdown-item d-flex align-items-center" href="#">
-                <div class="dropdown-list-image mr-3"> <img class="rounded-circle" src="https://i.imgur.com/nUNhspp.jpg" alt="">
-                    <div class="status-indicator bg-success"></div>
-                </div>
-                <div class="font-weight-bold">
-                    <div class="text-truncate">Thanks for your answer!</div>
-                    <div class="small text-gray-500">Andy flower · 8m</div>
-                </div>
-            </a> <a class="dropdown-item d-flex align-items-center" href="#">
-                <div class="dropdown-list-image mr-3"> <img class="rounded-circle" src="https://i.imgur.com/uIgDDDd.jpg" alt="">
-                    <div class="status-indicator"></div>
-                </div>
-                <div>
-                    <div class="text-truncate">Can you answer bbb?</div>
-                    <div class="small text-gray-500">John wrong · 4h</div>
-                </div>
-            </a> <a class="dropdown-item d-flex align-items-center" href="#">
-                <div class="dropdown-list-image mr-3"> <img class="rounded-circle" src="https://i.imgur.com/HjKTNkG.jpg" alt="">
-                    <div class="status-indicator bg-warning"></div>
-                </div>
-                <div>
-                    <div class="text-truncate">Your work is awesome</div>
-                    <div class="small text-gray-500"> Stanley · 12h</div>
-                </div>
-            </a> <a class="dropdown-item d-flex align-items-center" href="#">
-                <div class="dropdown-list-image mr-3"> <img class="rounded-circle" src="https://i.imgur.com/uIgDDDd.jpg" alt="">
-                    <div class="status-indicator bg-success"></div>
-                </div>
-                <div>
-                    <div class="text-truncate">Thanks for your support</div>
-                    <div class="small text-gray-500">grand misi · 2w</div>
-                </div>
-            </a> <a class="dropdown-item text-center small text-gray-500" href="#">Read all Messages</a>
+                    <div class="dropdown-list-image mr-3"> <img class="rounded-circle" src="https://i.imgur.com/nUNhspp.jpg" alt="">
+                        <div class="status-indicator bg-success"></div>
+                    </div>
+                    <div class="font-weight-bold">
+                        <div class="text-truncate">Thanks for your answer!</div>
+                        <div class="small text-gray-500">Andy flower · 8m</div>
+                    </div>
+                </a> <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="dropdown-list-image mr-3"> <img class="rounded-circle" src="https://i.imgur.com/uIgDDDd.jpg" alt="">
+                        <div class="status-indicator"></div>
+                    </div>
+                    <div>
+                        <div class="text-truncate">Can you answer bbb?</div>
+                        <div class="small text-gray-500">John wrong · 4h</div>
+                    </div>
+                </a> <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="dropdown-list-image mr-3"> <img class="rounded-circle" src="https://i.imgur.com/HjKTNkG.jpg" alt="">
+                        <div class="status-indicator bg-warning"></div>
+                    </div>
+                    <div>
+                        <div class="text-truncate">Your work is awesome</div>
+                        <div class="small text-gray-500"> Stanley · 12h</div>
+                    </div>
+                </a> <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="dropdown-list-image mr-3"> <img class="rounded-circle" src="https://i.imgur.com/uIgDDDd.jpg" alt="">
+                        <div class="status-indicator bg-success"></div>
+                    </div>
+                    <div>
+                        <div class="text-truncate">Thanks for your support</div>
+                        <div class="small text-gray-500">grand misi · 2w</div>
+                    </div>
+                </a> <a class="dropdown-item text-center small text-gray-500" href="#">Read all Messages</a>
             </div>
         </li>
         <div class="topbar-divider d-none d-sm-block"></div>
@@ -888,11 +891,11 @@
         <div class="form-inline d-flex align-items-center my-2 checkbox bg-light border mx-lg-2"> <label class="tick">Farm <input type="checkbox" checked="checked"> <span class="check"></span> </label> <span class="text-success px-2 count"> 328</span> </div>
         <div class="form-inline d-flex align-items-center my-2 checkbox bg-light border mx-lg-2"> <label class="tick">Bio <input type="checkbox"> <span class="check"></span> </label> <span class="text-success px-2 count"> 72</span> </div>
         <div class="form-inline d-flex align-items-center my-2 checkbox bg-light border mx-lg-2"> <label class="tick">Czech republic <input type="checkbox"> <span class="check"></span> </label> <span class="border px-1 mx-2 mr-3 font-weight-bold count"> 12</span> <select name="country" id="country" class="bg-light">
-            <option value="" hidden>Country</option>
+                <option value="" hidden>Country</option>
 
-            <option value="USA">USA</option>
-            <option value="Uk">UK</option>
-        </select> </div>
+                <option value="USA">USA</option>
+                <option value="Uk">UK</option>
+            </select> </div>
     </div>
 
     <div id="mobile-filter">

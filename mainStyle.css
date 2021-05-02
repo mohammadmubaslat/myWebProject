@@ -148,11 +148,13 @@ body{
 .btn-primary
 {
     color: #fff;
-    background-color: #0d6efd;
-    border-color: #0d6efd;
+    background-color: #b28b51;
+    border-color: #b28b51;
     border-radius: 20px;
      margin-top: 45px;
     width: 150px;
+    font-weight :550;
+
 }
 .carousel-control-next-icon , .carousel-control-prev-icon {
     display: inline-block;
@@ -172,7 +174,7 @@ body{
     grid-template-columns: repeat(2,1fr);
   /*height: 100px;*/
     width: 100%;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
 }
 
 
@@ -189,7 +191,7 @@ body{
 
 .container2 {
     font-family: "Open Sans", sans-serif;
-    padding-top: 200px;
+    padding-top: 50px;
 }
 h2 {
     color: #333;

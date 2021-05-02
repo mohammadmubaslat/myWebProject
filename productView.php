@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"><div class="pd-wrap">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -284,11 +284,11 @@
         }
 
         .add_div
-         {
-         padding-left: 350px;
+        {
+            padding-left: 350px;
             padding-bottom: 100px;
             margin-top: -59px;
-         }
+        }
 
         .item
         {
@@ -414,7 +414,7 @@
                         <div class="qtyplus">+</div>
                     </form>
                     <div class="add_div">
-                    <a href="#" class="round-black-btn">Add to Cart</a>
+                        <a href="#" class="round-black-btn">Add to Cart</a>
                     </div>
                 </div>
             </div>
@@ -483,7 +483,7 @@
 
 
 
-                        <!--Main layout                 -->
+<!--Main layout                 -->
 <main  class="mt-5 pt-4" >
     <div class="container dark-grey-text mt-5">
 

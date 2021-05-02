@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,64 +51,64 @@
         <li class="nav-item dropdown no-arrow mx-1"> <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-bell fa-fw"></i> <span class="badge badge-danger badge-counter">3+</span> </a>
             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in">
                 <h6 class="dropdown-header"> Alerts Center </h6> <a class="dropdown-item d-flex align-items-center" href="#">
-                <div class="mr-3">
-                    <div class="icon-circle"> <i class="fa fa-file"></i> </div>
-                </div>
-                <div>
-                    <div class="small text-gray-500">March 12, 2020</div> <span class="font-weight-bold">related snippets sent</span>
-                </div>
-            </a> <a class="dropdown-item d-flex align-items-center" href="#">
-                <div class="mr-3">
-                    <div class="icon-circle"> <i class="fa fa-user"></i> </div>
-                </div>
-                <div>
-                    <div class="small text-gray-500">Feb 7, 2020</div> you updated your profile!
-                </div>
-            </a> <a class="dropdown-item d-flex align-items-center" href="#">
-                <div class="mr-3">
-                    <div class="icon-circle"> <i class="fa fa-download"></i> </div>
-                </div>
-                <div>
-                    <div class="small text-gray-500">Jan 2, 2020</div> You just downloaded 3 snippets
-                </div>
-            </a> <a class="dropdown-item text-center small text-gray-500" href="#">Show All</a>
+                    <div class="mr-3">
+                        <div class="icon-circle"> <i class="fa fa-file"></i> </div>
+                    </div>
+                    <div>
+                        <div class="small text-gray-500">March 12, 2020</div> <span class="font-weight-bold">related snippets sent</span>
+                    </div>
+                </a> <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="mr-3">
+                        <div class="icon-circle"> <i class="fa fa-user"></i> </div>
+                    </div>
+                    <div>
+                        <div class="small text-gray-500">Feb 7, 2020</div> you updated your profile!
+                    </div>
+                </a> <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="mr-3">
+                        <div class="icon-circle"> <i class="fa fa-download"></i> </div>
+                    </div>
+                    <div>
+                        <div class="small text-gray-500">Jan 2, 2020</div> You just downloaded 3 snippets
+                    </div>
+                </a> <a class="dropdown-item text-center small text-gray-500" href="#">Show All</a>
             </div>
         </li>
         <li class="nav-item dropdown no-arrow mx-1"> <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-envelope fa-fw"></i> <span class="badge badge-danger badge-counter">4</span> </a>
             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
                 <h6 class="dropdown-header"> Messages </h6> <a class="dropdown-item d-flex align-items-center" href="#">
-                <div class="dropdown-list-image mr-3"> <img class="rounded-circle" src="https://i.imgur.com/nUNhspp.jpg" alt="">
-                    <div class="status-indicator bg-success"></div>
-                </div>
-                <div class="font-weight-bold">
-                    <div class="text-truncate">Thanks for your answer!</div>
-                    <div class="small text-gray-500">Andy flower · 8m</div>
-                </div>
-            </a> <a class="dropdown-item d-flex align-items-center" href="#">
-                <div class="dropdown-list-image mr-3"> <img class="rounded-circle" src="https://i.imgur.com/uIgDDDd.jpg" alt="">
-                    <div class="status-indicator"></div>
-                </div>
-                <div>
-                    <div class="text-truncate">Can you answer bbb?</div>
-                    <div class="small text-gray-500">John wrong · 4h</div>
-                </div>
-            </a> <a class="dropdown-item d-flex align-items-center" href="#">
-                <div class="dropdown-list-image mr-3"> <img class="rounded-circle" src="https://i.imgur.com/HjKTNkG.jpg" alt="">
-                    <div class="status-indicator bg-warning"></div>
-                </div>
-                <div>
-                    <div class="text-truncate">Your work is awesome</div>
-                    <div class="small text-gray-500"> Stanley · 12h</div>
-                </div>
-            </a> <a class="dropdown-item d-flex align-items-center" href="#">
-                <div class="dropdown-list-image mr-3"> <img class="rounded-circle" src="https://i.imgur.com/uIgDDDd.jpg" alt="">
-                    <div class="status-indicator bg-success"></div>
-                </div>
-                <div>
-                    <div class="text-truncate">Thanks for your support</div>
-                    <div class="small text-gray-500">grand misi · 2w</div>
-                </div>
-            </a> <a class="dropdown-item text-center small text-gray-500" href="#">Read all Messages</a>
+                    <div class="dropdown-list-image mr-3"> <img class="rounded-circle" src="https://i.imgur.com/nUNhspp.jpg" alt="">
+                        <div class="status-indicator bg-success"></div>
+                    </div>
+                    <div class="font-weight-bold">
+                        <div class="text-truncate">Thanks for your answer!</div>
+                        <div class="small text-gray-500">Andy flower · 8m</div>
+                    </div>
+                </a> <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="dropdown-list-image mr-3"> <img class="rounded-circle" src="https://i.imgur.com/uIgDDDd.jpg" alt="">
+                        <div class="status-indicator"></div>
+                    </div>
+                    <div>
+                        <div class="text-truncate">Can you answer bbb?</div>
+                        <div class="small text-gray-500">John wrong · 4h</div>
+                    </div>
+                </a> <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="dropdown-list-image mr-3"> <img class="rounded-circle" src="https://i.imgur.com/HjKTNkG.jpg" alt="">
+                        <div class="status-indicator bg-warning"></div>
+                    </div>
+                    <div>
+                        <div class="text-truncate">Your work is awesome</div>
+                        <div class="small text-gray-500"> Stanley · 12h</div>
+                    </div>
+                </a> <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="dropdown-list-image mr-3"> <img class="rounded-circle" src="https://i.imgur.com/uIgDDDd.jpg" alt="">
+                        <div class="status-indicator bg-success"></div>
+                    </div>
+                    <div>
+                        <div class="text-truncate">Thanks for your support</div>
+                        <div class="small text-gray-500">grand misi · 2w</div>
+                    </div>
+                </a> <a class="dropdown-item text-center small text-gray-500" href="#">Read all Messages</a>
             </div>
         </li>
         <div class="topbar-divider d-none d-sm-block"></div>
@@ -169,8 +173,8 @@
         <section id="sidebar">
             <div class="py-3">
                 <h5 class="font-weight-bold">CATEGORIES</h5>
-                <ul class="list-group">
-                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Bedroom <span class="badge badge-primary badge-pill">328</span> </li>
+                <ul  class="list-group">
+                    <li ><a href="productCategory.php" > <span class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> </span>  Bedroom <span class="badge badge-primary badge-pill">328</span>  </a></li>
                     <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Living <span class="badge badge-primary badge-pill">112</span> </li>
                     <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Dining <span class="badge badge-primary badge-pill">32</span> </li>
                     <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Decor <span class="badge badge-primary badge-pill">48</span> </li>
@@ -182,11 +186,11 @@
             <div  id="top_selling_div" class="py-3">
                 <h5 class="font-weight-bold">Top selling</h5>
                 <ul class="list-group">
-<!--                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Bedroom <span class="badge badge-primary badge-pill">328</span> </li>-->
-<!--                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Living <span class="badge badge-primary badge-pill">112</span> </li>-->
-<!--                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Dining <span class="badge badge-primary badge-pill">32</span> </li>-->
-<!--                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Decor <span class="badge badge-primary badge-pill">48</span> </li>-->
-<!--                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Storage <span class="badge badge-primary badge-pill">48</span> </li>-->
+                    <!--                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Bedroom <span class="badge badge-primary badge-pill">328</span> </li>-->
+                    <!--                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Living <span class="badge badge-primary badge-pill">112</span> </li>-->
+                    <!--                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Dining <span class="badge badge-primary badge-pill">32</span> </li>-->
+                    <!--                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Decor <span class="badge badge-primary badge-pill">48</span> </li>-->
+                    <!--                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Storage <span class="badge badge-primary badge-pill">48</span> </li>-->
 
                 </ul>
             </div>
@@ -200,35 +204,35 @@
         <section id="products">
 
 
-           <div id="img_slider">
+            <div id="img_slider">
 
 
 
-               <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                   <div class="carousel-inner">
-                       <div class="carousel-item active">
-                           <img src="mainUI/imgs/cover1.jpg" class="d-block w-100" alt="...">
-                       </div>
-                       <div class="carousel-item">
-                           <img src="mainUI/imgs/cover2.jpg" class="d-block w-100" alt="...">
-                       </div>
-                       <div class="carousel-item">
-                           <img src="mainUI/imgs/cover3.jpg" class="d-block w-100" alt="...">
-                       </div>
-                   </div>
-                   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                       <span class="sr-only">Previous</span>
-                   </a>
-                   <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                       <span class="sr-only">Next</span>
-                   </a>
-               </div>
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="mainUI/imgs/cover1.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="mainUI/imgs/cover2.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="mainUI/imgs/cover3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
 
 
 
-           </div>
+            </div>
 
 
             <div id="sections_div">
@@ -240,7 +244,7 @@
             <div id="new_products_div">
 
 
-                 <p style="margin-left: 40px; margin-top: -20px ;font-weight: bold;font-size: 22px;">NEW PRODUCTS </p>
+                <p style="margin-left: 40px; margin-top: -20px ;font-weight: bold;font-size: 22px;">NEW PRODUCTS </p>
 
                 <div class="new_container">
 

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,26 +12,26 @@
 
 
 
-<style>
+    <style>
 
-    .d-block
-    {
-        height: 800px;
-    }
+        .d-block
+        {
+            height: 800px;
+        }
 
-.container
-{
+        .container
+        {
 
-    padding-top: 80px;
-    padding-bottom: 100px ;
-}
+            padding-top: 80px;
+            padding-bottom: 100px ;
+        }
 
 
- .form-control
- {
-     margin-bottom: 15px;
- }
-</style>
+        .form-control
+        {
+            margin-bottom: 15px;
+        }
+    </style>
 
 
 </head>
@@ -45,7 +47,7 @@
 
 <div class="container">
 
-  <h1 style="text-align: center ; font-size: 30px ; margin-bottom: 70px">CONTACT US</h1>
+    <h1 style="text-align: center ; font-size: 30px ; margin-bottom: 70px">CONTACT US</h1>
 
     <div class="row">
         <div class="col-md-8">

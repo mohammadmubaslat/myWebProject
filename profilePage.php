@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,7 +84,7 @@
 
         .col-xl-12
         {
-           padding-top: 20px;
+            padding-top: 20px;
 
         }
 

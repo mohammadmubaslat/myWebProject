@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -108,15 +111,15 @@
 
      left: 0;
      width: 100%; ">
-<p id="bentley_Desc"  >
+    <p id="bentley_Desc"  >
 
-    The Bentley Home collection has been interpreting the luxurious personality of the automobile brand since 2013.<br />
+        The Bentley Home collection has been interpreting the luxurious personality of the automobile brand since 2013.<br />
         The silhouettes, precious materials and iconic shapes of Bentley Motors have been translated into a
-    new language intended for the home.<br />
+        new language intended for the home.<br />
         Sporting a passion for technology,
-    goods can be customised in the finishes that have made the British brand unique,
-    from the most exquisite leathers to <br /> Calacatta and Valentine Grey marbles,
-    right through to the woods that echo the automotive codes</p>
+        goods can be customised in the finishes that have made the British brand unique,
+        from the most exquisite leathers to <br /> Calacatta and Valentine Grey marbles,
+        right through to the woods that echo the automotive codes</p>
 
 </div>
 
@@ -126,116 +129,116 @@
 
 <div id="top_products_div">
     <div style="text-align: center">
-<p style="font-family:'Abel', sans-serif; font-weight: bold; font-size: 35px;   "> TOPS PRODUCTS </p>
-<p style="font-size: 17px; "> The Best of 2021 </p>
+        <p style="font-family:'Abel', sans-serif; font-weight: bold; font-size: 35px;   "> TOPS PRODUCTS </p>
+        <p style="font-size: 17px; "> The Best of 2021 </p>
 
-<section>
-    <div class="container">
+        <section>
+            <div class="container">
 
-        <main>
+                <main>
 
-            <div class="card">
-                <img class="top_imgs" src="mainUI/imgs/chair.png" alt="">
-                <div class="blogcontent">
-                    <h3>Italian Chair<span> 379.00 $ </span></h3>
-                    <br>
-<!--                    <p>by <a href="#">hamzeh saleh </a></p>-->
-                    <a href="" class="btn" >SHOW MORE</a>
+                    <div class="card">
+                        <img class="top_imgs" src="mainUI/imgs/chair.png" alt="">
+                        <div class="blogcontent">
+                            <h3>Italian Chair<span> 379.00 $ </span></h3>
+                            <br>
+                            <!--                    <p>by <a href="#">hamzeh saleh </a></p>-->
+                            <a href="" class="btn" >SHOW MORE</a>
 
-                </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card">
+                        <img class="top_imgs" src="mainUI/imgs/chair2.jfif" alt="">
+                        <div class="blogcontent">
+                            <h3>Luxury Chair <span> 870.00 $ </span></h3>
+                            <br>
+                            <!--                    <p>by <a href="#">hamzeh saleh </a></p>-->
+                            <a href="" class="btn">SHOW MORE</a>
+
+                        </div>
+                    </div>
+
+
+                    <div class="card">
+                        <img  class="top_imgs" src="mainUI/imgs/sofa.jpg" alt="">
+                        <div class="blogcontent">
+                            <h3>Turkish Gold Sofa <span>450.00 $</span></h3>
+                            <br>
+                            <!--                    <p>by <a href="#">hamzeh saleh </a></p>-->
+                            <a href="" class="btn">SHOW MORE</a>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="card">
+                        <img class="top_imgs"height=""  src="mainUI/imgs/sofa2.png" alt="">
+                        <div class="blogcontent">
+                            <h3>Blue Nice Sofa <span>1050.00 $</span></h3>
+                            <br>
+                            <!--                    <p>by <a href="#">hamzeh saleh </a></p>-->
+                            <a href="" class="btn">SHOW MORE</a>
+
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img class="top_imgs" src="mainUI/imgs/furniture.png" alt="">
+                        <div class="blogcontent">
+                            <h3>Full Office  <span>249.00 $</span></h3>
+                            <br>
+                            <!--                    <p>by <a href="#">hamzeh saleh </a></p>-->
+                            <a href="" class="btn">SHOW MORE</a>
+
+
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img class="top_imgs" src="mainUI/imgs/pngSofa.png" alt="">
+                        <div class="blogcontent">
+                            <h3>Red Love Sofa <span>599.00 $</span></h3>
+                            <br>
+                            <!--                    <p>by <a href="#">hamzeh saleh </a></p>-->
+                            <a href="" class="btn">SHOW MORE</a>
+
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img class="top_imgs" src="mainUI/imgs/22.jpg" alt="">
+                        <div class="blogcontent">
+                            <h3>Red Love Sofa <span>599.00 $</span></h3>
+                            <br>
+                            <!--                    <p>by <a href="#">hamzeh saleh </a></p>-->
+                            <a href="" class="btn">SHOW MORE</a>
+
+                        </div>
+                    </div>
+
+
+                    <div class="card">
+                        <img class="top_imgs" src="mainUI/imgs/Graychair1.png" alt="">
+                        <div class="blogcontent">
+                            <h3>Red Love Sofa <span>599.00 $</span></h3>
+                            <br>
+                            <!--                    <p>by <a href="#">hamzeh saleh </a></p>-->
+                            <a href="" class="btn">SHOW MORE</a>
+
+                        </div>
+                    </div>
+
+
+                </main>
+                <br>
+                <button  class="btn btn-primary" type="button"> Shopping Now! </button>
+                <br>
             </div>
-
-
-            <div class="card">
-                <img class="top_imgs" src="mainUI/imgs/chair2.jfif" alt="">
-                <div class="blogcontent">
-                    <h3>Luxury Chair <span> 870.00 $ </span></h3>
-                    <br>
-<!--                    <p>by <a href="#">hamzeh saleh </a></p>-->
-                    <a href="" class="btn">SHOW MORE</a>
-
-                </div>
-            </div>
-
-
-            <div class="card">
-                <img  class="top_imgs" src="mainUI/imgs/sofa.jpg" alt="">
-                <div class="blogcontent">
-                    <h3>Turkish Gold Sofa <span>450.00 $</span></h3>
-                    <br>
-<!--                    <p>by <a href="#">hamzeh saleh </a></p>-->
-                    <a href="" class="btn">SHOW MORE</a>
-
-                </div>
-            </div>
-
-
-
-            <div class="card">
-                <img class="top_imgs"height=""  src="mainUI/imgs/sofa2.png" alt="">
-                <div class="blogcontent">
-                    <h3>Blue Nice Sofa <span>1050.00 $</span></h3>
-                    <br>
-<!--                    <p>by <a href="#">hamzeh saleh </a></p>-->
-                    <a href="" class="btn">SHOW MORE</a>
-
-                </div>
-            </div>
-
-            <div class="card">
-                <img class="top_imgs" src="mainUI/imgs/furniture.png" alt="">
-                <div class="blogcontent">
-                    <h3>Full Office  <span>249.00 $</span></h3>
-                    <br>
-<!--                    <p>by <a href="#">hamzeh saleh </a></p>-->
-                    <a href="" class="btn">SHOW MORE</a>
-
-
-                </div>
-            </div>
-
-            <div class="card">
-                <img class="top_imgs" src="mainUI/imgs/pngSofa.png" alt="">
-                <div class="blogcontent">
-                    <h3>Red Love Sofa <span>599.00 $</span></h3>
-                    <br>
-<!--                    <p>by <a href="#">hamzeh saleh </a></p>-->
-                    <a href="" class="btn">SHOW MORE</a>
-
-                </div>
-            </div>
-
-            <div class="card">
-                <img class="top_imgs" src="mainUI/imgs/22.jpg" alt="">
-                <div class="blogcontent">
-                    <h3>Red Love Sofa <span>599.00 $</span></h3>
-                    <br>
-                    <!--                    <p>by <a href="#">hamzeh saleh </a></p>-->
-                    <a href="" class="btn">SHOW MORE</a>
-
-                </div>
-            </div>
-
-
-            <div class="card">
-                <img class="top_imgs" src="mainUI/imgs/Graychair1.png" alt="">
-                <div class="blogcontent">
-                    <h3>Red Love Sofa <span>599.00 $</span></h3>
-                    <br>
-                    <!--                    <p>by <a href="#">hamzeh saleh </a></p>-->
-                    <a href="" class="btn">SHOW MORE</a>
-
-                </div>
-            </div>
-
-
-        </main>
-        <br>
-        <button  class="btn btn-primary" type="button"> Button </button>
-    <br>
+        </section>
     </div>
-</section>
-</div>
 </div>
 
 
@@ -245,7 +248,7 @@
 
 
     <div class="advert_divs">
-         <img src="mainUI/imgs/advertDesign.jpg" class="img-fluid" alt="...">
+        <img src="mainUI/imgs/advertDesign.jpg" class="img-fluid" alt="...">
 
     </div>
 

@@ -53,10 +53,10 @@
 <!--                </ul>-->
             </li>
 
-            <li><a href="user_list.php"><span class="fa fa-user-o"></span>Users</a></li>
+            <li><a href="users_Admin.php"><span class="fa fa-user-o"></span>Users</a></li>
 
             <li><a href="menu_list.php"><span class="fa fa-sitemap"></span>Orders</a></li>
-            <li><a href="invoice_list.php"><span class="fa fa-money"></span>Messages</a></li>
+            <li><a href="messages_Admin.php"><span class="fa fa-money"></span>Messages</a></li>
 
             <!--            <li><a href="contact_list.php"><span class="fa fa-envelope-o"></span>CONTACT</a></li>-->
         </ul>
@@ -68,8 +68,8 @@
             <div class="account fr">
                 <div class="name has-submenu">John Doe<span class="fa fa-angle-down"></span></div>
                 <ul class="accountLinks submenu">
-                    <li><a href="../mainProducts.html">View website</a></li>
-                    <li><a href="../mainHTML.html">Log out<span class="fa fa-sign-out fr"></span></a></li>
+                    <li><a href="../IntroductionPage.php">View website</a></li>
+                    <li><a href="../mainProducts.php">Log out<span class="fa fa-sign-out fr"></span></a></li>
                 </ul>
             </div>
         </nav>

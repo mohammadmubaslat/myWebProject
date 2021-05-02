@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,14 +17,14 @@
 
     <style>
 
-     body {
-         background: #2B2B2A;
-         background: -webkit-linear-gradient(to right, #5B564D, #C0B397);
-         background: linear-gradient(to right, #5B564D, #C0B397);
-         min-height: 100vh;
-     }
+        body {
+            background: #2B2B2A;
+            background: -webkit-linear-gradient(to right, #5B564D, #C0B397);
+            background: linear-gradient(to right, #5B564D, #C0B397);
+            min-height: 100vh;
+        }
 
- </style>
+    </style>
 
 
 </head>

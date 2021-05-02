@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -148,7 +151,7 @@
 
 
 
-</style>
+    </style>
 </head>
 
 <body>
@@ -253,7 +256,7 @@
                                                     enim ad minim veniam, quis nostrud exercitation ullamco laboris
                                                     nisi ut aliquip ex ea commodo consequat.
                                                 </p>
-                                                <a class="btn btn-success">
+                                                <a href="https://www.paypal.com/us/signin" class="btn btn-success">
                                                     <i class="fa fa-cc-paypal">
                                                         Purchase via PayPal
                                                     </i>
