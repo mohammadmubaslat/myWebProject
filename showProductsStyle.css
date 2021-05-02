@@ -584,7 +584,7 @@ div.shadow{
     -ms-transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
     transform: rotate(135deg);
-    -webkit-transition: all 100ease-out;
+    -webkit-transition: all 100 ease-out;
     -moz-transition: all 100ms ease-out;
     -ms-transition: all 100ms ease-out;
     -o-transition: all 100ms ease-out;
