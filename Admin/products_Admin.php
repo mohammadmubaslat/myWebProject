@@ -53,9 +53,8 @@ include "side_Nav_Admin.php";
                                 <td>Medium</td>
                                 <td>Italy</td>
                                 <td>Noth ..</td>
-                                <td> <button type="button" class="close" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button> </td>
+                                <td>   <a href=" "><span class="">  <i class="far fa-trash-alt"></i></span></a>
+                                </td>
                             </tr>
 
 

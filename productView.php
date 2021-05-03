@@ -312,7 +312,7 @@
 
             text-align: center;
             margin-top: 70px;
-            height: 330px;
+            height: 420px;
             padding-top: 50px;
             box-shadow: 0 2px 10px #BCBCBC;
 width: 1100px;
