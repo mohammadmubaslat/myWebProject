@@ -129,12 +129,12 @@
     font-size: 0.85rem
 }
 
-.btn {
+#bar_search_button {
     color: #666;
     font-size: 0.85rem
 }
 
-.btn:hover {
+#bar_search_button:hover {
     color: #61b15a
 }
 
@@ -356,11 +356,6 @@ div.text-muted {
     float: right
 }
 
-.card:hover {
-    transform: scale(1.1);
-    transition: all 0.5s ease-in-out;
-    cursor: pointer
-}
 
 .card-body {
     padding: 0.5rem
@@ -384,7 +379,7 @@ h6 {
     font-size: 0.9rem
 }
 
-.btn.btn-primary {
+#bar_search_button.btn-primary {
     background-color: #1C1C1C;
     color: #fff;
     border: 1px solid #008000;
@@ -392,21 +387,16 @@ h6 {
     font-weight: 800
 }
 
-.btn.btn-primary:hover {
+#bar_search_button.btn-primary:hover {
     background-color: #48854C
 }
 
-img {
-    width: 192px;
-    height: 132px;
-    object-fit: contain
-}
 
 .clear {
     clear: both
 }
 
-.btn.btn-success {
+#bar_search_button.btn-success {
     visibility: hidden
 }
 
@@ -725,7 +715,7 @@ input::-moz-focus-inner {
 
 
 
-img {
+#logo_img {
     width: 250px;
     height: 60px;
     object-fit: contain;

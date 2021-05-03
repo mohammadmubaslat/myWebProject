@@ -18,6 +18,9 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
+    <link href="navBarStyle.css" rel="stylesheet" >
+
+
     <style>
         .pd-wrap {
             padding: 40px 0;
@@ -221,7 +224,7 @@
         }
 
         .product-info-tabs {
-            margin-top: 25px;
+            margin-top: 60px;
         }
         .product-info-tabs .nav-tabs {
             border-bottom: 2px solid #d8d8d8;
@@ -297,24 +300,131 @@
 
 
 
-        .pt-4, .py-4 {
-            padding-top: 0rem !important;
-        }
+
         .mt-5, .my-5 {
             margin-top: 0rem !important;
         }
 
+        #related_products
+        {
+            margin-left: 200px;
+          margin-bottom: 100px;
+
+            text-align: center;
+            margin-top: 70px;
+            height: 330px;
+            padding-top: 50px;
+            box-shadow: 0 2px 10px #BCBCBC;
+width: 1100px;
+            border-radius: 15px;
+
+        }
+
+        #inner_related_products_div
+        {
+
+            padding: 40px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+
+        .product-image3
+        {
+            height: 100%;
+
+        }
+
     </style>
-
-
-
 
 </head>
 
 <body>
-<div class="container">
+
+
+
+<nav id="nav_id" class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+
+    <img  id="logo_img" style="padding-left: 70px" src="mainUI/imgs/productsLogo.png" alt="" >
+    <!-- Topbar Search -->
+    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+        <div class="input-group"> <input type="text" class="form-control bg-light border-0 small" placeholder="Search for...">
+            <div class="input-group-append"> <button  class="btn btn-primary" type="button"> <i class="fa fa-search fa-sm"></i> </button> </div>
+        </div>
+    </form>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown no-arrow d-sm-none"> <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-search fa-fw"></i> </a>
+            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                <form class="form-inline mr-auto w-100 navbar-search">
+                    <div class="input-group"> <input type="text" class="form-control bg-light border-0 small" placeholder="Search for...">
+                        <div class="input-group-append"> <button id="bar_search_button" class="btn btn-primary" type="button"> <i class="fa fa-search fa-sm"></i> </button> </div>
+                    </div>
+                </form>
+            </div>
+        </li>
+        <li class="nav-item dropdown no-arrow mx-1"> <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-bell fa-fw"></i> <span class="badge badge-danger badge-counter">3+</span> </a>
+            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in">
+                <h6 class="dropdown-header"> Alerts Center </h6> <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="mr-3">
+                        <div class="icon-circle"> <i class="fa fa-file"></i> </div>
+                    </div>
+                    <div>
+                        <div class="small text-gray-500">March 12, 2020</div> <span class="font-weight-bold">related snippets sent</span>
+                    </div>
+                </a>
+
+                </a> <a class="dropdown-item text-center small text-gray-500" href="#">Show All</a>
+            </div>
+        </li>
+
+
+
+
+        <li class="nav-item dropdown no-arrow mx-1"> <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-envelope fa-fw"></i> <span class="badge badge-danger badge-counter">4</span> </a>
+            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
+                <h6 class="dropdown-header"> Messages </h6> <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="dropdown-list-image mr-3"> <img class="rounded-circle" src="https://i.imgur.com/nUNhspp.jpg" alt="">
+                        <div class="status-indicator bg-success"></div>
+                    </div>
+                    <div class="font-weight-bold">
+                        <div class="text-truncate">Thanks for your answer!</div>
+                        <div class="small text-gray-500">Andy flower · 8m</div>
+                    </div>
+
+
+
+                </a> <a class="dropdown-item text-center small text-gray-500" href="#">Read all Messages</a>
+            </div>
+        </li>
+
+
+
+
+        <li class="nav-item dropdown no-arrow mx-1"> <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-shopping-cart"></i> <span class="badge badge-danger badge-counter"> 0 </span> </a>
+
+        </li>
+
+
+
+
+
+        <div class="topbar-divider d-none d-sm-block"></div>
+        <li class="nav-item dropdown no-arrow"> <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span> <img class="img-profile rounded-circle" src="https://i.imgur.com/uIgDDDd.jpg"> </a>
+            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown"> <a class="dropdown-item" href="#"> <i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile </a> <a class="dropdown-item" href="#"> <i class="fa fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> Settings </a> <a class="dropdown-item" href="#"> <i class="fa fa-list fa-sm fa-fw mr-2 text-gray-400"></i> Activity Log </a>
+                <div class="dropdown-divider"></div> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"> <i class="fa fa-sign-out fa-sm fa-fw mr-2 text-gray-400"></i> Logout </a>
+            </div>
+        </li>
+    </ul>
+</nav>
+
+
+
+
+<div style="padding-top: 60px;" class="container">
     <div class="heading-section">
-        <h2>Product Details</h2>
+
     </div>
     <div class="row">
         <div class="col-md-6">
@@ -541,71 +651,158 @@
 
     </div>
 </main>
+
+
+
+
 <!--Main layout-->
 
-<!--Footer-->
-<footer class="page-footer text-center font-small mt-4 wow fadeIn">
 
-    <!--Call to action-->
-    <div class="pt-4">
-        <a class="btn btn-outline-white" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" target="_blank"
-           role="button">Download MDB
-            <i class="fas fa-download ml-2"></i>
-        </a>
-        <a class="btn btn-outline-white" href="https://mdbootstrap.com/education/bootstrap/" target="_blank" role="button">Start
-            free tutorial
-            <i class="fas fa-graduation-cap ml-2"></i>
-        </a>
+
+
+
+
+
+
+<div id="related_products">
+
+
+    <div id="inner_related_products_div">
+      <p style="margin-left: -850px; margin-top: -30px ;font-weight: bold;font-size: 22px;">Related Products </p>
+
+
+        <div class="new_container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="product-grid3">
+                        <div class="product-image3">
+                            <a href="#">
+                                <img class="pic-1" src="mainUI/imgs/storage1_1.jfif">
+                                <img class="pic-2" src="mainUI/imgs/storage1_2.jfif">
+                            </a>
+                            <ul class="social">
+                                <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                            <span class="product-new-label">New</span>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="title"><a href="#">Men's Blazer</a></h3>
+                            <div class="price">
+                                $63.50
+                                <span>$75.00</span>
+                            </div>
+                            <ul class="rating">
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star disable"></li>
+                                <li class="fa fa-star disable"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="product-grid3">
+                        <div class="product-image3">
+                            <a href="#">
+                                <img class="pic-1" src="mainUI/imgs/chair1_1.jfif">
+                                <img class="pic-2" src="mainUI/imgs/chair1_2.jfif">
+                            </a>
+                            <ul class="social">
+                                <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="title"><a href="#">Women's Designer Top</a></h3>
+                            <div class="price">
+                                $43.50
+                            </div>
+                            <ul class="rating">
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="product-grid3">
+                        <div class="product-image3">
+                            <a href="#">
+                                <img class="pic-1" src="mainUI/imgs/sofa1_1.jfif">
+                                <img class="pic-2" src="mainUI/imgs/sofa1_2.jpg">
+                            </a>
+                            <ul class="social">
+                                <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                            <span class="product-new-label">New</span>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="title"><a href="#">Men's Blazer</a></h3>
+                            <div class="price">
+                                $63.50
+                                <span>$75.00</span>
+                            </div>
+                            <ul class="rating">
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star disable"></li>
+                                <li class="fa fa-star disable"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="product-grid3">
+                        <div class="product-image3">
+                            <a href="#">
+                                <img class="pic-1" src="mainUI/imgs/table1.jpg">
+                                <img class="pic-2" src="mainUI/imgs/table2.jpg">
+                            </a>
+                            <ul class="social">
+                                <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                            <span class="product-new-label">New</span>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="title"><a href="#">Men's Blazer</a></h3>
+                            <div class="price">
+                                $63.50
+                                <span>$75.00</span>
+                            </div>
+                            <ul class="rating">
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star disable"></li>
+                                <li class="fa fa-star disable"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <!--/.Call to action-->
 
-    <hr class="my-4">
 
-    <!-- Social icons -->
-    <div class="pb-4">
-        <a href="https://www.facebook.com/mdbootstrap" target="_blank">
-            <i class="fab fa-facebook-f mr-3"></i>
-        </a>
+</div>
 
-        <a href="https://twitter.com/MDBootstrap" target="_blank">
-            <i class="fab fa-twitter mr-3"></i>
-        </a>
 
-        <a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4" target="_blank">
-            <i class="fab fa-youtube mr-3"></i>
-        </a>
 
-        <a href="https://plus.google.com/u/0/b/107863090883699620484" target="_blank">
-            <i class="fab fa-google-plus-g mr-3"></i>
-        </a>
 
-        <a href="https://dribbble.com/mdbootstrap" target="_blank">
-            <i class="fab fa-dribbble mr-3"></i>
-        </a>
+<?php
 
-        <a href="https://pinterest.com/mdbootstrap" target="_blank">
-            <i class="fab fa-pinterest mr-3"></i>
-        </a>
+include "mini_Footer.php";
 
-        <a href="https://github.com/mdbootstrap/bootstrap-material-design" target="_blank">
-            <i class="fab fa-github mr-3"></i>
-        </a>
+?>
 
-        <a href="http://codepen.io/mdbootstrap/" target="_blank">
-            <i class="fab fa-codepen mr-3"></i>
-        </a>
-    </div>
-    <!-- Social icons -->
-
-    <!--Copyright-->
-    <div class="footer-copyright py-3">
-        © 2021 Copyright :
-        <a href="" target="_blank"> Living Luxury </a>
-    </div>
-    <!--/.Copyright-->
-
-</footer>
-<!--/.Footer-->
 
 
 

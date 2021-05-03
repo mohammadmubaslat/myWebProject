@@ -9,6 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+
     <style>
 
 
@@ -155,16 +158,7 @@
     </style>
 </head>
 
-
-
 <body>
-
-
-
-
-
-
-
 
 
 <div class="container">
@@ -364,6 +358,9 @@
         </div>
     </div>
 </div>
+
+
+
 
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
