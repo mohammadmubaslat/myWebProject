@@ -21,6 +21,9 @@
 
 
     <link href="navBarStyle.css" rel="stylesheet" >
+    <link rel="stylesheet" href="mainProductsStyle.css">
+    <link href="productCategoryStyle.css" rel="stylesheet" >
+
 
 
 
@@ -31,12 +34,11 @@
 
 <nav id="nav_id" class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-
     <img  id="logo_img" style="padding-left: 70px" src="mainUI/imgs/productsLogo.png" alt="" >
     <!-- Topbar Search -->
     <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
         <div class="input-group"> <input type="text" class="form-control bg-light border-0 small" placeholder="Search for...">
-            <div class="input-group-append"> <button  class="btn btn-primary" type="button"> <i class="fa fa-search fa-sm"></i> </button> </div>
+            <div class="input-group-append"> <button  id="bar_search_button" class="btn btn-primary" type="button"> <i class="fa fa-search fa-sm"></i> </button> </div>
         </div>
     </form>
     <ul class="navbar-nav ml-auto">
@@ -44,7 +46,7 @@
             <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                 <form class="form-inline mr-auto w-100 navbar-search">
                     <div class="input-group"> <input type="text" class="form-control bg-light border-0 small" placeholder="Search for...">
-                        <div class="input-group-append"> <button id="bar_search_button" class="btn btn-primary" type="button"> <i class="fa fa-search fa-sm"></i> </button> </div>
+                        <div class="input-group-append"> <button  class="btn btn-primary" type="button"> <i class="fa fa-search fa-sm"></i> </button> </div>
                     </div>
                 </form>
             </div>
@@ -64,9 +66,6 @@
             </div>
         </li>
 
-
-
-
         <li class="nav-item dropdown no-arrow mx-1"> <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-envelope fa-fw"></i> <span class="badge badge-danger badge-counter">4</span> </a>
             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
                 <h6 class="dropdown-header"> Messages </h6> <a class="dropdown-item d-flex align-items-center" href="#">
@@ -78,26 +77,25 @@
                         <div class="small text-gray-500">Andy flower · 8m</div>
                     </div>
 
-
-
                 </a> <a class="dropdown-item text-center small text-gray-500" href="#">Read all Messages</a>
             </div>
         </li>
-
-
-
 
         <li class="nav-item dropdown no-arrow mx-1"> <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-shopping-cart"></i> <span class="badge badge-danger badge-counter"> 0 </span> </a>
 
         </li>
 
-
-
-
-
         <div class="topbar-divider d-none d-sm-block"></div>
-        <li class="nav-item dropdown no-arrow"> <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span> <img class="img-profile rounded-circle" src="https://i.imgur.com/uIgDDDd.jpg"> </a>
+        <li class="nav-item dropdown no-arrow">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+<!--                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span> -->
+<!--                -->
+
+                <img class="img-profile rounded-circle" src="https://i.imgur.com/uIgDDDd.jpg"> </a>
+
+
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown"> <a class="dropdown-item" href="#"> <i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile </a> <a class="dropdown-item" href="#"> <i class="fa fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> Settings </a> <a class="dropdown-item" href="#"> <i class="fa fa-list fa-sm fa-fw mr-2 text-gray-400"></i> Activity Log </a>
                 <div class="dropdown-divider"></div> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"> <i class="fa fa-sign-out fa-sm fa-fw mr-2 text-gray-400"></i> Logout </a>
             </div>
@@ -107,6 +105,45 @@
 
 
 
+<div class="wrapper">
+         <div class="d-md-flex align-items-md-center">
+                    <div class="ml-auto d-flex align-items-center views"> <span class="btn text-success"> <span class="fas fa-th px-md-2 px-1"></span><span>Grid view</span> </span> <span class="btn"> <span class="fas fa-list-ul"></span><span class="px-md-2 px-1">List view</span> </span> <span class="green-label px-md-2 px-1">428</span> <span class="text-muted">Products</span> </div>
+         </div>
 
-</body>
+
+          <div class="content py-md-0 py-3">
+                     <section id="sidebar">
+            <div class="py-3">
+                <h5 class="font-weight-bold">CATEGORIES</h5>
+                <ul  class="list-group">
+                    <li ><a href="productCategory.php" > <span class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> </span>  Bedroom <span class="badge badge-primary badge-pill">328</span>  </a></li>
+                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Living <span class="badge badge-primary badge-pill">112</span> </li>
+                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Dining <span class="badge badge-primary badge-pill">32</span> </li>
+                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Decor <span class="badge badge-primary badge-pill">48</span> </li>
+                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Storage <span class="badge badge-primary badge-pill">48</span> </li>
+                </ul>
+            </div>
+            <div  id="top_selling_div" class="py-3">
+                <h5 class="font-weight-bold">Brands</h5>
+                <ul class="list-group">
+                    <!--                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Bedroom <span class="badge badge-primary badge-pill">328</span> </li>-->
+                    <!--                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Living <span class="badge badge-primary badge-pill">112</span> </li>-->
+                    <!--                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Dining <span class="badge badge-primary badge-pill">32</span> </li>-->
+                    <!--                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Decor <span class="badge badge-primary badge-pill">48</span> </li>-->
+                    <!--                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Storage <span class="badge badge-primary badge-pill">48</span> </li>-->
+                </ul>
+            </div>
+        </section>
+
+                     <!-- Products Section now ..  -->
+
+                     <section id="products">
+
+
+
+<!--            -->
+<!--            -->
+<!--        </section>-->
+<!--        -->
+
 

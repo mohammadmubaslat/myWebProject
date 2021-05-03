@@ -13,7 +13,7 @@ include "side_Nav_Admin.php";
 
 
 
-    <form id="show_products" action="" method="POST" enctype="multipart/form-data" class="form">
+    <form id="show_products_tables" action="" method="POST" enctype="multipart/form-data" class="form">
         <div class="formHeader row">
             <h2 class="text-1 fl">Products in warehouse</h2>
             <div class="fr">
@@ -416,18 +416,7 @@ include "side_Nav_Admin.php";
 
 
 
-
-
-
-
-
-
-
-
-
     <?php
-
 include "footer_Admin.php";
-
 ?>
 

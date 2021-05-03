@@ -55,7 +55,7 @@
 
             <li><a href="users_Admin.php"><span class="fa fa-user-o"></span>Users</a></li>
 
-            <li><a href="menu_list.php"><span class="fa fa-sitemap"></span>Orders</a></li>
+            <li><a href="orders_Admin.php"><span class="fa fa-sitemap"></span>Orders</a></li>
             <li><a href="messages_Admin.php"><span class="fa fa-money"></span>Messages</a></li>
 
             <!--            <li><a href="contact_list.php"><span class="fa fa-envelope-o"></span>CONTACT</a></li>-->

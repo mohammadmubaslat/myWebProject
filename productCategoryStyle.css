@@ -1,14 +1,8 @@
 
 
-
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap');
 
-#nav_id {
-    font-family: 'Manrope', sans-serif;
-}
-.topbar {
-    height: 4.375rem
-}
+
 .topbar .nav-item .nav-link {
     height: 4.375rem;
     display: flex;
@@ -27,26 +21,6 @@
     color: #d1d3e2
 }
 
-.dropdown-toggle::after {
-    content: none !important
-}
-
-.badge {
-    display: inline-block;
-    padding: .25em .4em;
-    font-size: 75%;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: .35rem;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
-}
-
-.form-control:focus {
-    box-shadow: none !important
-}
 
 .input-group-append button {
     box-shadow: none !important
@@ -60,23 +34,6 @@
     margin-top: -.25rem
 }
 
-.badge {
-    display: inline-block;
-    padding: .25em .4em;
-    font-size: 75%;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: .35rem;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
-}
-
-.rounded-circle {
-    width: 40px;
-    height: 40px
-}
 
 .topbar .topbar-divider {
     width: 0;
@@ -89,17 +46,8 @@
     width: 20rem !important
 }
 
-.input-group
-{
-    padding-left: 550px;
-
-}
 
 
-.font-weight-bold
-{
-    font-family: "Roboto", sans-serif;
-}
 
 
 /* second one !!!*/
@@ -108,57 +56,18 @@
 
 
 
-* {
+#category_row {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     /*font-family: 'Poppins', sans-serif*/
+    font-family: sans-serif;
+    padding: 40px;
 }
 
-.wrapper {
-    padding: 0px;
-    max-width: 1400px;
-    margin: auto
-}
 
-.h3 {
-    font-weight: 900
-}
 
-.views {
-    font-size: 0.85rem
-}
 
-#bar_search_button {
-    color: #666;
-    font-size: 0.85rem
-}
-
-#bar_search_button:hover {
-    color: #61b15a
-}
-
-.green-label {
-    background-color: #defadb;
-    color: #48b83e;
-    border-radius: 5px;
-    font-size: 0.8rem;
-    margin: 0 3px
-}
-
-.radio,
-.checkbox {
-    padding: 6px 10px
-}
-
-.border {
-    border-radius: 12px
-}
-
-.options {
-    position: relative;
-    padding-left: 25px
-}
 
 .radio label,
 .checkbox label {
@@ -172,16 +81,7 @@
     opacity: 0
 }
 
-.checkmark {
-    position: absolute;
-    top: 0px;
-    left: 0;
-    height: 20px;
-    width: 20px;
-    background-color: #f8f8f8;
-    border: 1px solid #ddd;
-    border-radius: 50%
-}
+
 
 .options input:checked~.checkmark:after {
     display: block
@@ -210,22 +110,12 @@
     transform: translate(-50%, -50%) scale(1)
 }
 
-.count {
-    font-size: 0.8rem
-}
 
 label {
     cursor: pointer
 }
 
-.tick {
-    display: block;
-    position: relative;
-    padding-left: 23px;
-    cursor: pointer;
-    font-size: 0.8rem;
-    margin: 0
-}
+
 
 .tick input {
     position: absolute;
@@ -235,16 +125,7 @@ label {
     width: 0
 }
 
-.check {
-    position: absolute;
-    top: 1px;
-    left: 0;
-    height: 18px;
-    width: 18px;
-    background-color: #f8f8f8;
-    border: 1px solid #ddd;
-    border-radius: 3px
-}
+
 
 .tick:hover input~.check {
     background-color: #f3f3f3
@@ -254,11 +135,6 @@ label {
     background-color: #61b15a
 }
 
-.check:after {
-    content: "";
-    position: absolute;
-    display: none
-}
 
 .tick input:checked~.check:after {
     display: block;
@@ -275,37 +151,13 @@ label {
     transform: rotate(45deg) scale(2)
 }
 
-#country {
-    font-size: 0.8rem;
-    border: none;
-    border-left: 1px solid #ccc;
-    padding: 0px 10px;
-    outline: none;
-    font-weight: 500
-}
 
-.close {
-    font-size: 1.2rem
-}
 
 div.text-muted {
     font-size: 0.85rem
 }
 
-#sidebar {
-    width: 20%;
-    float: left
-}
 
-.category {
-    font-size: 0.9rem;
-    cursor: pointer
-}
-
-.list-group-item {
-    border: none;
-    padding: 0.3rem 0.4rem 0.3rem 0rem
-}
 
 .badge-primary {
     background-color: #defadb;
@@ -349,17 +201,7 @@ div.text-muted {
     background-color: #61b15a
 }
 
-#products {
-    width: 75%;
-    padding-left: 30px;
-    margin: 0;
-    float: right
-}
 
-
-.card-body {
-    padding: 0.5rem
-}
 
 .card-body .description {
     font-size: 0.78rem;
@@ -375,142 +217,20 @@ h6 {
     font-size: 0.9rem
 }
 
-.rebate {
-    font-size: 0.9rem
-}
 
-#bar_search_button {
-    background-color: #071f38;
-    color: #fff;
-    border: 1px solid #071f38;
-    border-radius: 10px;
-    font-weight: 800
-}
 
-#bar_search_button:hover {
-    background-color: #092848;
+img {
+    width: 192px;
+    height: 132px;
+    object-fit: contain
 }
 
 
-.clear {
-    clear: both
-}
-
-#bar_search_button.btn-success {
-    visibility: hidden
-}
-
-@media(min-width:992px) {
-
-    .filter,
-    #mobile-filter {
-        display: none
-    }
-}
-
-@media(min-width:768px) and (max-width:991px) {
-
-    .radio,
-    .checkbox {
-        padding: 6px 10px;
-        width: 49%;
-        float: left;
-        margin: 5px 5px 5px 0px
-    }
-
-    .filter,
-    #mobile-filter {
-        display: none
-    }
-}
-
-@media(min-width:576px) and (max-width:767px) {
-    #sidebar {
-        width: 35%
-    }
-
-    #products {
-        width: 65%
-    }
-
-    .filter,
-    #mobile-filter {
-        display: none
-    }
-
-    .h3+.ml-auto {
-        margin: 0
-    }
-}
-
-@media(max-width:575px) {
-    .wrapper {
-        padding: 10px
-    }
-
-    .h3 {
-        font-size: 1.3rem
-    }
-
-    #sidebar {
-        display: none
-    }
-
-    #products {
-        width: 100%;
-        float: none
-    }
 
 
 
-    .clear {
-        float: left;
-        width: 80%
-    }
-
-    .btn.btn-success {
-        visibility: visible;
-        margin: 10px 0px;
-        color: #fff;
-        padding: 0.2rem 0.1rem;
-        width: 20%
-    }
-
-    .green-label {
-        width: 50%
-    }
-
-    .btn.text-success {
-        padding: 0
-    }
-
-    .content,
-    #mobile-filter {
-        clear: both
-    }
-}
-
-.fas.fa-star
-{
-    color: #E8F163;
-}
 
 
-.d-lg-flex
-{
-    padding-left: 370px;
-}
-.d-sm-flex
-{
-    padding-left: 380px;
-}
-
-
-#sidebar
-{
-
-    margin-top: -50px;
-}
 
 
 
@@ -522,9 +242,12 @@ h6 {
 .product-grid3{font-family:Roboto,sans-serif;text-align:center;position:relative;z-index:1}
 .product-grid3:before{content:"";height:81%;width:100%;background:#fff;border:1px solid rgba(0,0,0,.1);opacity:0;position:absolute;top:0;left:0;z-index:-1;transition:all .5s ease 0s}
 .product-grid3:hover:before{opacity:1;height:100%}
-.product-grid3 .product-image3{position:relative}
-.product-grid3 .product-image3 a{display:block}
-.product-grid3 .product-image3 img{width:100%;height:240px}
+.product-grid3 .product-image_card{position:relative}
+.product-grid3 .product-image_card a{display:block}
+.product-grid3 .product-image_card img{
+    width:100%;
+    height:280px;
+}
 .product-grid3 .pic-1{opacity:1;transition:all .5s ease-out 0s}
 .product-grid3:hover .pic-1{opacity:0}
 .product-grid3 .pic-2{position:absolute;top:0;left:0;opacity:0;transition:all .5s ease-out 0s}
@@ -552,13 +275,6 @@ h6 {
 @media only screen and (max-width:359px){.product-grid3 .rating{margin:0}
 }
 
-#products {
-    width: 85%;
-    padding-left: 90px;
-    margin: 0;
-    float: right;
-    padding-top: 30px;
-}
 
 .col-md-3
 {
@@ -568,42 +284,7 @@ h6 {
 
 
 
-#range_div {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
 
-    margin-top: 50px;
-}
-
-.PrixMin {
-    float: left;
-    color: #181D31;
-    font-size: 15px;
-    margin-right: 5px;
-}
-
-.selecteurPrix {
-    margin-top: -50px;
-}
-
-body {
-    font-family: sans-serif;
-    padding: 40px;
-}
-
-.valeurPrix {
-    position: absolute;
-    top: -29px;
-    left: 50px;
-}
-
-.range-slider {
-    position: relative;
-    width: 189px;
-    float: left;
-    margin-right: 5px;
-}
 
 .range-slider .input-range {
     -webkit-appearance: none;
@@ -692,30 +373,10 @@ input::-moz-focus-inner {
 }
 
 
-#rating_div
-{
-    margin-top: -35px;
-}
-
-#nav_id
-{
-    position: fixed;
-    z-index: 9999;
-    top: 0;
-    right: 0;
-    left: 0;
-}
-
-#sidebar
-{
-    position: fixed;
-    z-index: 9999;
-    height: 500px;
-}
 
 
 
-#logo_img {
+img {
     width: 250px;
     height: 60px;
     object-fit: contain;
@@ -735,15 +396,9 @@ input::-moz-focus-inner {
     padding-left: 490px;
 }
 
-#sidebar {
-    width: 15%;
-    float: left;
-    margin-top: 40px;
 
-}
-
-footer
+.product-image_card
 {
-    padding-top: 40px;
+    height: 280px;
 }
 

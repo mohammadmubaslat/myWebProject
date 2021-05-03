@@ -415,6 +415,7 @@ strike {
 /* CLASSES */
 .fl {
     float: left;
+    height: 25px;
 }
 .fr {
     float: right;
@@ -783,6 +784,7 @@ label {
     padding: 1em;
     background: #fff;
     border-bottom: 1px solid #dedede;
+    margin-top: 15px;
 }
 .formBody {
     width: 100%;
@@ -1281,8 +1283,8 @@ p {
 #add_product
 {
 
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 #msform .action-button
@@ -1299,8 +1301,8 @@ p {
 #add_top_products
 {
     margin-top: 30px;
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 #show_products
@@ -1311,14 +1313,12 @@ p {
 }
 
 
-
-
-
-
-
-
-
-
+#show_products_tables
+{
+    margin-bottom: 30px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
 
 
 
@@ -1396,7 +1396,29 @@ tr:hover
 }
 
 
+#order_table
+{
+    margin: 20px;
+}
+
+#show_products_orders
+{
+
+    margin-bottom:20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
 
 
-
-
+.far.fa-trash-alt:hover
+{
+color: red;
+}
+.fas.fa-check-circle
+{
+    padding-left: 10px;
+}
+.fas.fa-check-circle:hover
+{
+    color: green;
+}
