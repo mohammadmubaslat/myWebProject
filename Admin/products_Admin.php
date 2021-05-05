@@ -32,9 +32,9 @@ include "side_Nav_Admin.php";
                                 <th>Name</th>
                                 <th>Price</th>
                                 <th>Color</th>
-                                <th>Size</th>
+
                                 <th>Country</th>
-                                <th>Section</th>
+                                <th>Brand</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -50,7 +50,7 @@ include "side_Nav_Admin.php";
                                 <td>Big Sofa</td>
                                 <td>-500 $</td>
                                 <td>Red</td>
-                                <td>Medium</td>
+
                                 <td>Italy</td>
                                 <td>Noth ..</td>
                                 <td>   <a href=" "><span class="">  <i class="far fa-trash-alt"></i></span></a>
@@ -115,18 +115,7 @@ include "side_Nav_Admin.php";
                 </span>
                 </label>
 
-                <label class="inputGroup">
-                    <span>Size</span>
-                    <span>
-                    <select name="cate">
-                        <option value="cate01">Large</option>
-                        <option value="cate02">Medium</option>
-                        <option value="cate02">Small</option>
 
-                    </select>
-<!--                    <i class="btnNewInput fa fa-plus bg-1 text-fff"></i>-->
-                </span>
-                </label>
 
                 <label class="inputGroup">
                     <span>Country</span>
@@ -291,18 +280,6 @@ include "side_Nav_Admin.php";
                 </span>
                 </label>
 
-                <label class="inputGroup">
-                    <span>Size</span>
-                    <span>
-                    <select name="cate">
-                        <option value="cate01">Large</option>
-                        <option value="cate02">Medium</option>
-                        <option value="cate02">Small</option>
-
-                    </select>
-                        <!--                    <i class="btnNewInput fa fa-plus bg-1 text-fff"></i>-->
-                </span>
-                </label>
 
 
 
@@ -323,16 +300,7 @@ include "side_Nav_Admin.php";
                 </span>
                 </label>
 
-                <label class="inputGroup">
-                    <span>Sections</span>
-                    <span>
-                    <select name="cate">
-                        <option value="cate01">Bed</option>
-                        <option value="cate02">Mirror</option>
-                    </select>
-                        <!--                    <i class="btnNewInput fa fa-plus bg-1 text-fff"></i>-->
-                </span>
-                </label>
+
 
 
                 <label class="inputGroup">

@@ -67,6 +67,53 @@ include "side_Nav_Admin.php";
 
 
 
+    <form id="mails_tables" action="" method="POST" enctype="multipart/form-data" class="form">
+        <div class="formHeader row" style="padding-left: 50%">
+            <h2 class="text-1 fl">Mails</h2>
+
+        </div>
+        <div class="formBody row">
+
+            <section>
+                <div class="tbl-header">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                        <tr >
+                            <th >Full Name</th>
+                            <th >Phone Number </th>
+                            <th>Email</th>
+                            <th class="message_class">Message</th>
+                            <th>Action</th>
+
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="tbl-content">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <tbody>
+
+                        <tr>
+                            <td> Mohammad </td>
+                            <td >22qp5</td>
+                            <td>Big Sofa</td>
+                            <td class="message_class"> hello from me </td>
+
+                            <td>   <a href=" "><span class="">  <i class="far fa-trash-alt"></i></span></a>
+                            </td>
+                        </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </div>
+
+    </form>
+
+
 
     <?php
     include "footer_Admin.php";

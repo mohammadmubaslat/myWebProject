@@ -8,7 +8,6 @@
   typeof define === 'function' && define.amd ? define(['@popperjs/core'], factory) :
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.bootstrap = factory(global.Popper));
 }(this, (function (Popper) { 'use strict';
-
   function _interopNamespace(e) {
     if (e && e.__esModule) return e;
     var n = Object.create(null);
@@ -28,9 +27,7 @@
     n['default'] = e;
     return Object.freeze(n);
   }
-
   var Popper__namespace = /*#__PURE__*/_interopNamespace(Popper);
-
   /**
    * --------------------------------------------------------------------------
    * Bootstrap (v5.0.0-beta3): util/index.js
@@ -53,16 +50,12 @@
    * Public Util Api
    * --------------------------------------------------------------------------
    */
-
-
   const getUID = prefix => {
     do {
       prefix += Math.floor(Math.random() * MAX_UID);
     } while (document.getElementById(prefix));
-
     return prefix;
   };
-
   const getSelector = element => {
     let selector = element.getAttribute('data-bs-target');
 
@@ -71,25 +64,18 @@
       // so everything starting with `#` or `.`. If a "real" URL is used as the selector,
       // `document.querySelector` will rightfully complain it is invalid.
       // See https://github.com/twbs/bootstrap/issues/32273
-
       if (!hrefAttr || !hrefAttr.includes('#') && !hrefAttr.startsWith('.')) {
         return null;
       } // Just in case some CMS puts out a full URL with the anchor appended
-
-
       if (hrefAttr.includes('#') && !hrefAttr.startsWith('#')) {
         hrefAttr = '#' + hrefAttr.split('#')[1];
       }
-
       selector = hrefAttr && hrefAttr !== '#' ? hrefAttr.trim() : null;
     }
-
     return selector;
   };
-
   const getSelectorFromElement = element => {
     const selector = getSelector(element);
-
     if (selector) {
       return document.querySelector(selector) ? selector : null;
     }

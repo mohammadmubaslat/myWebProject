@@ -798,8 +798,6 @@ include "navBar.php";
 
 
 
-
-
 <?php
 include "mini_Footer.php";
 ?>

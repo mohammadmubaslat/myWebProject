@@ -26,11 +26,12 @@ include "side_Nav_Admin.php";
                         <thead>
                         <tr >
                             <th>Photo</th>
+                            <th>ID</th>
                             <th >Full Name</th>
                             <th >Email</th>
                             <th>Country</th>
                             <th>Address</th>
-                            <th>Password</th>
+<!--                            <th>Password</th>-->
                             <th>Interests</th>
                             <th>Action</th>
                         </tr>
@@ -43,11 +44,13 @@ include "side_Nav_Admin.php";
 
                         <tr>
                             <td><img style="height: 40px; width: 40px;" src="../mainUI/imgs/chair1_1.jfif" alt="" > </td>
+                            <td>1112</td>
                             <td>Mohammad Mubaslat</td>
+
                             <td>mohammad@ll.com</td>
                             <td>Palestine</td>
                             <td>Tubas, Baghdad street</td>
-                            <td>1234</td>
+<!--                            <td>1234</td>-->
                             <td>Beds,Lights</td>
                             <td>
 

@@ -117,6 +117,7 @@
         }
         .display-flex {
             display: flex;
+
         }
         .align-center {
             align-items: center;
@@ -183,7 +184,7 @@
             box-shadow: none;
         }
         .product-count {
-            margin-top: 15px;
+            margin-top:-10px;
         }
         .product-count .qtyminus,
         .product-count .qtyplus {
@@ -505,15 +506,15 @@ width: 1100px;
                 </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 <div class="row">
-                    <div class="col-md-6">
-                        <label for="size">Size</label>
-                        <select id="size" name="size" class="form-control">
-                            <option>S</option>
-                            <option>M</option>
-                            <option>L</option>
-                            <option>XL</option>
-                        </select>
-                    </div>
+<!--                    <div class="col-md-6">-->
+<!--                        <label for="size">Size</label>-->
+<!--                        <select id="size" name="size" class="form-control">-->
+<!--                            <option>S</option>-->
+<!--                            <option>M</option>-->
+<!--                            <option>L</option>-->
+<!--                            <option>XL</option>-->
+<!--                        </select>-->
+<!--                    </div>-->
                     <div class="col-md-6">
                         <label for="color">Color</label>
                         <select id="color" name="color" class="form-control">
@@ -529,12 +530,15 @@ width: 1100px;
                             <option>Turkish</option>
                             <option>UK</option>
                         </select>
+
+
+
                     </div>
 
-                    <div style="margin-bottom: 50px" class="col-md-6">
-
-                       <p style="margin-top: 70px; margin-left :-283px  ;font-weight: 550;"> +200$ shipped</p>
-                    </div>
+<!--                    <div style="margin-bottom: 50px" class="col-md-6">-->
+<!---->
+<!--                       <p style="margin-top: 70px; margin-left :150px  ;font-weight: 550;"> +200$ shipped</p>-->
+<!--                    </div>-->
 
 
                 </div>
