@@ -2,9 +2,39 @@
 
 include "side_Nav_Admin.php";
 
+
+session_start() ;
+include '../dataBase.php';
+error_reporting(0);
+if(isset($_GET['action']) && $_GET['action'] != "" && $_GET['action'] == 'delete'){
+    $user_code = $_GET['user_id'];
+    $result=mysqli_query($con , "select user_img from user_info where user_id='$user_code'") or die("query is incorrect...");
+
+    list($pic) = mysqli_fetch_array($result);
+    $path = "../mainUI/imgs/$pic" ;
+
+    if(file_exists($path)==true)
+    {
+        unlink($path);
+    }
+    else
+    {}
+    mysqli_query($con,"delete from user_info where user_id='$user_code'")or die("query is incorrect...");
+
+}
+
+$page=$_GET['page'];
+
+if($page=="" || $page=="1")
+{
+    $page1=0;
+}
+else
+{
+    $page1=($page*10)-10;
+}
+
 ?>
-
-
 
 <div class="mainContent">
 
@@ -43,23 +73,35 @@ include "side_Nav_Admin.php";
                         <tbody>
 
                         <tr>
-                            <td><img style="height: 40px; width: 40px;" src="../mainUI/imgs/chair1_1.jfif" alt="" > </td>
-                            <td>1112</td>
-                            <td>Mohammad Mubaslat</td>
-
-                            <td>mohammad@ll.com</td>
-                            <td>Palestine</td>
-                            <td>Tubas, Baghdad street</td>
-<!--                            <td>1234</td>-->
-                            <td>Beds,Lights</td>
-                            <td>
-
-                                <a href=" "><span class="">  <i class="fas fa-user-times"></i></span></a>
-                                <a href="messages_Admin.php"><span class=""> <i class="fas fa-comment-dots"></i></span></a>
 
 
-                               </td>
-                        </tr>
+                            <?php
+
+                            $result=mysqli_query($con,"select * from user_info where 1 ")or die ("query 1 incorrect.....");
+
+                            while(list($user_id,$name,$email,$password,$address , $img )=mysqli_fetch_array($result))
+                            {
+                                echo "
+
+                          <tr>
+                                <td><img style='height: 40px; width: 40px;' src='../mainUI/imgs/$img' alt='' > </td>
+                                <td>$name</td>
+                                <td>$email</td>
+                                <td>$user_id</td>
+                                <td>$address</td>
+                                <td>Medium</td>
+                                <td>***</td>
+              
+                                <td> <a href='users_Admin.php?user_id=$user_id&action=delete'> <button type='button' class='close' aria-label='Close'>
+                                        <span aria-hidden='true'>&times;</span>
+                                    </button> </a> </td>
+                            </tr>
+";
+                            }
+
+                            ?>
+
+
 
 
                         </tbody>

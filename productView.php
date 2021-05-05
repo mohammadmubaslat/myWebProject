@@ -1,3 +1,8 @@
+<?php
+
+include "php_head.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -428,6 +433,53 @@ width: 1100px;
 </nav>
 
 
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $(".scroll").click(function(event){
+            event.preventDefault();
+            $('html,body').animate({scrollTop:$(this.hash).offset().top},900);
+        });
+    });
+</script>
+
+<script>
+
+    (function (global) {
+        if(typeof (global) === "undefined")
+        {
+            throw new Error("window is undefined");
+        }
+        var _hash = "!";
+        var noBackPlease = function () {
+            global.location.href += "#";
+            // making sure we have the fruit available for juice....
+            // 50 milliseconds for just once do not cost much (^__^)
+            global.setTimeout(function () {
+                global.location.href += "!";
+            }, 50);
+        };
+        // Earlier we had setInerval here....
+        global.onhashchange = function () {
+            if (global.location.hash !== _hash) {
+                global.location.hash = _hash;
+            }
+        };
+        global.onload = function () {
+            noBackPlease();
+            // disables backspace on page except on input fields and textarea..
+            document.body.onkeydown = function (e) {
+                var elm = e.target.nodeName.toLowerCase();
+                if (e.which === 8 && (elm !== 'input' && elm  !== 'textarea')) {
+                    e.preventDefault();
+                }
+                // stopping event bubbling up the DOM tree..
+                e.stopPropagation();
+            };
+        };
+    })(window);
+</script>
+
+
 
 
 <div style="padding-top: 60px;" class="container">
@@ -435,58 +487,68 @@ width: 1100px;
 
     </div>
     <div class="row">
+
+<?php
+include 'dataBase.php' ;
+$product_id = $_GET['p'];
+
+$sql = " SELECT * FROM products ";
+$sql = " SELECT * FROM products WHERE product_id = $product_id";
+if (!$con) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+$result = mysqli_query($con, $sql);
+
+if (mysqli_num_rows($result) > 0){
+    while ($row = mysqli_fetch_assoc($result)){
+
+    $last = $row['product_price'] + 150 ;
+        echo '
+        
         <div class="col-md-6">
-            <div id="slider" class="owl-carousel product-slider">
+            <div id="slider" class="owl-carousel product-slider " >
                 <div class="item">
-                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" />
+                      <img src="./mainUI/imgs/'.$row['product_image'].' " />
                 </div>
+               
                 <div class="item">
-                    <img src="https://i.ytimg.com/vi/PJ_zomNMK_s/maxresdefault.jpg" />
+                   <img src="./mainUI/imgs/'.$row['product_image2'].' " />
                 </div>
+                
                 <div class="item">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQI6nUmObt62eDkqNSmIvCN_KkQExtbpJmUbVx_eTh_Y3v3r-Jw" />
+                    <img src="./mainUI/imgs/'.$row['product_image3'].' " />
                 </div>
+                
                 <div class="item">
-                    <img src="https://i.ytimg.com/vi/PJ_zomNMK_s/maxresdefault.jpg" />
-                </div>
-                <div class="item">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQI6nUmObt62eDkqNSmIvCN_KkQExtbpJmUbVx_eTh_Y3v3r-Jw" />
-                </div>
-                <div class="item">
-                    <img src="https://i.ytimg.com/vi/PJ_zomNMK_s/maxresdefault.jpg" />
-                </div>
-                <div class="item">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQI6nUmObt62eDkqNSmIvCN_KkQExtbpJmUbVx_eTh_Y3v3r-Jw" />
+                  <img src="./mainUI/imgs/'.$row['product_image4'].' " />
                 </div>
             </div>
+            
+            
             <div id="thumb" class="owl-carousel product-thumb">
                 <div class="item">
-                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" />
+                   <img src="./mainUI/imgs/'.$row['product_image'].' " />
                 </div>
+                
                 <div class="item">
-                    <img src="https://i.ytimg.com/vi/PJ_zomNMK_s/maxresdefault.jpg" />
+                   <img src="./mainUI/imgs/'.$row['product_image2'].' " />
                 </div>
+                
                 <div class="item">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQI6nUmObt62eDkqNSmIvCN_KkQExtbpJmUbVx_eTh_Y3v3r-Jw" />
+                  <img src="./mainUI/imgs/'.$row['product_image3'].' " />
                 </div>
+              
                 <div class="item">
-                    <img src="https://i.ytimg.com/vi/PJ_zomNMK_s/maxresdefault.jpg" />
-                </div>
-                <div class="item">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQI6nUmObt62eDkqNSmIvCN_KkQExtbpJmUbVx_eTh_Y3v3r-Jw" />
-                </div>
-                <div class="item">
-                    <img src="https://i.ytimg.com/vi/PJ_zomNMK_s/maxresdefault.jpg" />
-                </div>
-                <div class="item">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQI6nUmObt62eDkqNSmIvCN_KkQExtbpJmUbVx_eTh_Y3v3r-Jw" />
+                    <img src="./mainUI/imgs/'.$row['product_image4'].' " />
                 </div>
             </div>
         </div>
+        
+        
         <div class="col-md-6">
             <div class="product-dtl">
                 <div class="product-info">
-                    <div class="product-name">Variable Product</div>
+                    <div class="product-name">'.$row['product_title'].'</div>
                     <div class="reviews-counter">
                         <div class="rate">
                             <input type="radio" id="star5_1" name="rate" value="5" checked />
@@ -502,9 +564,9 @@ width: 1100px;
                         </div>
                         <span>3 Reviews</span>
                     </div>
-                    <div class="product-price-discount"><span>$39.00</span><span class="line-through">$29.00</span></div>
+                    <div class="product-price-discount"><span>$'.$row['product_price'].'</span><span class="line-through">$'.$last.'</span></div>
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>'.$row['product_desc'].'</p>
                 <div class="row">
 <!--                    <div class="col-md-6">-->
 <!--                        <label for="size">Size</label>-->
@@ -515,6 +577,10 @@ width: 1100px;
 <!--                            <option>XL</option>-->
 <!--                        </select>-->
 <!--                    </div>-->
+
+'; }
+}
+?>
                     <div class="col-md-6">
                         <label for="color">Color</label>
                         <select id="color" name="color" class="form-control">
@@ -530,8 +596,6 @@ width: 1100px;
                             <option>Turkish</option>
                             <option>UK</option>
                         </select>
-
-
 
                     </div>
 
@@ -619,7 +683,7 @@ width: 1100px;
 
 
 
-<!--Main layout                 -->
+<!--Main layout           ///////////////////////////////////////////////////      -->
 <main  class="mt-5 pt-4" >
     <div class="container dark-grey-text mt-5">
 

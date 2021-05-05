@@ -1,7 +1,7 @@
+<?php
 
-
-
-
+include "dataBase.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="bootstrap.css">
+<!--    <link rel="stylesheet" href="bootstrap.css">-->
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -113,16 +113,12 @@
 
           <div class="content py-md-0 py-3">
                      <section id="sidebar">
-            <div class="py-3">
-                <h5 class="font-weight-bold">CATEGORIES</h5>
-                <ul  class="list-group">
-                    <li ><a href="productCategory.php" > <span class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> </span>  Bedroom <span class="badge badge-primary badge-pill">328</span>  </a></li>
-                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Living <span class="badge badge-primary badge-pill">112</span> </li>
-                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Dining <span class="badge badge-primary badge-pill">32</span> </li>
-                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Decor <span class="badge badge-primary badge-pill">48</span> </li>
-                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Storage <span class="badge badge-primary badge-pill">48</span> </li>
-                </ul>
-            </div>
+                         <div class="py-3">
+                             <h5 class="font-weight-bold">CATEGORIES</h5>
+                             <ul class="list-group" id="get_category">
+
+                             </ul>
+                         </div>
             <div  id="top_selling_div" class="py-3">
                 <h5 class="font-weight-bold">Brands</h5>
                 <ul class="list-group">

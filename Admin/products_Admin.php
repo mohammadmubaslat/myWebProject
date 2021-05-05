@@ -1,16 +1,46 @@
 
-
 <?php
 
 include "side_Nav_Admin.php";
 
+
+session_start() ;
+include '../dataBase.php';
+error_reporting(0);
+if(isset($_GET['action']) && $_GET['action'] != "" && $_GET['action'] == 'delete'){
+    $product_code = $_GET['product_id'];
+    $result=mysqli_query($con , "select product_image from products where product_id='$product_code'") or die("query is incorrect...");
+
+    list($pic) = mysqli_fetch_array($result);
+    $path = "../mainUI/imgs/$pic" ;
+
+    if(file_exists($path)==true)
+    {
+        unlink($path);
+    }
+    else
+    {}
+    mysqli_query($con,"delete from products where product_id='$product_code'")or die("query is incorrect...");
+    mysqli_query($con,"delete from cart where product_id='$product_code'")or die("query is incorrect...");
+}
+
+
+
+$page=$_GET['page'];
+
+if($page=="" || $page=="1")
+{
+    $page1=0;
+}
+else
+{
+    $page1=($page*10)-10;
+}
+
 ?>
 
 
-
 <div class="mainContent">
-
-
 
 
     <form id="show_products_tables" action="" method="POST" enctype="multipart/form-data" class="form">
@@ -44,18 +74,29 @@ include "side_Nav_Admin.php";
                         <table cellpadding="0" cellspacing="0" border="0">
                             <tbody>
 
-                            <tr>
-                                <td><img style="height: 40px; width: 40px;" src="../mainUI/imgs/chair1_1.jfif" alt="" > </td>
-                                <td>22qp5</td>
-                                <td>Big Sofa</td>
-                                <td>-500 $</td>
-                                <td>Red</td>
+                            <?php
 
-                                <td>Italy</td>
-                                <td>Noth ..</td>
-                                <td>   <a href=" "><span class="">  <i class="far fa-trash-alt"></i></span></a>
-                                </td>
-                            </tr>
+                            $result=mysqli_query($con,"select product_image,product_id, product_title,product_price , color , COUNTRY , product_cat from products  where product_cat=1 or  product_cat=2 or product_cat=3 or product_cat=4 or product_cat=5 or product_cat=6 Limit $page1,12")or die ("query 1 incorrect.....");
+
+                            while(list($product_image,$product_id,$product_title,$product_price,$color , $country ,$product_cat)=mysqli_fetch_array($result))
+                            {
+                                echo "
+                          <tr>
+                                <td><img style='height: 40px; width: 40px;' src='../mainUI/imgs/$product_image' alt='' > </td>
+                                <td>$product_id</td>
+                                <td>$product_title</td>
+                                <td>$product_price</td>
+                                <td>$color</td>
+                                <td>$country</td>
+                                <td>$product_cat</td>
+                                <td> <a href='products_Admin.php?product_id=$product_id&action=delete'> <button type='button' class='close' aria-label='Close'>
+                                        <span aria-hidden='true'>&times;</span>
+                                    </button> </a> </td>
+                            </tr> ";
+                            }
+
+                            ?>
+
 
 
                             </tbody>
