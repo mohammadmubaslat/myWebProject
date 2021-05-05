@@ -24,7 +24,8 @@ include "side_Nav_Admin.php";
 
                      <div class="message">
                            <div class="message_header">
-                                     Mohammad Mubaslat
+                                 <span>  Mohammad Mubaslat </span>
+                               <span class="offline_class"> Offline</span>
                            </div>
 
                            <div class="message_body">
@@ -44,13 +45,13 @@ include "side_Nav_Admin.php";
                          <div class="send_div">
 
 
-<!--                                 <label class="text_group">-->
-<!--                                      <textarea style="height: 10px;" class="message_textArea" name="description"></textarea>-->
-<!--                                 </label>-->
+                                 <label class="text_group">
+                                      <textarea   class="message_textArea" name="description"></textarea>
+                                 </label>
 
                                <div class="send_icon">
 
-                                   <a  href=" "><span class="">  <i class="far fa-paper-plane"></i></span></a>
+                                   <a  href=" "><span   class="far fa-paper-plane">  </span></a>
                                </div>
 
                          </div>

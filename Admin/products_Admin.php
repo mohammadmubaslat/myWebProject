@@ -158,7 +158,7 @@ include "side_Nav_Admin.php";
                 </label>
 
                 <label class="inputGroup">
-                    <span>Sections</span>
+                    <span>Brand</span>
                     <span>
                     <select name="cate">
                         <option value="cate01">Bed</option>
@@ -230,7 +230,7 @@ include "side_Nav_Admin.php";
             <div class="column">
                 <label class="inputGroup">
                     <span>Description</span>
-                    <textarea name="description"></textarea>
+                    <textarea class="textArea_products_class" name="description"></textarea>
                 </label>
             </div>
 
@@ -238,7 +238,7 @@ include "side_Nav_Admin.php";
             <div class="column">
                 <label class="inputGroup">
                     <span style="width: 00px;">Aditional Description</span>
-                    <textarea name="aditional_description"></textarea>
+                    <textarea class="textArea_products_class" name="aditional_description"></textarea>
                 </label>
             </div>
 
@@ -396,7 +396,7 @@ include "side_Nav_Admin.php";
             <div class="column">
                 <label class="inputGroup">
                     <span>Description</span>
-                    <textarea name="description"></textarea>
+                    <textarea class="textArea_products_class" name="description"></textarea>
                 </label>
             </div>
 
@@ -404,7 +404,7 @@ include "side_Nav_Admin.php";
             <div class="column">
                 <label class="inputGroup">
                     <span style="width: 00px;">Aditional Description</span>
-                    <textarea name="aditional_description"></textarea>
+                    <textarea class="textArea_products_class" name="aditional_description"></textarea>
                 </label>
             </div>
 

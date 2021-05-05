@@ -335,6 +335,13 @@ width: 1100px;
 
         }
 
+        .btn-primary {
+            color: #fff;
+            background-color: #212529;
+            border-color: #212529;
+        }
+
+
     </style>
 
 </head>
@@ -515,6 +522,21 @@ width: 1100px;
                             <option>Red</option>
                         </select>
                     </div>
+                    <div style="margin-bottom: 50px" class="col-md-6">
+                        <label for="color">Brand country</label>
+                        <select id="color" name="color" class="form-control">
+                            <option>Italy</option>
+                            <option>Turkish</option>
+                            <option>UK</option>
+                        </select>
+                    </div>
+
+                    <div style="margin-bottom: 50px" class="col-md-6">
+
+                       <p style="margin-top: 70px; margin-left :-283px  ;font-weight: 550;"> +200$ shipped</p>
+                    </div>
+
+
                 </div>
                 <div class="product-count">
                     <label for="size">Quantity</label>

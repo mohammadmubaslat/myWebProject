@@ -25,12 +25,195 @@
 
     <style>
 
-        body {
-            background: #2B2B2A;
-            background: -webkit-linear-gradient(to right, #5B564D, #C0B397);
-            background: linear-gradient(to right, #5B564D, #C0B397);
+        #second_body_id {
+            background: #fff;
+            /*background: -webkit-linear-gradient(to right, #5B564D, #C0B397);*/
+            /*background: linear-gradient(to right, #5B564D, #C0B397);*/
             min-height: 100vh;
         }
+
+ .container
+ {
+
+     border: 0.1px solid #A9A9A9;
+ }
+
+
+        .heading-section h2 {
+            font-size: 32px;
+            font-weight: 500;
+            padding-top: 10px;
+            padding-bottom: 15px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .carousel-testimonial .item {
+            padding: 30px 10px;
+        }
+
+        .owl-nav button {
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            outline: none;
+            height: 25px;
+        }
+        .owl-nav button svg {
+            width: 25px;
+            height: 25px;
+        }
+        .owl-nav button.owl-prev {
+            left: 25px;
+        }
+        .owl-nav button.owl-next {
+            right: 25px;
+        }
+        .owl-nav button span {
+            font-size: 45px;
+        }
+        .product-thumb .item img {
+            height: 100px;
+        }
+
+        .product-price-discount span.line-through {
+            text-decoration: line-through;
+            margin-left: 10px;
+            font-size: 14px;
+            vertical-align: middle;
+            color: #a5a5a5;
+        }
+
+        .reviews-counter span {
+            vertical-align: -2px;
+        }
+
+        .rate:not(:checked) > input {
+            position:absolute;
+            top:-9999px;
+        }
+        .rate:not(:checked) > label {
+            float: right;
+            width: 15px;
+            overflow: hidden;
+            white-space: nowrap;
+            cursor: pointer;
+            font-size: 21px;
+            color:#ccc;
+            margin-bottom: 0;
+            line-height: 21px;
+        }
+        .rate:not(:checked) > label:before {
+            content: '\2605';
+        }
+        .rate > input:checked ~ label {
+            color: #ffc700;
+        }
+        .rate:not(:checked) > label:hover,
+        .rate:not(:checked) > label:hover ~ label {
+            color: #deb217;
+        }
+        .rate > input:checked + label:hover,
+        .rate > input:checked + label:hover ~ label,
+        .rate > input:checked ~ label:hover,
+        .rate > input:checked ~ label:hover ~ label,
+        .rate > label:hover ~ input:checked ~ label {
+            color: #c59b08;
+        }
+        .product-dtl p {
+            font-size: 14px;
+            line-height: 24px;
+            color: #7a7a7a;
+        }
+        .product-dtl .form-control {
+            font-size: 15px;
+        }
+        .product-dtl label {
+            line-height: 16px;
+            font-size: 15px;
+        }
+        .form-control:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        .product-count .qtyminus,
+        .product-count .qtyplus {
+            width: 34px;
+            height: 34px;
+            background: #212529;
+            text-align: center;
+            font-size: 19px;
+            line-height: 36px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .product-count .qtyminus {
+            border-radius: 3px 0 0 3px;
+        }
+        .product-count .qtyplus {
+            border-radius: 0 3px 3px 0;
+        }
+        .product-count .qty {
+            width: 60px;
+            text-align: center;
+        }
+
+        .product-info-tabs .nav-tabs {
+            border-bottom: 2px solid #d8d8d8;
+        }
+        .product-info-tabs .nav-tabs .nav-item {
+            margin-bottom: 0;
+        }
+        .product-info-tabs .nav-tabs .nav-link {
+            border: none;
+            border-bottom: 2px solid transparent;
+            color: #323232;
+        }
+        .product-info-tabs .nav-tabs .nav-item .nav-link:hover {
+            border: none;
+        }
+        .product-info-tabs .nav-tabs .nav-item.show .nav-link,
+        .product-info-tabs .nav-tabs .nav-link.active,
+        .product-info-tabs .nav-tabs .nav-link.active:hover {
+            border: none;
+            border-bottom: 2px solid #d8d8d8;
+            font-weight: bold;
+        }
+        .product-info-tabs .tab-content .tab-pane {
+            padding: 30px 20px;
+            font-size: 15px;
+            line-height: 24px;
+            color: #7a7a7a;
+        }
+        .review-form .form-group {
+            clear: both;
+        }
+
+        .review-form .rate {
+            float: none;
+            display: inline-block;
+        }
+
+        .review-form .form-control {
+            font-size: 14px;
+        }
+        .review-form input.form-control {
+            height: 40px;
+        }
+        .review-form textarea.form-control {
+            resize: none;
+        }
+        .review-form .round-black-btn {
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            color: #fff;
+            background-color: #212529;
+            border-color: #212529;
+        }
+
 
     </style>
 
@@ -40,14 +223,7 @@
 
 
 
-<div class="px-4 px-lg-0">
-    <!-- For demo purpose -->
-    <div class="container text-white py-5 text-center">
-        <h1 class="display-4">Shopping Cart</h1>
-
-        </p>
-    </div>
-    <!-- End -->
+<div id="second_body_id" class="px-4 px-lg-0">
 
     <div class="pb-5">
         <div class="container">
@@ -101,6 +277,8 @@
                                 <td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
+
+
                             <tr>
                                 <th scope="row">
                                     <div class="p-2">
@@ -165,6 +343,7 @@
 include "mini_Footer.php";
 
 ?>
+
 
 
 
