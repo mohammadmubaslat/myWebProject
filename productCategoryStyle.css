@@ -219,13 +219,18 @@ h6 {
 
 
 
-img {
+.pic-1{
     width: 192px;
     height: 132px;
     object-fit: contain
 }
 
-
+.pic-2
+{
+    width: 192px;
+    height: 132px;
+    object-fit: contain
+}
 
 
 
@@ -280,11 +285,6 @@ img {
 {
     padding-bottom: 20px;
 }
-
-
-
-
-
 
 .range-slider .input-range {
     -webkit-appearance: none;
@@ -376,11 +376,11 @@ input::-moz-focus-inner {
 
 
 
-img {
-    width: 250px;
-    height: 60px;
-    object-fit: contain;
-}
+/*img {*/
+/*    width: 250px;*/
+/*    height: 60px;*/
+/*    object-fit: contain;*/
+/*}*/
 
 .input-group > .custom-file, .input-group > .custom-select, .input-group > .form-control {
     position: relative;

@@ -73,8 +73,8 @@ include "dataBase.php";
                         <div class="status-indicator bg-success"></div>
                     </div>
                     <div class="font-weight-bold">
-                        <div class="text-truncate">Thanks for your answer!</div>
-                        <div class="small text-gray-500">Andy flower · 8m</div>
+                        <div class="text-truncate">you have new messages</div>
+                        <div class="small text-gray-500">Admin · 8m</div>
                     </div>
 
                 </a> <a class="dropdown-item text-center small text-gray-500" href="#">Read all Messages</a>
@@ -96,7 +96,7 @@ include "dataBase.php";
                 <img class="img-profile rounded-circle" src="https://i.imgur.com/uIgDDDd.jpg"> </a>
 
 
-            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown"> <a class="dropdown-item" href="#"> <i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile </a> <a class="dropdown-item" href="#"> <i class="fa fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> Settings </a> <a class="dropdown-item" href="#"> <i class="fa fa-list fa-sm fa-fw mr-2 text-gray-400"></i> Activity Log </a>
+            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown"> <a class="dropdown-item" href="#"> <i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile </a>
                 <div class="dropdown-divider"></div> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"> <i class="fa fa-sign-out fa-sm fa-fw mr-2 text-gray-400"></i> Logout </a>
             </div>
         </li>

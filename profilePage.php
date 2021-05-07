@@ -98,7 +98,22 @@
 
         }
 
+        .btn-primary{
+            color: #fff;
+            background-color: #071f38;
+            border-color: #071f38;
+        }
 
+        .btn-primary:hover{
+            color: #fff;
+            background-color: #071f38d1;
+            border-color: #071f38d1;
+        }
+
+.account-settings
+{
+    margin-top: 70px;
+}
     </style>
 
 </head>
@@ -200,10 +215,7 @@
                             <h6 class="user-email">yuki@Maxwell.com</h6>
                             <button type="button" class="btn btn-light">Edit Photo</button>
                         </div>
-                        <div class="about">
-                            <h5>About</h5>
-                            <p>I'm Yuki. Full Stack Designer I enjoy creating user-centric, delightful and human experiences.</p>
-                        </div>
+
                     </div>
                 </div>
             </div>

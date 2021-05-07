@@ -76,6 +76,9 @@
     backface-visibility: hidden;
     -webkit-perspective: 1000px;
     perspective: 1000px;
+
+    /*background-image: url("mainUI/imgs/cover2.jpg");*/
+
 }
 .carousel-fade .carousel-item {
     opacity: 0;
@@ -411,3 +414,123 @@ padding-bottom: 2px;
 
 
 
+
+
+
+.order-2 {
+
+    margin-top: 30px;
+    margin-right: -40px;
+    padding-left: 50px;
+}
+
+
+
+
+#sections_div {
+    width: 100%;
+    /* width: 100%; */
+
+    margin-top: 40px;
+
+    height: 300px;
+    /*padding-left: 350px;*/
+
+
+    margin-bottom: 70px;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+#sections_div{
+
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+.sections_container {
+
+}
+
+.title {
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 10px
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    /*max-width: 400px;*/
+
+    overflow: hidden
+}
+
+.content .content-overlay {
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    height: 99%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    -webkit-transition: all 0.4s ease-in-out 0s;
+    -moz-transition: all 0.4s ease-in-out 0s;
+    transition: all 0.4s ease-in-out 0s
+}
+
+
+.content-image {
+    width: 100%
+}
+
+#sections_div img {
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 5px
+}
+
+.content-details {
+    position: absolute;
+    text-align: center;
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    font-weight: 600;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s
+}
+
+#sections_div .content:hover .content-details {
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+
+
+
+}
+
+.content-details h3 {
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+}
+.content-details p {
+    color: #fff;
+    font-size: 0.8em
+}
+
+.fadeIn-bottom {
+    top: 80%
+}

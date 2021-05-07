@@ -53,8 +53,13 @@
             border-radius: 10px;
         }
 
-        .sscard > div {
-            padding: 2rem;
+        .scroll_means_div_1_3 {
+            padding-top: 60px;
+            margin-left: 100px;
+        }
+        .scroll_means_div_2_4 {
+            padding-top: 60px;
+            margin-right: 100px;
         }
 
         .sscard:nth-child(even) img {
@@ -64,23 +69,24 @@
 
         .ssbtn {
             display: inline-block;
-            background-color: transparent;
+            background-color: #b08d41;
             font-size: 16px;
             border-radius: 15px;
-            border: 2px solid #b08d41 ;
-            color: #112855;
+            border: 2px solid #b08d41;
+            color: white;
             font-weight: bold;
-            padding: 0.8rem 1.8rem;
+            padding-top: 7px;
             margin-top: 2rem;
             cursor: pointer;
             text-decoration: none;
-
+            height: 42px;
+            width: 170px;
         }
 
         .ssbtn:hover {
-            background-color: gray;
+            background-color: #d39717;
             color: white;
-            border: none;
+
             text-decoration: none;
         }
 
@@ -89,6 +95,12 @@
                 display: block;
             }
         }
+
+        /*.scroll_means_div*/
+        /*{*/
+        /*    padding-top: 100px;*/
+        /*}*/
+
     </style>
 
     <script>
@@ -114,7 +126,7 @@
 
     <div class="sscard" data-aos="fade-left">
         <img class="simg" src="./mainUI/imgs/livingRoom.jpg" alt="" />
-        <div style="text-align: center">
+        <div class="scroll_means_div_1_3" style="text-align: center">
             <h3>Living Rooms</h3>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod error
@@ -129,7 +141,7 @@
 
     <div class="sscard" data-aos="fade-right">
         <img class="simg" src="./mainUI/imgs/offices.jpg" alt="" />
-        <div style="text-align: center">
+        <div class="scroll_means_div_2_4" style="text-align: center">
             <h3>Offices</h3>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod error
@@ -144,7 +156,7 @@
 
     <div class="sscard" data-aos="fade-left">
         <img class="simg" src="./mainUI/imgs/bedRooms.jpg" alt="" />
-        <div style="text-align: center">
+        <div class="scroll_means_div_1_3" style="text-align: center">
             <h3>Bed Rooms </h3>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod error
@@ -158,7 +170,7 @@
 
     <div class="sscard" data-aos="fade-right">
         <img class="simg" src="./mainUI/imgs/homeAcess.jpg" alt="" />
-        <div style="text-align: center">
+        <div class="scroll_means_div_2_4" style="text-align: center">
             <h3>Home Accessories </h3>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod error
