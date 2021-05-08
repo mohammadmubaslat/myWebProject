@@ -1586,3 +1586,10 @@ color: red;
 
      width: 400px;
  }
+
+.fa-poll
+{
+    width: 1em;
+    text-align: center;
+    margin-right: 10px;
+}

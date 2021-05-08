@@ -1,6 +1,26 @@
 <?php
 
 include "php_head.php";
+include "dataBase.php";
+
+session_start();
+
+
+if (isset($_POST['add_ToCart'])) {
+
+  $prod_id = $_GET['p'];
+  $color = $_POST['color'];
+  $country = $_POST['brand_country'];
+  $quan = $_POST['quantity'];
+
+    mysqli_query($con, "insert into cart(user_id,qty,product_id,color,country)
+                                        values ('12393' , '$quan' , '$prod_id' , '$color' , '$country')");
+
+    mysqli_close($con);
+    header("location:productView.php?p=".$_GET['p']);
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -489,11 +509,12 @@ width: 1100px;
     <div class="row">
 
 <?php
-include 'dataBase.php' ;
+$key_word = "";
+
 $product_id = $_GET['p'];
 
-$sql = " SELECT * FROM products ";
 $sql = " SELECT * FROM products WHERE product_id = $product_id";
+
 if (!$con) {
     die("Connection failed: " . mysqli_connect_error());
 }
@@ -503,6 +524,8 @@ if (mysqli_num_rows($result) > 0){
     while ($row = mysqli_fetch_assoc($result)){
 
     $last = $row['product_price'] + 150 ;
+    $GLOBALS['key_word'] = $row['product_keywords'];
+
         echo '
         
         <div class="col-md-6">
@@ -549,6 +572,7 @@ if (mysqli_num_rows($result) > 0){
             <div class="product-dtl">
                 <div class="product-info">
                     <div class="product-name">'.$row['product_title'].'</div>
+                    <div id="prod_id" name="prod_id" style="font-size: 16px;">Product Parcode: '.$row['product_id'].' </div>
                     <div class="reviews-counter">
                         <div class="rate">
                             <input type="radio" id="star5_1" name="rate" value="5" checked />
@@ -581,6 +605,7 @@ if (mysqli_num_rows($result) > 0){
 '; }
 }
 ?>
+        <form action="productView.php?p=<?php echo $_GET['p']?>" method="post" >
                     <div class="col-md-6">
                         <label for="color">Color</label>
                         <select id="color" name="color" class="form-control">
@@ -590,8 +615,8 @@ if (mysqli_num_rows($result) > 0){
                         </select>
                     </div>
                     <div style="margin-bottom: 50px" class="col-md-6">
-                        <label for="color">Brand country</label>
-                        <select id="color" name="color" class="form-control">
+                        <label for="brand_country">Brand country</label>
+                        <select id="brand_country" name="brand_country" class="form-control">
                             <option>Italy</option>
                             <option>Turkish</option>
                             <option>UK</option>
@@ -605,21 +630,28 @@ if (mysqli_num_rows($result) > 0){
 <!--                    </div>-->
 
 
-                </div>
+
                 <div class="product-count">
                     <label for="size">Quantity</label>
-                    <form action="#" class="display-flex">
+ <div class="display-flex">
                         <div class="qtyminus">-</div>
-                        <input type="text" name="quantity" value="1" class="qty">
+                        <input type="text" id="quantity" name="quantity" value="1" class="qty">
                         <div class="qtyplus">+</div>
-                    </form>
+
                     <div class="add_div">
-                        <a href="#" class="round-black-btn">Add to Cart</a>
+                        <input id="add_ToCart" name="add_ToCart" type="submit" value="Add to Cart" class="round-black-btn">
                     </div>
+ </div>
+                    </form>
                 </div>
+
+
             </div>
+
+
         </div>
     </div>
+
     <div class="product-info-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
@@ -683,64 +715,6 @@ if (mysqli_num_rows($result) > 0){
 
 
 
-<!--Main layout           ///////////////////////////////////////////////////      -->
-<main  class="mt-5 pt-4" >
-    <div class="container dark-grey-text mt-5">
-
-
-
-        <hr>
-
-        <!--Grid row-->
-        <div class="row d-flex justify-content-center wow fadeIn">
-
-            <!--Grid column-->
-            <div class="col-md-6 text-center">
-
-                <h4 class="my-4 h4">Additional information</h4>
-
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus suscipit modi sapiente illo soluta odit
-                    voluptates,
-                    quibusdam officia. Neque quibusdam quas a quis porro? Molestias illo neque eum in laborum.</p>
-
-            </div>
-            <!--Grid column-->
-
-        </div>
-        <!--Grid row-->
-
-        <!--Grid row-->
-        <div class="row wow fadeIn">
-
-            <!--Grid column-->
-            <div class="col-lg-4 col-md-12 mb-4">
-
-                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/11.jpg" class="img-fluid" alt="">
-
-            </div>
-            <!--Grid column-->
-
-            <!--Grid column-->
-            <div class="col-lg-4 col-md-6 mb-4">
-
-                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/12.jpg" class="img-fluid" alt="">
-
-            </div>
-            <!--Grid column-->
-
-            <!--Grid column-->
-            <div class="col-lg-4 col-md-6 mb-4">
-
-                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/13.jpg" class="img-fluid" alt="">
-
-            </div>
-            <!--Grid column-->
-
-        </div>
-        <!--Grid row-->
-
-    </div>
-</main>
 
 
 
@@ -760,9 +734,71 @@ if (mysqli_num_rows($result) > 0){
     <div id="inner_related_products_div">
       <p style="margin-left: -850px; margin-top: -30px ;font-weight: bold;font-size: 22px;">Related Products </p>
 
-
         <div class="new_container">
             <div class="row">
+
+        <?php
+        include "dataBase.php";
+    $product_query = "SELECT * FROM products WHERE product_keywords =".$GLOBALS['key_word'];
+    $run_query = mysqli_query($con, $product_query);
+
+    if (mysqli_num_rows($run_query) > 0) {
+        while ($row = mysqli_fetch_array($run_query)) {
+            $pro_id = $row['product_id'];
+            $pro_cat = $row['product_cat'];
+            $pro_brand = $row['product_brand'];
+            $pro_title = $row['product_title'];
+            $pro_price = $row['product_price'];
+            $pro_image = $row['product_image'];
+            $pro_image2 = $row['product_image2'];
+
+            $cat_name = $row["cat_title"];
+
+            //     echo $pro_id . '  ' . $pro_cat .'  ' . $pro_brand .'  '.$pro_title ;
+
+            echo "
+  <div class='col-md-3 col-sm-6'>
+       <div class='product-grid3'>
+            <div class='product-image3'>
+                                    <a href='productView.php?p=$pro_id'>
+                                        <img class='pic-1' src='./mainUI/imgs/$pro_image'>
+                                        <img class='pic-2' src='./mainUI/imgs/$pro_image2'>
+                                    </a>
+                                    <ul class='social'>
+                                        <li><a href='productView.php?p=$pro_id'><i class='fa fa-shopping-bag'></i></a></li>
+                                        <li><a pid='$pro_id' id='product' href='#'><i class='fa fa-shopping-cart'></i></a></li>
+                                    </ul>
+                                    <span class='product-new-label'>New</span>
+                                </div>
+                                <div class='product-content'>
+                                    <h3 class='title'><a href='#'>$pro_title</a></h3>
+                                    <div class='price'>
+                                        $pro_price
+                                       <span>$75.00</span>
+                                    </div>
+                                    <ul class='rating'>
+                                        <li class='fa fa-star'></li>
+                                        <li class='fa fa-star'></li>
+                                        <li class='fa fa-star'></li>
+                                        <li class='fa fa-star disable'></li>
+                                        <li class='fa fa-star disable'></li>
+                                    </ul>
+            </div>
+       </div>
+  </div>
+        
+        ";
+        }
+    }
+
+    else{
+        echo '<script> alert("asdf") </script>';
+    }
+
+        ?>
+        
+
+
                 <div class="col-md-3 col-sm-6">
                     <div class="product-grid3">
                         <div class="product-image3">
@@ -792,6 +828,8 @@ if (mysqli_num_rows($result) > 0){
                         </div>
                     </div>
                 </div>
+                
+                
                 <div class="col-md-3 col-sm-6">
                     <div class="product-grid3">
                         <div class="product-image3">
@@ -819,64 +857,11 @@ if (mysqli_num_rows($result) > 0){
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="product-grid3">
-                        <div class="product-image3">
-                            <a href="#">
-                                <img class="pic-1" src="mainUI/imgs/sofa1_1.jfif">
-                                <img class="pic-2" src="mainUI/imgs/sofa1_2.jpg">
-                            </a>
-                            <ul class="social">
-                                <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                            <span class="product-new-label">New</span>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Men's Blazer</a></h3>
-                            <div class="price">
-                                $63.50
-                                <span>$75.00</span>
-                            </div>
-                            <ul class="rating">
-                                <li class="fa fa-star"></li>
-                                <li class="fa fa-star"></li>
-                                <li class="fa fa-star"></li>
-                                <li class="fa fa-star disable"></li>
-                                <li class="fa fa-star disable"></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="product-grid3">
-                        <div class="product-image3">
-                            <a href="#">
-                                <img class="pic-1" src="mainUI/imgs/table1.jpg">
-                                <img class="pic-2" src="mainUI/imgs/table2.jpg">
-                            </a>
-                            <ul class="social">
-                                <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                            <span class="product-new-label">New</span>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Men's Blazer</a></h3>
-                            <div class="price">
-                                $63.50
-                                <span>$75.00</span>
-                            </div>
-                            <ul class="rating">
-                                <li class="fa fa-star"></li>
-                                <li class="fa fa-star"></li>
-                                <li class="fa fa-star"></li>
-                                <li class="fa fa-star disable"></li>
-                                <li class="fa fa-star disable"></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+
+
+                
+                
+
             </div>
         </div>
     </div>
@@ -890,6 +875,9 @@ if (mysqli_num_rows($result) > 0){
 <?php
 
 include "mini_Footer.php";
+
+
+
 
 ?>
 
