@@ -1,5 +1,28 @@
 
 
+
+<?php
+
+function myfun()
+{
+    header("navBar.php");
+}
+
+if(isset($_POST['logIn'])){
+
+    header("location:contactUs.php");
+
+}
+
+if(isset($_POST['signUp'])){
+
+    header("location:contactUs.php");
+
+}
+
+
+    ?>
+
 <!DOCTYPE html>
 <html lang="en" >
 
@@ -322,7 +345,7 @@
         <div class="left">
             <div class="content">
                 <h2>Sign Up</h2>
-                <form id="form-signup" method="post" onsubmit="return false;">
+                <form id="form-signup" method="post"   >
 
                     <div class="form-element form-stack">
                         <label for="username-signup" class="form-label">Full Name</label>
@@ -342,8 +365,8 @@
                         <label for="confirm-terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
                     </div>
                     <div class="form-element form-submit">
-                        <button id="signUp" class="signup" type="submit" name="signup">Sign up</button>
-                        <button id="goLeft" class="signup off">Log In</button>
+                        <button id="signUp" class="signup" onclick="myfun()" type="submit" name="signUp">Sign up</button>
+                        <button id="goLeft"  onsubmit=" return false;" class="signup off">Log In</button>
                     </div>
                 </form>
             </div>
@@ -351,7 +374,9 @@
         <div class="right">
             <div class="content">
                 <h2>Login</h2>
-                <form id="form-login" method="post" onsubmit="return false;">
+
+
+                <form id="form-login" method="post"     >
                     <div class="form-element form-stack">
                         <label for="username-login" class="form-label">Email</label>
                         <input id="username-login" type="text" name="username">
@@ -361,8 +386,8 @@
                         <input id="password-login" type="password" name="password">
                     </div>
                     <div class="form-element form-submit">
-                        <button id="logIn" class="login" type="submit" name="login">Log In</button>
-                        <button id="goRight" class="login off" name="signup">Sign Up</button>
+                        <button id="logIn" class="login" onclick="myfun()" type="submit" name="logIn">Log In</button>
+                        <button id="goRight" class="login off"  onsubmit=" return false;"  name="signup">Sign Up</button>
                     </div>
                 </form>
             </div>
@@ -370,30 +395,13 @@
     </div>
 </div>
 
-<!-- 
 
-Remixed from "Sliding Login Form" Codepen by
-C-Rodg (github.com/C-Rodg)
-https://codepen.io/crodg/pen/yNKxej
-
-Remixed from "Paper.js - Animated Shapes Header" Codepen by
-Connor Hubeny (@cooper_hu)
-https://codepen.io/cooper_hu/pen/ybxoev
-
-Custom Checkbox based on the blog post by
-Mik Ted (@inserthtml):
-https://www.inserthtml.com/2012/06/custom-form-radio-checkbox/
-
-HTML5 Form Validation based on the blog post by
-Thoriq Firdaus (@tfirdaus):
-https://webdesign.tutsplus.com/tutorials/
-html5-form-validation-with-the-pattern-attribute--cms-25145
-
--->
 <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.11.3/paper-full.min.js'></script>
+
+
 <script id="rendered-js" >
     /* ====================== *
      *  Toggle Between        *
@@ -402,10 +410,15 @@ html5-form-validation-with-the-pattern-attribute--cms-25145
     $(document).ready(function () {
         $('#goRight').on('click', function () {
             $('#slideBox').animate({
-                'marginLeft': '0' });
+                'marginLeft': '0'
+
+            });
 
             $('.topLayer').animate({
                 'marginLeft': '100%' });
+
+
+
 
         });
         $('#goLeft').on('click', function () {
@@ -568,4 +581,4 @@ html5-form-validation-with-the-pattern-attribute--cms-25145
 </body>
 
 </html>
- 
+
