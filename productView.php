@@ -1,17 +1,12 @@
 <?php
-
-include "php_head.php";
 include "dataBase.php";
-
-session_start();
-
 
 if (isset($_POST['add_ToCart'])) {
 
-  $prod_id = $_GET['p'];
-  $color = $_POST['color'];
-  $country = $_POST['brand_country'];
-  $quan = $_POST['quantity'];
+    $prod_id = $_GET['p'];
+    $color = $_POST['color'];
+    $country = $_POST['Brand_Q'];
+    $quan = $_POST['quantity'];
 
     mysqli_query($con, "insert into cart(user_id,qty,product_id,color,country)
                                         values ('12393' , '$quan' , '$prod_id' , '$color' , '$country')");
@@ -20,9 +15,7 @@ if (isset($_POST['add_ToCart'])) {
     header("location:productView.php?p=".$_GET['p']);
 }
 
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -334,14 +327,14 @@ if (isset($_POST['add_ToCart'])) {
         #related_products
         {
             margin-left: 200px;
-          margin-bottom: 100px;
+            margin-bottom: 100px;
 
             text-align: center;
             margin-top: 70px;
             height: 420px;
             padding-top: 50px;
             box-shadow: 0 2px 10px #BCBCBC;
-width: 1100px;
+            width: 1100px;
             border-radius: 15px;
 
         }
@@ -453,80 +446,32 @@ width: 1100px;
 </nav>
 
 
-<script type="text/javascript">
-    jQuery(document).ready(function($) {
-        $(".scroll").click(function(event){
-            event.preventDefault();
-            $('html,body').animate({scrollTop:$(this.hash).offset().top},900);
-        });
-    });
-</script>
-
-<script>
-
-    (function (global) {
-        if(typeof (global) === "undefined")
-        {
-            throw new Error("window is undefined");
-        }
-        var _hash = "!";
-        var noBackPlease = function () {
-            global.location.href += "#";
-            // making sure we have the fruit available for juice....
-            // 50 milliseconds for just once do not cost much (^__^)
-            global.setTimeout(function () {
-                global.location.href += "!";
-            }, 50);
-        };
-        // Earlier we had setInerval here....
-        global.onhashchange = function () {
-            if (global.location.hash !== _hash) {
-                global.location.hash = _hash;
-            }
-        };
-        global.onload = function () {
-            noBackPlease();
-            // disables backspace on page except on input fields and textarea..
-            document.body.onkeydown = function (e) {
-                var elm = e.target.nodeName.toLowerCase();
-                if (e.which === 8 && (elm !== 'input' && elm  !== 'textarea')) {
-                    e.preventDefault();
-                }
-                // stopping event bubbling up the DOM tree..
-                e.stopPropagation();
-            };
-        };
-    })(window);
-</script>
-
-
 
 
 <div style="padding-top: 60px;" class="container">
     <div class="heading-section">
-
     </div>
     <div class="row">
 
-<?php
-$key_word = "";
+        <?php
+        $key_word = "";
 
-$product_id = $_GET['p'];
+        $product_id = $_GET['p'];
 
-$sql = " SELECT * FROM products WHERE product_id = $product_id";
+        $sql = " SELECT * FROM products WHERE product_id = $product_id";
 
-if (!$con) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-$result = mysqli_query($con, $sql);
+        if (!$con) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+        $result = mysqli_query($con, $sql);
 
-if (mysqli_num_rows($result) > 0){
-    while ($row = mysqli_fetch_assoc($result)){
+        if (mysqli_num_rows($result) > 0){
+            while ($row = mysqli_fetch_assoc($result)){
 
-    $last = $row['product_price'] + 150 ;
-    $GLOBALS['key_word'] = $row['product_keywords'];
+                $last = $row['product_price'] + 150 ;
+                $GLOBALS['key_word'] = $row['product_keywords'];
 
-        echo '
+                echo '
         
         <div class="col-md-6">
             <div id="slider" class="owl-carousel product-slider " >
@@ -603,9 +548,12 @@ if (mysqli_num_rows($result) > 0){
 <!--                    </div>-->
 
 '; }
-}
-?>
+        }
+        ?>
+
         <form action="productView.php?p=<?php echo $_GET['p']?>" method="post" >
+
+            <div style="display: flex">
                     <div class="col-md-6">
                         <label for="color">Color</label>
                         <select id="color" name="color" class="form-control">
@@ -615,40 +563,42 @@ if (mysqli_num_rows($result) > 0){
                         </select>
                     </div>
                     <div style="margin-bottom: 50px" class="col-md-6">
-                        <label for="brand_country">Brand country</label>
-                        <select id="brand_country" name="brand_country" class="form-control">
+                        <label for="Brand_Q">Brand country</label>
+                        <select id="Brand_Q" name="Brand_Q" class="form-control">
                             <option>Italy</option>
                             <option>Turkish</option>
                             <option>UK</option>
                         </select>
 
                     </div>
-
-<!--                    <div style="margin-bottom: 50px" class="col-md-6">-->
-<!---->
-<!--                       <p style="margin-top: 70px; margin-left :150px  ;font-weight: 550;"> +200$ shipped</p>-->
-<!--                    </div>-->
-
-
-
-                <div class="product-count">
-                    <label for="size">Quantity</label>
- <div class="display-flex">
-                        <div class="qtyminus">-</div>
-                        <input type="text" id="quantity" name="quantity" value="1" class="qty">
-                        <div class="qtyplus">+</div>
-
-                    <div class="add_div">
-                        <input id="add_ToCart" name="add_ToCart" type="submit" value="Add to Cart" class="round-black-btn">
-                    </div>
- </div>
-                    </form>
-                </div>
-
-
             </div>
 
+                    <!--                    <div style="margin-bottom: 50px" class="col-md-6">-->
+                    <!---->
+                    <!--                       <p style="margin-top: 70px; margin-left :150px  ;font-weight: 550;"> +200$ shipped</p>-->
+                    <!--                    </div>-->
 
+
+                </div>
+                <div class="product-count">
+                    <label for="size">Quantity</label>
+
+<!--                    <form action="#" class="display-flex">-->
+                        <div class="display-flex">
+                        <div class="qtyminus">-</div>
+                        <input type="text" name="quantity" id="quantity" value="1" class="qty">
+                        <div class="qtyplus">+</div>
+                        </div>
+<!--                    </form>-->
+
+                    <div class="add_div">
+
+                        <input id="add_ToCart" name="add_ToCart" type="submit" value="Add to Cart" class="round-black-btn">
+                    </div>
+
+                </div>
+</form>
+            </div>
         </div>
     </div>
 
@@ -713,50 +663,35 @@ if (mysqli_num_rows($result) > 0){
 
 
 
-
-
-
-
-
-
-<!--Main layout-->
-
-
-
-
-
-
-
-
 <div id="related_products">
-
-
     <div id="inner_related_products_div">
-      <p style="margin-left: -850px; margin-top: -30px ;font-weight: bold;font-size: 22px;">Related Products </p>
-
+        <p style="margin-left: -850px; margin-top: -30px ;font-weight: bold;font-size: 22px;">Related Products </p>
         <div class="new_container">
             <div class="row">
 
+
         <?php
-        include "dataBase.php";
-    $product_query = "SELECT * FROM products WHERE product_keywords =".$GLOBALS['key_word'];
-    $run_query = mysqli_query($con, $product_query);
+        $temp = $GLOBALS['key_word'];
 
-    if (mysqli_num_rows($run_query) > 0) {
-        while ($row = mysqli_fetch_array($run_query)) {
-            $pro_id = $row['product_id'];
-            $pro_cat = $row['product_cat'];
-            $pro_brand = $row['product_brand'];
-            $pro_title = $row['product_title'];
-            $pro_price = $row['product_price'];
-            $pro_image = $row['product_image'];
-            $pro_image2 = $row['product_image2'];
+        $related_query = "SELECT * FROM `products` WHERE product_keywords = '$temp' ";
+        $run_query = mysqli_query($con, $related_query);
 
-            $cat_name = $row["cat_title"];
 
-            //     echo $pro_id . '  ' . $pro_cat .'  ' . $pro_brand .'  '.$pro_title ;
+        if (mysqli_num_rows($run_query) > 0) {
+            while ($row = mysqli_fetch_array($run_query)) {
+                $pro_id = $row['product_id'];
+                $pro_cat = $row['product_cat'];
+                $pro_brand = $row['product_brand'];
+                $pro_title = $row['product_title'];
+                $pro_price = $row['product_price'];
+                $pro_image = $row['product_image'];
+                $pro_image2 = $row['product_image2'];
 
-            echo "
+                $last_price = $pro_price + 150;
+
+                //     echo $pro_id . '  ' . $pro_cat .'  ' . $pro_brand .'  '.$pro_title ;
+
+                echo "
   <div class='col-md-3 col-sm-6'>
        <div class='product-grid3'>
             <div class='product-image3'>
@@ -774,7 +709,7 @@ if (mysqli_num_rows($result) > 0){
                                     <h3 class='title'><a href='#'>$pro_title</a></h3>
                                     <div class='price'>
                                         $pro_price
-                                       <span>$75.00</span>
+                                       <span>$$last_price</span>
                                     </div>
                                     <ul class='rating'>
                                         <li class='fa fa-star'></li>
@@ -788,23 +723,23 @@ if (mysqli_num_rows($result) > 0){
   </div>
         
         ";
+            }
         }
-    }
 
-    else{
-        echo '<script> alert("asdf") </script>';
-    }
+        else{
+            echo '<script> alert("asdf") </script>';
+        }
+
 
         ?>
-        
 
 
                 <div class="col-md-3 col-sm-6">
                     <div class="product-grid3">
                         <div class="product-image3">
                             <a href="#">
-                                <img class="pic-1" src="mainUI/imgs/storage1_1.jfif">
-                                <img class="pic-2" src="mainUI/imgs/storage1_2.jfif">
+                                <img class="pic-1" src="mainUI/imgs/sofa1_1.jfif">
+                                <img class="pic-2" src="mainUI/imgs/sofa1_2.jpg">
                             </a>
                             <ul class="social">
                                 <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
@@ -828,40 +763,35 @@ if (mysqli_num_rows($result) > 0){
                         </div>
                     </div>
                 </div>
-                
-                
                 <div class="col-md-3 col-sm-6">
                     <div class="product-grid3">
                         <div class="product-image3">
                             <a href="#">
-                                <img class="pic-1" src="mainUI/imgs/chair1_1.jfif">
-                                <img class="pic-2" src="mainUI/imgs/chair1_2.jfif">
+                                <img class="pic-1" src="mainUI/imgs/table1.jpg">
+                                <img class="pic-2" src="mainUI/imgs/table2.jpg">
                             </a>
                             <ul class="social">
                                 <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
                                 <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
+                            <span class="product-new-label">New</span>
                         </div>
                         <div class="product-content">
-                            <h3 class="title"><a href="#">Women's Designer Top</a></h3>
+                            <h3 class="title"><a href="#">Men's Blazer</a></h3>
                             <div class="price">
-                                $43.50
+                                $63.50
+                                <span>$75.00</span>
                             </div>
                             <ul class="rating">
                                 <li class="fa fa-star"></li>
                                 <li class="fa fa-star"></li>
                                 <li class="fa fa-star"></li>
-                                <li class="fa fa-star"></li>
-                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star disable"></li>
+                                <li class="fa fa-star disable"></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-
-
-                
-                
-
             </div>
         </div>
     </div>
@@ -875,9 +805,6 @@ if (mysqli_num_rows($result) > 0){
 <?php
 
 include "mini_Footer.php";
-
-
-
 
 ?>
 

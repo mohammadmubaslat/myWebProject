@@ -1,3 +1,7 @@
+
+
+
+
 <?php
 
 include "dataBase.php";
@@ -114,22 +118,52 @@ include "dataBase.php";
           <div class="content py-md-0 py-3">
                      <section id="sidebar">
                          <div class="py-3">
-                             <h5 class="font-weight-bold">CATEGORIES</h5>
+                             <h5 class="font-weight-bold"><a href="productCategory.php">CATEGORIES</a></h5>
                              <ul class="list-group" id="get_category">
 
                              </ul>
-                         </div>
-            <div  id="top_selling_div" class="py-3">
-                <h5 class="font-weight-bold">Brands</h5>
-                <ul class="list-group">
-                    <!--                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Bedroom <span class="badge badge-primary badge-pill">328</span> </li>-->
-                    <!--                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Living <span class="badge badge-primary badge-pill">112</span> </li>-->
-                    <!--                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Dining <span class="badge badge-primary badge-pill">32</span> </li>-->
-                    <!--                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Decor <span class="badge badge-primary badge-pill">48</span> </li>-->
-                    <!--                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Storage <span class="badge badge-primary badge-pill">48</span> </li>-->
-                </ul>
-            </div>
-        </section>
+
+                           </div>
+                     <div   class="py-3">
+                            <h5 class="font-weight-bold">Brands</h5>
+                               <ul class="list-group">
+                                       <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Bentley <span class="badge badge-primary badge-pill"></span> </li>
+                                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Fendi <span class="badge badge-primary badge-pill"></span> </li>
+                                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Trussardi <span class="badge badge-primary badge-pill"</span> </li>
+                               </ul>
+                     </div>
+
+                          <div   class="py-3" style="height: 230px ;   border: 0.1px solid #A9A9A9;">
+
+                              <div style=" height: 100%;">
+
+                                  <div class="upper_div"  >
+                                        <p style="padding-top: 10px"> Welcome in Luxury Living</p>
+                                 </div>
+
+                                  <div class="login_signup_side_div">
+                                      <div class="div_buttons">
+                                          <button type="button" class="btn btn-secondary">Login</button>
+                                      </div>
+
+                                      <div  class="div_buttons">
+                                          <button type="button" class="btn btn-dark">Sign Up</button>
+                                      </div>
+
+                                  </div>
+
+                                  <div class="login_signup_img_div">
+                                      <img class="login_signup_img" src="mainUI/imgs/advertDesign.jpg"
+                                  </div>
+
+                              </div>
+
+
+                          </div>
+
+
+
+                     </section>
 
                      <!-- Products Section now ..  -->
 

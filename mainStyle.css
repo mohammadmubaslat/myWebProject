@@ -159,6 +159,21 @@ body{
     width: 150px;
     font-weight :550;
 
+
+
+}
+
+
+a {
+    color: #FCFEFC;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+a:hover
+{
+    color: #FCFEFC;
+    text-decoration: none;
 }
 
 #advert_div
@@ -441,7 +456,7 @@ hr {
 #footer_id {
     color: grey;
 }
-#footer_id p, a {
+#footer_id p {
     font-size: 12px;
     font-family: 'Roboto', sans-serif;
 }
@@ -468,12 +483,11 @@ hr {
     font-size: 13px;
     padding: 7px 30px;
     line-height: 47px;
-}
-.btn-footer:hover {
 
-    text-decoration: none;
-
+    font-size: 12px;
+    font-family: Roboto ,sans-serif;
 }
+
 .form-footer input[type="text"] {
     border: none;
     border-radius: 16px 0 0 16px;
@@ -513,7 +527,7 @@ hr {
     color: grey;
     text-decoration:none;
 }
-a:hover {
+btn-footer:hover {
     text-decoration: none;
     color: #f5f5f5 !important;
 

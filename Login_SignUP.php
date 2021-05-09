@@ -345,7 +345,7 @@ if(isset($_POST['signUp'])){
         <div class="left">
             <div class="content">
                 <h2>Sign Up</h2>
-                <form id="form-signup" method="post"   >
+                <form id="form-signup" method="post"  >
 
                     <div class="form-element form-stack">
                         <label for="username-signup" class="form-label">Full Name</label>
@@ -366,7 +366,7 @@ if(isset($_POST['signUp'])){
                     </div>
                     <div class="form-element form-submit">
                         <button id="signUp" class="signup" onclick="myfun()" type="submit" name="signUp">Sign up</button>
-                        <button id="goLeft"  onsubmit=" return false;" class="signup off">Log In</button>
+                        <button id="goLeft" onsubmit="   class="signup off">Log In</button>
                     </div>
                 </form>
             </div>
@@ -387,7 +387,7 @@ if(isset($_POST['signUp'])){
                     </div>
                     <div class="form-element form-submit">
                         <button id="logIn" class="login" onclick="myfun()" type="submit" name="logIn">Log In</button>
-                        <button id="goRight" class="login off"  onsubmit=" return false;"  name="signup">Sign Up</button>
+                        <button id="goRight" class="login off"    name="signup">Sign Up</button>
                     </div>
                 </form>
             </div>

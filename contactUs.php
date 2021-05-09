@@ -62,23 +62,23 @@
         <div class="col-md-4">
             <b>Customer service:</b> <br />
             Phone: +970-595-266-581<br />
-            E-mail: <a href="mailto:support@mysite.com">support@mysite.com</a><br />
+            E-mail: <a href="mailto:support@mysite.com">support@LuxuryLiving.com</a><br />
             <br /><br />
-            <b>Headquarter:</b><br />
+            <b>Ramallah :</b><br />
             Company Inc, <br />
-            Las vegas street 201<br />
-            55001 Nevada, USA<br />
-            Phone: +1 145 000 101<br />
-            <a href="mailto:usa@mysite.com">usa@mysite.com</a><br />
+            Lions street 201<br />
+            55001 Ramallah, Palestine<br />
+            Phone: -970 595 266 581 <br />
+            <a href="mailto:usa@mysite.com">MohammadMubaslat@LuxuryLiving.com</a><br />
 
 
             <br /><br />
-            <b>Hong kong:</b><br />
-            Company HK Litd, <br />
-            25/F.168 Queen<br />
-            Wan Chai District, Hong Kong<br />
-            Phone: +852 129 209 291<br />
-            <a href="mailto:hk@mysite.com">hk@mysite.com</a><br />
+            <b>Jerusalem :</b><br />
+            Company LL Litd, <br />
+            Sultan Suleiman street <br />
+             Jerusalem ,Palestine<br />
+            Phone: +970 597 598 615<br />
+            <a href="mailto:hk@mysite.com">HamzehSaleh@LuxuryLiving.com</a><br />
 
 
         </div>

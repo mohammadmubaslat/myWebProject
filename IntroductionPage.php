@@ -41,7 +41,7 @@
                     coolest homes out there.  </p>
 
                 <div class="button_img_slider">
-                         <p class="read_more_slider_text">Read More</p>
+                         <p  class="read_more_slider_text">Read More</p>
                 </div>
 
             </div>
@@ -56,13 +56,13 @@
                     which we take a peek inside some of the
                     coolest homes out there.  </p>
 
-                <div class="button_img_slider">
-                    <p class="read_more_slider_text">Read More</p>
+                <div   class="button_img_slider">
+                    <p  class="read_more_slider_text">Read More</p>
                 </div>
                 </div>
 
             </div>
-        </div>
+        
         <div class="carousel-item">
             <img alt="Third slide" class="d-block w-100 body_img" src="./mainUI/imgs/luxury3.jpg">
             <div class="carousel-caption d-none d-md-block">
@@ -89,13 +89,17 @@
 
 
         <ul class="Navcontainer">
-            <li class="box"> Home </li>
-            <li class="box"> Products </li>
-            <li class="box"> Accessories </li>
-          <li>  <img id="logo_img" src="mainUI/imgs/logo.png" alt=""> </li>
-            <li class="box"> Offers </li>
-            <li class="box"> About Us </li>
-            <li class="box"> Contact Us</li>
+
+            <li class="box"><a href="contactUs.php"><span ></span>Home</a></li>
+            <li class="box"><a href="mainProducts.php"><span ></span>Products</a></li>
+            <li class="box"><a href="mainProducts.php"><span ></span>Accessories</a></li>
+
+
+            <li>  <img id="logo_img" src="mainUI/imgs/logo.png" alt=""> </li>
+
+            <li class="box"><a href=""><span ></span>Offers</a></li>
+            <li class="box"><a href=""><span ></span>About Us</a></li>
+            <li class="box"><a href="contactUs.php"><span ></span>Contact Us</a></li>
 
         </ul>
 

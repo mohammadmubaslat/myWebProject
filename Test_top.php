@@ -3,355 +3,9 @@ include "navBar.php";
 ?>
 
 
-<div id="img_slider">
-    <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="mask flex-center">
-                    <div class="img_container">
-                        <div class="row align-items-center">
-                            <div class="col-md-7 col-12 order-md-1 order-2">
-                                <h4>Everything Your <br>
-                                    Home Needs</h4>
-                                <p>Shop The Best Furniture Online For Your Home <br>
-                                    Luxury Living Shop is your best choice is always.</p>
-                                <a href="#">BUY NOW</a></div>
-                            <div class="col-md-5 col-12 order-md-2 order-1"><img src="mainUI/imgs/png_sofa_cover1.png"
-                                                                                 class="mx-auto" alt="slide"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="mask flex-center">
-                    <div class="img_container">
-                        <div class="row align-items-center">
-                            <div class="col-md-7 col-12 order-md-1 order-2">
-                                <h4>Everything Your <br>
-                                    Home Needs</h4>
-                                <p>Shop The Best Furniture Online For Your Home <br>
-                                    Luxury Living Shop is your best choice is always.</p>
-                                <a href="#">BUY NOW</a></div>
 
-                            <div class="col-md-5 col-12 order-md-2 order-1"><img src="mainUI/imgs/png_bed_cover2.png"
-                                                                                 class="mx-auto" alt="slide"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div id="second_Top_slider">
 
-            <div class="carousel-item">
-
-                <div class="mask flex-center">
-
-                    <div class="img_container">
-
-                        <div class="row align-items-center">
-                            <div class="col-md-7 col-12 order-md-1 order-2">
-                                <h4>Everything Your <br>
-                                    Home Needs</h4>
-                                <p>Shop The Best Furniture Online For Your Home <br>
-                                    Luxury Living Shop is your best choice is always.</p>
-                                <a href="#">BUY NOW</a></div>
-                            <div class="col-md-5 col-12 order-md-2 order-1"><img
-                                        src="mainUI/imgs/png_Bigsofa_cover3.png" class="mx-auto" alt="slide"></div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev"> <span
-                    class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a> <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next"> <span
-                    class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span> </a>
-    </div>
-</div>
-
-<div id="sections_div">
-     <div class="sections_container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="content"><a href="#">
-                        <div class="content-overlay"></div>
-                        <img class="content-image" src="https://i.imgur.com/7cNRozs.jpg">
-                        <div class="content-details fadeIn-bottom">
-                            <h3 class="content-title">FENDI Casa collection</h3>
-                            <p class="content-text"><i class="fa fa-map-marker"></i> Italy</p>
-                        </div>
-                    </a></div>
-            </div>
-            <div class="col-md-4">
-                <div class="content"><a href="#">
-                        <div class="content-overlay"></div>
-                        <img class="content-image" src="https://i.imgur.com/CS59IJZ.jpg">
-                        <div class="content-details fadeIn-bottom">
-                            <h3 class="content-title">Bentley Home collection</h3>
-                            <p class="content-text"><i class="fa fa-map-marker"></i> United Kingdom</p>
-                        </div>
-                    </a></div>
-            </div>
-            <div class="col-md-4">
-                <div class="content"><a href="#">
-                        <div class="content-overlay"></div>
-                        <img class="content-image" src="https://i.imgur.com/LITAKvq.jpg">
-                        <div class="content-details fadeIn-bottom">
-                            <h3 class="content-title">Trussardi Casa collection</h3>
-                            <p class="content-text"><i class="fa fa-map-marker"></i> Turkey</p>
-                        </div>
-                    </a></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div id="new_products_div">
-    <p style="margin-left: 40px; margin-top: 30px ;font-weight: bold;font-size: 22px;">NEW PRODUCTS </p>
-    <div class="new_container">
-        <div class="row">
-
-            <?php
-
-
-             $product_query = "SELECT * FROM products where 1";
-    $run_query = mysqli_query($con, $product_query);
-    if (mysqli_num_rows($run_query) > 0) {
-        while ($row = mysqli_fetch_array($run_query)) {
-            $pro_id = $row['product_id'];
-            $pro_cat = $row['product_cat'];
-            $pro_brand = $row['product_brand'];
-            $pro_title = $row['product_title'];
-            $pro_price = $row['product_price'];
-            $pro_image = $row['product_image'];
-            $pro_image2 = $row['product_image2'];
-
-            $last_price = $pro_price + 150;
-
-            //     echo $pro_id . '  ' . $pro_cat .'  ' . $pro_brand .'  '.$pro_title ;
-
-            echo "
-  <div class='col-md-3 col-sm-6'>
-       <div class='product-grid3'>
-            <div class='product-image3'>
-                                    <a href='productView.php?p=$pro_id'>
-                                        <img class='pic-1' src='./mainUI/imgs/$pro_image'>
-                                        <img class='pic-2' src='./mainUI/imgs/$pro_image2'>
-                                    </a>
-                                    <ul class='social'>
-                                        <li><a href='productView.php?p=$pro_id'><i class='fa fa-shopping-bag'></i></a></li>
-                                        <li><a pid='$pro_id' id='product' href='#'><i class='fa fa-shopping-cart'></i></a></li>
-                                    </ul>
-                                    <span class='product-new-label'>New</span>
-                                </div>
-                                <div class='product-content'>
-                                    <h3 class='title'><a href='#'>$pro_title</a></h3>
-                                    <div class='price'>
-                                        $pro_price
-                                       <span>$$last_price</span>
-                                    </div>
-                                    <ul class='rating'>
-                                        <li class='fa fa-star'></li>
-                                        <li class='fa fa-star'></li>
-                                        <li class='fa fa-star'></li>
-                                        <li class='fa fa-star disable'></li>
-                                        <li class='fa fa-star disable'></li>
-                                    </ul>
-            </div>
-       </div>
-  </div>
-           "; }
-
-            }?>
-
-
-
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid3">
-                    <div class="product-image3">
-                        <a href="#">
-                            <img class="pic-1" src="mainUI/imgs/storage1_1.jfif">
-                            <img class="pic-2" src="mainUI/imgs/storage1_2.jfif">
-                        </a>
-                        <ul class="social">
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                        <span class="product-new-label">New</span>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Men's Blazer</a></h3>
-                        <div class="price">
-                            $63.50
-                            <span>$75.00</span>
-                        </div>
-                        <ul class="rating">
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star disable"></li>
-                            <li class="fa fa-star disable"></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid3">
-                    <div class="product-image3">
-                        <a href="#">
-                            <img class="pic-1" src="mainUI/imgs/table1.jpg">
-                            <img class="pic-2" src="mainUI/imgs/table2.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                        <span class="product-new-label">New</span>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Men's Blazer</a></h3>
-                        <div class="price">
-                            $63.50
-                            <span>$75.00</span>
-                        </div>
-                        <ul class="rating">
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star disable"></li>
-                            <li class="fa fa-star disable"></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid3">
-                    <div class="product-image3">
-                        <a href="#">
-                            <img class="pic-1" src="mainUI/imgs/sofa1_1.jfif">
-                            <img class="pic-2" src="mainUI/imgs/sofa1_2.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                        <span class="product-new-label">New</span>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Men's Blazer</a></h3>
-                        <div class="price">
-                            $63.50
-                            <span>$75.00</span>
-                        </div>
-                        <ul class="rating">
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star disable"></li>
-                            <li class="fa fa-star disable"></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid3">
-                    <div class="product-image3">
-                        <a href="#">
-                            <img class="pic-1" src="mainUI/imgs/table1.jpg">
-                            <img class="pic-2" src="mainUI/imgs/table2.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                        <span class="product-new-label">New</span>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Men's Blazer</a></h3>
-                        <div class="price">
-                            $63.50
-                            <span>$75.00</span>
-                        </div>
-                        <ul class="rating">
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star disable"></li>
-                            <li class="fa fa-star disable"></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-
-<div id="advert_div">
-
-    <img id="adv_img" src="mainUI/imgs/advert.jpg" alt="">
-    <div id="container_div">
-
-        <div id="timer_div">
-
-
-            <div class="timer_container">
-                <div class="timer_row">
-                    <div class="timer_col-lg-6 offset-3">
-
-                        <div class="timer">
-                            <div>
-                                <span class="days" id="day"></span>
-                                <div class="smalltext">Days</div>
-                            </div>
-                            <div>
-                                <span class="hours" id="hour"></span>
-                                <div class="smalltext">Hours</div>
-                            </div>
-                            <div>
-                                <span class="minutes" id="minute"></span>
-                                <div class="smalltext">Minutes</div>
-                            </div>
-                            <div>
-                                <span class="seconds" id="second"></span>
-                                <div class="smalltext">Seconds</div>
-                            </div>
-                            <p id="time-up"></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <h2> hot deal this week </h2>
-            <p class="timer_div_p">New Collection Up to 50% OFF</p>
-
-            <div id="shop_now_timer_div">
-                <p> Shop Now</p>
-            </div>
-        </div>
-
-
-        <div>
-
-        </div>
-
-
-    </div>
-
-</div>
-
-
-<div id="big_Top_slider">
     <p style="margin-left: 40px; margin-top: 30px ;font-weight: bold;font-size: 22px;"> Top Selling Products</p>
     <div id="top_slider">
 
@@ -365,11 +19,15 @@ include "navBar.php";
                                 <li data-target="#carouselindicators" data-slide-to="1" class="active"></li>
                                 <li data-target="#carouselindicators" data-slide-to="2" class=""></li>
                             </ol>
-                            <div class="carousel-inner">
-                                <div class="carousel-item active carousel-item-left">
 
+
+                            <div class="carousel-inner">
+
+
+                                <div class="carousel-item active carousel-item-left">
                                     <div class="d-block w-100" alt="First slide" class="new_container">
                                         <div class="row">
+
                                             <div class="col-md-3 col-sm-6">
                                                 <div class="product-grid3">
                                                     <div class="product-image3">
@@ -492,9 +150,10 @@ include "navBar.php";
 
                                         </div>
                                     </div>
-
-
                                 </div>
+
+
+
                                 <div class="carousel-item carousel-item-next carousel-item-left">
 
                                     <div class="d-block w-100" alt="Second slide" class="new_container">
@@ -618,11 +277,13 @@ include "navBar.php";
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
-
                                 </div>
+
+
+
+
                                 <div class="carousel-item">
 
                                     <div class="d-block w-100" alt="Third slide" class="new_container">
@@ -746,11 +407,12 @@ include "navBar.php";
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
-
                                 </div>
+
+
+
                             </div>
                             <!--                        <a class="carousel-control-prev" href="#carouselindicators" role="button" data-slide="prev" data-abc="true"> -->
                             <!--                            <i class="fa fa-chevron-left"></i> -->
@@ -767,6 +429,10 @@ include "navBar.php";
 
     </div>
 
+</div>
+
+
+</section>
 
 </div>
 
@@ -775,16 +441,7 @@ include "navBar.php";
 include "mini_Footer.php";
 ?>
 
-
-</section>
-
 </div>
-
-
-</div>
-
-
-
 
 <script>
 

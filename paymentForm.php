@@ -17,8 +17,8 @@
 
         body{margin-top:20px;
             background: #2B2B2A;
-            background: -webkit-linear-gradient(to right, #5B564D, #C0B397);
-            background: linear-gradient(to right, #5B564D, #C0B397);
+            /*background: -webkit-linear-gradient(to right, #5B564D, #C0B397);*/
+            /*background: linear-gradient(to right, #5B564D, #C0B397);*/
         }
 
         /* WRAPPERS */
@@ -90,6 +90,14 @@
             width: 100%;
             font-size: 14px;
         }
+
+        .input-group .form-control {
+            position: relative;
+            z-index: 2;
+            float: left;
+            width: 100%;
+            margin-bottom: 0;
+        }
         .text-navy {
             color: #1ab394;
         }
@@ -153,8 +161,31 @@
             color: #ed5565;
         }
 
+ .left_div
+ {
 
+     width: 50%;
+     height: 100%;
 
+ }
+        .right_div
+        {
+
+            width: 50%;
+ height: 100%;
+        }
+ .first_form_group
+ {
+     padding-left: 120px;
+     padding-top: 25px;
+ }
+
+ .two_first_divs
+ {
+
+     display: flex;
+     height: 200px;
+ }
     </style>
 </head>
 
@@ -178,7 +209,7 @@
                         </div>
                         <div class="col-sm-6 text-right">
                             <small>
-                                <strong>Name:</strong> David
+                                <strong>Name:</strong> Mohammad
                             </small>
                         </div>
                     </div>
@@ -198,7 +229,7 @@
                         </div>
                         <div class="col-sm-6 text-right">
                             <small>
-                                <strong>Name:</strong> Anna Smith
+                                <strong>Name:</strong> Hamzeh
                             </small>
                         </div>
                     </div>
@@ -218,7 +249,7 @@
                         </div>
                         <div class="col-sm-6 text-right">
                             <small>
-                                <strong>Name:</strong> Morgan
+                                <strong>Name:</strong> Rebal
                             </small>
                         </div>
                     </div>
@@ -229,6 +260,71 @@
         <div class="row">
 
             <div class="col-lg-12">
+
+                <div class="ibox">
+                    <div class="ibox-title">
+                        Shipping details
+                    </div>
+                    <div class="ibox-content">
+
+                        <div class="panel-group payments-method" id="shipping_details">
+                            <div  class="panel panel-default">
+
+                                <div class="two_first_divs">
+                                <div class="left_div">
+                                <div class="first_form_group">
+                                    <label>Full Name</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="Number" placeholder="Valid Name" required="">
+                                           </div>
+                                </div>
+                                <div class="first_form_group">
+                                    <label>Country</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="Number" placeholder="Your Country" required="">
+                                    </div>
+                                </div>
+
+
+
+                                </div>
+
+
+                                <div class="right_div">
+                                    <div class="first_form_group">
+                                        <label>Phone Number</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="Number" placeholder="Valid Phone Number" required="">
+                                        </div>
+                                    </div>
+
+                                    <div class="first_form_group">
+                                        <label>Address</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="Number" placeholder="Your Address" required="">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
 
                 <div class="ibox">
                     <div class="ibox-title">

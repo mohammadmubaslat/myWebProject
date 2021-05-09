@@ -1,4 +1,57 @@
+<?php
+include "dataBase.php";
 
+session_start();
+$_SESSION['user_id'] = '12345';
+
+$profile_query = "SELECT * FROM user_info WHERE user_id= ". $_SESSION['user_id'];
+$run_query = mysqli_query($con, $profile_query);
+if (mysqli_num_rows($run_query) > 0) {
+while ($row = mysqli_fetch_array($run_query)) {
+    $user_id = $row['user_id'];
+    $full_name = $row['full_name'];
+    $email = $row['email'];
+    $password = $row['password'];
+    $address = $row['address1'];
+    $user_image = "./mainUI/imgs/" . $row['user_img'];
+    $phone1 = $row['mobile'];
+
+
+    $stringParts = explode('-', $address);
+    $countryPart = $stringParts[0];
+    $cityPart = $stringParts[1];
+    $streetPart = $stringParts[2];
+
+
+    if (isset($_POST['submit_cancel'])) {
+
+        header("location:profilePage.php");
+
+    }
+
+
+    if (isset($_POST['submit_update'])) {
+
+
+        $up_user = $_POST['fullName'];
+        $up_email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $up_pass = $_POST['pass'];
+        $up_address = $_POST['street'] . ' ' . $_POST['city'] . ' ' . $_POST['counTry'];
+        $up_img = $_POST['img'];
+
+
+        mysqli_query($con, "UPDATE user_info SET full_name = '$up_user' , email = '$up_email' , password = '$up_pass ', phone = '$phone' ,address = '$address' , user_img = '$up_img' WHERE user_id = " . $_SESSION['user_id']);
+
+        mysqli_close($con);
+
+//    header("location:profilePage.php");
+
+    }
+
+
+
+?>
 
 
 
@@ -159,8 +212,6 @@
         </li>
 
 
-
-
         <li class="nav-item dropdown no-arrow mx-1"> <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-envelope fa-fw"></i> <span class="badge badge-danger badge-counter">4</span> </a>
             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
                 <h6 class="dropdown-header"> Messages </h6> <a class="dropdown-item d-flex align-items-center" href="#">
@@ -188,8 +239,6 @@
 
 
 
-
-
         <div class="topbar-divider d-none d-sm-block"></div>
         <li class="nav-item dropdown no-arrow"> <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span> <img class="img-profile rounded-circle" src="https://i.imgur.com/uIgDDDd.jpg"> </a>
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown"> <a class="dropdown-item" href="#"> <i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile </a> <a class="dropdown-item" href="#"> <i class="fa fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> Settings </a> <a class="dropdown-item" href="#"> <i class="fa fa-list fa-sm fa-fw mr-2 text-gray-400"></i> Activity Log </a>
@@ -200,6 +249,7 @@
 </nav>
 
 
+<form action="profilePage.php" method="post"></form>
 
 <div style="margin-bottom: 100px;" class="container">
     <div class="row gutters">
@@ -209,17 +259,21 @@
                     <div class="account-settings">
                         <div class="user-profile">
                             <div class="user-avatar">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
+                                <img src="<?php echo $user_image?>" alt="user Photo">
                             </div>
-                            <h5 class="user-name">Yuki Hayashi</h5>
-                            <h6 class="user-email">yuki@Maxwell.com</h6>
+                            <h5 class="user-name" ><?php echo $full_name?></h5>
+
                             <button type="button" class="btn btn-light">Edit Photo</button>
+                            <input type="file" id="img" name="img" value="Edit" class="btn btn-light" accept="image/png">
+
                         </div>
 
                     </div>
                 </div>
             </div>
         </div>
+
+
         <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
             <div class="card h-100">
                 <div class="card-body">
@@ -228,27 +282,33 @@
                             <h6 class="mb-2 text-primary">Personal Details</h6>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+
+
                             <div class="form-group">
                                 <label for="fullName">Full Name</label>
-                                <input type="text" class="form-control" id="fullName" placeholder="Enter full name">
+                                <input type="text" class="form-control" name="fullName" id="fullName" placeholder="<?php echo $full_name?>">
+                                <!--                                <div class="form-control" > --><?php //echo $full_name?><!-- </div>-->
                             </div>
+
                         </div>
+
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="eMail">Email</label>
-                                <input type="email" class="form-control" id="eMail" placeholder="Enter email ID">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="<?php echo $email?>">
                             </div>
                         </div>
+
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="phone">Phone</label>
-                                <input type="text" class="form-control" id="phone" placeholder="Enter phone number">
+                                <input type="text" class="form-control" name="phone" id="phone" placeholder="<?php echo $phone1?>">
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
-                                <label for="website">Website URL</label>
-                                <input type="url" class="form-control" id="website" placeholder="Website url">
+                                <label for="website">Password</label>
+                                <input type="password" class="form-control" name="pass" id="pass" placeholder="<?php echo $password?>">
                             </div>
                         </div>
                     </div>
@@ -259,21 +319,25 @@
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="Street">Street</label>
-                                <input type="name" class="form-control" id="Street" placeholder="Enter Street">
+                                <input type="name" class="form-control" name="street" id="street" placeholder="<?php echo $streetPart?>">
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="ciTy">City</label>
-                                <input type="name" class="form-control" id="ciTy" placeholder="Enter City">
+                                <input type="name" class="form-control" name="city" id="city" placeholder="<?php echo $cityPart?>">
                             </div>
                         </div>
+
+
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
-                                <label for="sTate">State</label>
-                                <input type="text" class="form-control" id="sTate" placeholder="Enter State">
+                                <label for="ciTy">Country</label>
+                                <input type="name" class="form-control" name="counTry" id="counTry" placeholder="<?php echo $countryPart?>">
                             </div>
                         </div>
+
+
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="zIp">Zip Code</label>
@@ -284,18 +348,21 @@
                     <div class="row gutters">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="text-right">
-                                <button type="button" id="submit_cancel" name="submit_cancel" class="btn btn-secondary">Cancel</button>
-                                <button type="button" id="submit_update" name="submit_update" class="btn btn-primary">Update</button>
+                                <button type="submit" id="submit_cancel" name="submit_cancel" class="btn btn-secondary">Cancel</button>
+                                <button type="submit" id="submit_update" name="submit_update" class="btn btn-primary">Update</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 
 <?php
+}
+}
 
 include "mini_Footer.php";
 
