@@ -399,7 +399,7 @@ padding-bottom: 2px;
 
 #shop_now_timer_div:hover
 {
-    background-color: #d11536db;
+    background-color: #b01631;
 }
 #shop_now_timer_div p {
     font-size: 19px;
@@ -534,3 +534,4 @@ padding-bottom: 2px;
 .fadeIn-bottom {
     top: 80%
 }
+

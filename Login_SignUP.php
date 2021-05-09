@@ -1,7 +1,8 @@
 
-
-
 <?php
+include "dataBase.php";
+session_start();
+$_SESSION['loged']=0;
 
 function myfun()
 {
@@ -10,18 +11,45 @@ function myfun()
 
 if(isset($_POST['logIn'])){
 
-    header("location:contactUs.php");
+    if(isset($_POST['username']) && isset($_POST['password'])){
+        $email =  $_POST['username'] ;
+         $pass = sha1($_POST['password']);
+
+        $sql = "SELECT * from `user_info` , `email_info` WHERE email_id = user_id";
+        $run_query = mysqli_query($con,$sql);
+
+        $count = mysqli_num_rows($run_query);
+        $row = mysqli_fetch_array($run_query);
+
+        for($i=0 ; $i<$count ; $i++){
+            if ($email == $row['email'] && $pass == $row['password']){
+                $_SESSION["userId"] = $row["user_id"];
+                $_SESSION["name"] = $row["full_name"];
+                $_SESSION["loged"] = 1;
+                header("location:mainProducts.php");
+            }
+            else{
+                echo '<script> alert("email or password is not correct") </script>' ;
+            }
+        }
+        }
+
+        else{
+            echo '<script> alert("please fill all fields") </script>' ;
+        }
+
+
 
 }
 
 if(isset($_POST['signUp'])){
 
-    header("location:contactUs.php");
-
+//    header("location:contactUs.php");
+ echo '<script> alert("sigup") </script>';
 }
 
-
     ?>
+
 
 <!DOCTYPE html>
 <html lang="en" >
@@ -345,9 +373,9 @@ if(isset($_POST['signUp'])){
         <div class="left">
             <div class="content">
                 <h2>Sign Up</h2>
-                <form id="form-signup" method="post"  >
+                <form id="form-signup" method="post"  action="Login_SignUP.php" >
 
-                    <div class="form-element form-stack">
+                    <div class="form-element form-stack" onsubmit="return false;">
                         <label for="username-signup" class="form-label">Full Name</label>
                         <input id="username-signup" type="text" name="username">
                     </div>
@@ -366,32 +394,43 @@ if(isset($_POST['signUp'])){
                     </div>
                     <div class="form-element form-submit">
                         <button id="signUp" class="signup" onclick="myfun()" type="submit" name="signUp">Sign up</button>
-                        <button id="goLeft" onsubmit="   class="signup off">Log In</button>
+                        <button id="goLeft"  onsubmit=" return false;" class="signup off">Log In</button>
                     </div>
                 </form>
             </div>
         </div>
+
+
+
+
+
         <div class="right">
             <div class="content">
                 <h2>Login</h2>
 
-
-                <form id="form-login" method="post"     >
+                <form id="form-login" method="post"  action="Login_SignUP.php"    >
                     <div class="form-element form-stack">
                         <label for="username-login" class="form-label">Email</label>
-                        <input id="username-login" type="text" name="username">
+                        <input id="username-login" type="email" name="username">
                     </div>
                     <div class="form-element form-stack">
                         <label for="password-login" class="form-label">Password</label>
                         <input id="password-login" type="password" name="password">
                     </div>
                     <div class="form-element form-submit">
-                        <button id="logIn" class="login" onclick="myfun()" type="submit" name="logIn">Log In</button>
-                        <button id="goRight" class="login off"    name="signup">Sign Up</button>
+
+
+                        <button id="logIn" class="login" type="submit" name="logIn">Log In</button>
+<!--                        <input type="submit" name="logIn" id="logIn" value="log">-->
+
+
+                        <button id="goRight" class="login off"  onsubmit=" return false;"  name="signup">Sign Up</button>
                     </div>
                 </form>
             </div>
         </div>
+
+
     </div>
 </div>
 

@@ -1,10 +1,10 @@
 <?php
 include "dataBase.php";
-
 session_start();
-$_SESSION['user_id'] = '12345';
+if (isset($_SESSION['loged']))
+   if($_SESSION['loged'] == 1){
 
-$profile_query = "SELECT * FROM user_info WHERE user_id= ". $_SESSION['user_id'];
+$profile_query = "SELECT * FROM user_info , `email_info` WHERE user_id= ". $_SESSION['userId'];
 $run_query = mysqli_query($con, $profile_query);
 if (mysqli_num_rows($run_query) > 0) {
 while ($row = mysqli_fetch_array($run_query)) {
@@ -12,7 +12,7 @@ while ($row = mysqli_fetch_array($run_query)) {
     $full_name = $row['full_name'];
     $email = $row['email'];
     $password = $row['password'];
-    $address = $row['address1'];
+    $address = $row['address'];
     $user_image = "./mainUI/imgs/" . $row['user_img'];
     $phone1 = $row['mobile'];
 
@@ -20,34 +20,7 @@ while ($row = mysqli_fetch_array($run_query)) {
     $stringParts = explode('-', $address);
     $countryPart = $stringParts[0];
     $cityPart = $stringParts[1];
-    $streetPart = $stringParts[2];
 
-
-    if (isset($_POST['submit_cancel'])) {
-
-        header("location:profilePage.php");
-
-    }
-
-
-    if (isset($_POST['submit_update'])) {
-
-
-        $up_user = $_POST['fullName'];
-        $up_email = $_POST['email'];
-        $phone = $_POST['phone'];
-        $up_pass = $_POST['pass'];
-        $up_address = $_POST['street'] . ' ' . $_POST['city'] . ' ' . $_POST['counTry'];
-        $up_img = $_POST['img'];
-
-
-        mysqli_query($con, "UPDATE user_info SET full_name = '$up_user' , email = '$up_email' , password = '$up_pass ', phone = '$phone' ,address = '$address' , user_img = '$up_img' WHERE user_id = " . $_SESSION['user_id']);
-
-        mysqli_close($con);
-
-//    header("location:profilePage.php");
-
-    }
 
 
 
@@ -382,3 +355,36 @@ include "mini_Footer.php";
 
 </body>
 </html>
+
+<?php
+
+}
+
+
+if (isset($_POST['submit_cancel'])) {
+
+    header("location:profilePage.php");
+
+}
+
+
+if (isset($_POST['submit_update'])) {
+
+
+    $up_user = $_POST['fullName'];
+    $up_email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $up_pass = $_POST['pass'];
+    $up_address = $_POST['street'] . ' ' . $_POST['city'] . ' ' . $_POST['counTry'];
+    $up_img = $_POST['img'];
+
+
+    mysqli_query($con, "UPDATE user_info SET full_name = '$up_user' , email = '$up_email' , password = '$up_pass ', phone = '$phone' ,address = '$address' , user_img = '$up_img' WHERE user_id = " . $_SESSION['user_id']);
+
+    mysqli_close($con);
+
+//    header("location:profilePage.php");
+
+}
+
+        ?>

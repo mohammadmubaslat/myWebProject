@@ -38,7 +38,7 @@ include "dataBase.php";
 
 <nav id="nav_id" class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-    <img  id="logo_img" style="padding-left: 70px" src="mainUI/imgs/productsLogo.png" alt="" >
+    <a  href="mainProducts.php"><img  id="logo_img" style="padding-left: 70px" src="mainUI/imgs/productsLogo.png" alt="" > </a>
     <!-- Topbar Search -->
     <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
         <div class="input-group"> <input type="text" class="form-control bg-light border-0 small" placeholder="Search for...">
@@ -143,11 +143,21 @@ include "dataBase.php";
 
                                   <div class="login_signup_side_div">
                                       <div class="div_buttons">
-                                          <button type="button" class="btn btn-secondary">Login</button>
+
+                                          <form method="post" action="Login_SignUP.php">
+                                              <button type="submit" class="btn btn-secondary">Login</button>
+                                          </form>
+
+
                                       </div>
 
                                       <div  class="div_buttons">
-                                          <button type="button" class="btn btn-dark">Sign Up</button>
+
+                                          <form method="post" action="Login_SignUP.php">
+                                              <button  type="submit" class="btn btn-dark">Sign Up</button>
+                                          </form>
+
+
                                       </div>
 
                                   </div>

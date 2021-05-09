@@ -349,7 +349,7 @@ header("location:products_Admin.php");
 
     <form id="add_top_products" action="" method="POST"  class="form">
         <div class="formHeader row">
-            <h2 class="text-1 fl">Add Top Products </h2>
+            <h2 class="text-1 fl">Edit Product Info </h2>
             <div class="fr">
                 <button type="submit" class="btnSave bg-1 text-fff text-bold fr">SAVE</button>
             </div>

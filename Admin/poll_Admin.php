@@ -113,7 +113,7 @@ include "side_Nav_Admin.php";
 
     <h3 style="padding-left: 40%"> Bently Home Chart</h3>
 
-    <div class="chart-container" style="position: relative;padding-left: 50px; height:80vh; width:80vw">
+    <div class="chart-container" >
         <canvas id="myChart" ></canvas>
     </div>
 

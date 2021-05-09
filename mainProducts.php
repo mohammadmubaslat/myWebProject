@@ -15,7 +15,7 @@ include "navBar.php";
                                     Home Needs</h4>
                                 <p>Shop The Best Furniture Online For Your Home <br>
                                     Luxury Living Shop is your best choice is always.</p>
-                                <a href="#">BUY NOW</a></div>
+                                <a href="mainProducts.php">BUY NOW</a></div>
                             <div class="col-md-5 col-12 order-md-2 order-1"><img src="mainUI/imgs/png_sofa_cover1.png"
                                                                                  class="mx-auto" alt="slide"></div>
                         </div>
@@ -31,7 +31,7 @@ include "navBar.php";
                                     Home Needs</h4>
                                 <p>Shop The Best Furniture Online For Your Home <br>
                                     Luxury Living Shop is your best choice is always.</p>
-                                <a href="#">BUY NOW</a></div>
+                                <a href="mainProducts.php">BUY NOW</a></div>
 
                             <div class="col-md-5 col-12 order-md-2 order-1"><img src="mainUI/imgs/png_bed_cover2.png"
                                                                                  class="mx-auto" alt="slide"></div>
@@ -52,7 +52,7 @@ include "navBar.php";
                                     Home Needs</h4>
                                 <p>Shop The Best Furniture Online For Your Home <br>
                                     Luxury Living Shop is your best choice is always.</p>
-                                <a href="#">BUY NOW</a></div>
+                                <a href="mainProducts.php">BUY NOW</a></div>
                             <div class="col-md-5 col-12 order-md-2 order-1"><img
                                         src="mainUI/imgs/png_Bigsofa_cover3.png" class="mx-auto" alt="slide"></div>
                         </div>
