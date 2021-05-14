@@ -1,3 +1,4 @@
+<script src="../js/sweetalert.min.js"></script>
 
 <?php
 
@@ -27,7 +28,6 @@ if(isset($_GET['action']) && $_GET['action'] != "" && $_GET['action'] == 'delete
 }
 
 
-
 $page=$_GET['page'];
 
 if($page=="" || $page=="1")
@@ -42,24 +42,7 @@ else
 if(isset($_POST['btn_save'])){
 
 
-
     $product_id = $_POST['code'];
-
-//    if($_POST['category'] == 'Bedroom'){
-//         $product_cat = 1;
-//    }
-//    if($_POST['category'] == 'Living'){
-//        $product_cat = 2;
-//    }
-//    if($_POST['category'] == 'Storage'){
-//        $product_cat = 3;
-//    }
-//    if($_POST['category'] == 'Decor'){
-//        $product_cat = 4;
-//    }
-//    if($_POST['category'] == 'Study'){
-//        $product_cat = 5;
-//    }
     $product_cat = $_POST['category'];
     $product_brand = $_POST['brand'];
     $product_title =$_POST['name'];
@@ -87,14 +70,30 @@ if(isset($_POST['btn_save'])){
 
 mysqli_close($con);
 
-header("location:products_Admin.php");
+        echo '<script>
+       swal({
+        title: "The product added",
+        icon: "success",
+        button: "Ok",
+    });
+    </script>';
+
+
 }
 
     else{
+echo '<script> 
+       swal({
+        title: "Missing Information",
+        text: "please enter full data",
+        icon: "warning",
+        button: "Ok",
+    });
+    </script>';
 
-     echo '<script> alert("please enter all data") </script>' ;
 
     }
+
 
 }
 
@@ -104,7 +103,7 @@ header("location:products_Admin.php");
 <div class="mainContent">
 
 
-    <form id="show_products_tables" action="" method="POST" enctype="multipart/form-data" class="form">
+    <form id="show_products_tables" action="products_Admin.php" method="POST" enctype="multipart/form-data" class="form">
         <div class="formHeader row">
             <h2 class="text-1 fl">Products in warehouse</h2>
             <div class="fr">
@@ -487,7 +486,9 @@ header("location:products_Admin.php");
 
 
 
+
     </form>
+
 
 
 

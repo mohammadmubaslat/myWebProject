@@ -38,14 +38,16 @@ if(isset($_POST['logIn'])){
             echo '<script> alert("please fill all fields") </script>' ;
         }
 
-
-
 }
 
 if(isset($_POST['signUp'])){
 
 //    header("location:contactUs.php");
  echo '<script> alert("sigup") </script>';
+}
+
+if (isset($_POST['logIn'])){
+    echo '<script> alert("login") </script>';
 }
 
     ?>
@@ -252,7 +254,7 @@ if(isset($_POST['signUp'])){
 
         .checkbox:checked:after {
             outline: none;
-            content: "✓";
+
             color: #03A9F4;
             font-size: 1.4em;
             font-weight: 900;
@@ -359,7 +361,7 @@ if(isset($_POST['signUp'])){
 
 </head>
 
-<body translate="no" >
+<body >
 <div id="back">
     <canvas id="canvas" class="canvas-back"></canvas>
     <div class="backRight">
@@ -370,12 +372,13 @@ if(isset($_POST['signUp'])){
 
 <div id="slideBox">
     <div class="topLayer">
+
         <div class="left">
             <div class="content">
                 <h2>Sign Up</h2>
-                <form id="form-signup" method="post"  action="Login_SignUP.php" >
+                <form id="form-signup" method="post"  action="Login_SignUP.php" onsubmit="return false;">
 
-                    <div class="form-element form-stack" onsubmit="return false;">
+                    <div class="form-element form-stack" >
                         <label for="username-signup" class="form-label">Full Name</label>
                         <input id="username-signup" type="text" name="username">
                     </div>
@@ -393,7 +396,7 @@ if(isset($_POST['signUp'])){
                         <label for="confirm-terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
                     </div>
                     <div class="form-element form-submit">
-                        <button id="signUp" class="signup" onclick="myfun()" type="submit" name="signUp">Sign up</button>
+                        <button id="signUp" class="signup"  type="submit" name="signUp">Sign up</button>
                         <button id="goLeft"  onsubmit=" return false;" class="signup off">Log In</button>
                     </div>
                 </form>
@@ -402,14 +405,12 @@ if(isset($_POST['signUp'])){
 
 
 
-
-
         <div class="right">
             <div class="content">
                 <h2>Login</h2>
 
-                <form id="form-login" method="post"  action="Login_SignUP.php"    >
-                    <div class="form-element form-stack">
+                <form id="form-login" method="post"  action="Login_SignUP.php" >
+                    <div class="form-element form-stack" >
                         <label for="username-login" class="form-label">Email</label>
                         <input id="username-login" type="email" name="username">
                     </div>
@@ -420,7 +421,7 @@ if(isset($_POST['signUp'])){
                     <div class="form-element form-submit">
 
 
-                        <button id="logIn" class="login" type="submit" name="logIn">Log In</button>
+                        <button id="logIn" class="login" type="submit" name="logIn" >Log In</button>
 <!--                        <input type="submit" name="logIn" id="logIn" value="log">-->
 
 
@@ -461,7 +462,7 @@ if(isset($_POST['signUp'])){
 
         });
         $('#goLeft').on('click', function () {
-            if (window.innerWidth > 769) {
+            if (window.innerWidth > 750) {
                 $('#slideBox').animate({
                     'marginLeft': '50%' });
 
@@ -547,71 +548,12 @@ if(isset($_POST['signUp'])){
     /* ====================== *
      * Create Shapes          *
      * ====================== */
-    function initializeShapes() {
-        // Get Canvas Bounds
-        getCanvasBounds();
 
-        var shapePathData = [
-            'M231,352l445-156L600,0L452,54L331,3L0,48L231,352',
-            'M0,0l64,219L29,343l535,30L478,37l-133,4L0,0z',
-            'M0,65l16,138l96,107l270-2L470,0L337,4L0,65z',
-            'M333,0L0,94l64,219L29,437l570-151l-196-42L333,0',
-            'M331.9,3.6l-331,45l231,304l445-156l-76-196l-148,54L331.9,3.6z',
-            'M389,352l92-113l195-43l0,0l0,0L445,48l-80,1L122.7,0L0,275.2L162,297L389,352',
-            'M 50 100 L 300 150 L 550 50 L 750 300 L 500 250 L 300 450 L 50 100',
-            'M 700 350 L 500 350 L 700 500 L 400 400 L 200 450 L 250 350 L 100 300 L 150 50 L 350 100 L 250 150 L 450 150 L 400 50 L 550 150 L 350 250 L 650 150 L 650 50 L 700 150 L 600 250 L 750 250 L 650 300 L 700 350 '];
-
-
-        for (var i = 0; i <= shapePathData.length; i++) {if (window.CP.shouldStopExecution(0)) break;
-            // Create shape
-            var headerShape = new Path({
-                strokeColor: 'rgba(255, 255, 255, 0.5)',
-                strokeWidth: 2,
-                parent: shapeGroup });
-
-            // Set path data
-            headerShape.pathData = shapePathData[i];
-            headerShape.scale(2);
-            // Set path position
-            headerShape.position = positionArray[i];
-        }window.CP.exitedLoop(0);
-    };
-
-    initializeShapes();
 
     /* ====================== *
      * Animation              *
      * ====================== */
-    view.onFrame = function paperOnFrame(event) {
-        if (event.count % 4 === 0) {
-            // Slows down frame rate
-            for (var i = 0; i < shapeGroup.children.length; i++) {if (window.CP.shouldStopExecution(1)) break;
-                if (i % 2 === 0) {
-                    shapeGroup.children[i].rotate(-0.1);
-                } else {
-                    shapeGroup.children[i].rotate(0.1);
-                }
-            }window.CP.exitedLoop(1);
-        }
-    };
 
-    view.onResize = function paperOnResize() {
-        getCanvasBounds();
-
-        for (var i = 0; i < shapeGroup.children.length; i++) {if (window.CP.shouldStopExecution(2)) break;
-            shapeGroup.children[i].position = positionArray[i];
-        }window.CP.exitedLoop(2);
-
-        if (canvasWidth < 700) {
-            shapeGroup.children[3].opacity = 0;
-            shapeGroup.children[2].opacity = 0;
-            shapeGroup.children[5].opacity = 0;
-        } else {
-            shapeGroup.children[3].opacity = 1;
-            shapeGroup.children[2].opacity = 1;
-            shapeGroup.children[5].opacity = 1;
-        }
-    };
     //# sourceURL=pen.js
 </script>
 

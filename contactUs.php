@@ -1,4 +1,22 @@
+<?php
+include "dataBase.php";
 
+if(isset($_POST['submit'])){
+
+    $name = $_POST['name'];
+    $phone= $_POST['phone'];
+    $email = $_POST['email'];
+    $text = $_POST['text'];
+
+mysqli_query($con , "INSERT INTO `contact_us` (`name`, `phone`, `email`, `messege`) 
+                       VALUES ('$name', '$phone', '$email', '$text');");
+
+    mysqli_close($con);
+
+    header("location:contactUs.php");
+
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -51,12 +69,12 @@
 
     <div class="row">
         <div class="col-md-8">
-            <form action="/post" method="post">
-                <input class="form-control" name="name" placeholder="Name..." /><br />
-                <input class="form-control" name="phone" placeholder="Phone..." /><br />
-                <input class="form-control" name="email" placeholder="E-mail..." /><br />
-                <textarea class="form-control" name="text" placeholder="How can we help you?" style="height:150px;"></textarea><br />
-                <input class="btn btn-primary" type="submit" value="Send" /><br /><br />
+            <form action="contactUs.php" method="post">
+                <input class="form-control" name="name" id="name" placeholder="Name..." /><br />
+                <input class="form-control" name="phone" id="phone" placeholder="Phone..." /><br />
+                <input class="form-control" name="email" id="email" placeholder="E-mail..." /><br />
+                <textarea class="form-control" name="text" id="text " placeholder="How can we help you?" style="height:150px;"></textarea><br />
+                <input class="btn btn-primary" type="submit" name="submit" id="submit" value="Send" /><br /><br />
             </form>
         </div>
         <div class="col-md-4">

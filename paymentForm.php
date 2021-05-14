@@ -1,5 +1,30 @@
+<?php
+include "dataBase.php";
+
+//$p = $_GET['product_id'];
+//echo $p;
+
+if(isset($_POST['pay'])){
+    $name = $_POST['vname'];
+    $phone = $_POST['vphone'];
+    $country = $_POST['vcountry'];
+    $address = $_POST['vaddress'];
+    $card_num = $_POST['vcardnum'];
+    $expd = $_POST['vexpd'];
+    $cv = $_POST['vcvv'];
+    $cardName = $_POST['vcardname'];
+
+    mysqli_query($con, "insert into orders_info(user_id,f_name,address,city,cardname , cardnumber,expdate , cvv )
+                                              values ('12393' , '$name' , '$address' , '$country' , '$cardName' , '$card_num' , '$expd','$cv')");
+
+    mysqli_close($con);
+    header("location:mainProducts.php");
+}
 
 
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -261,6 +286,7 @@
 
             <div class="col-lg-12">
 
+                <form action="paymentForm.php" method="post">
                 <div class="ibox">
                     <div class="ibox-title">
                         Shipping details
@@ -268,44 +294,45 @@
                     <div class="ibox-content">
 
                         <div class="panel-group payments-method" id="shipping_details">
-                            <div  class="panel panel-default">
+                            <div class="panel panel-default">
 
                                 <div class="two_first_divs">
-                                <div class="left_div">
-                                <div class="first_form_group">
-                                    <label>Full Name</label>
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" name="Number" placeholder="Valid Name" required="">
-                                           </div>
-                                </div>
-                                <div class="first_form_group">
-                                    <label>Country</label>
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" name="Number" placeholder="Your Country" required="">
-                                    </div>
-                                </div>
-
-
-
-                                </div>
-
-
-                                <div class="right_div">
-                                    <div class="first_form_group">
-                                        <label>Phone Number</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" name="Number" placeholder="Valid Phone Number" required="">
+                                    <div class="left_div">
+                                        <div class="first_form_group">
+                                            <label>Full Name</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" name="vname" id="vname"
+                                                       placeholder="Valid Name" required="">
+                                            </div>
+                                        </div>
+                                        <div class="first_form_group">
+                                            <label>Country</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" name="vcountry"
+                                                       placeholder="Your Country" required="">
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <div class="first_form_group">
-                                        <label>Address</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" name="Number" placeholder="Your Address" required="">
-                                        </div>
-                                    </div>
 
-                                </div>
+                                    <div class="right_div">
+                                        <div class="first_form_group">
+                                            <label>Phone Number</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" name="vphone"
+                                                       placeholder="Valid Phone Number" required="">
+                                            </div>
+                                        </div>
+
+                                        <div class="first_form_group">
+                                            <label>Address</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" name="vaddress"
+                                                       placeholder="Your Address" required="">
+                                            </div>
+                                        </div>
+
+                                    </div>
 
 
                                 </div>
@@ -315,13 +342,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
-
-
-
-
 
 
 
@@ -348,15 +368,33 @@
                                         <div class="row">
                                             <div class="col-md-10">
                                                 <h2>Summary</h2>
-                                                <strong>Product:</strong>: Name of product <br>
-                                                <strong>Price:</strong>: <span class="text-navy">$452.90</span>
+                                                <strong>Products:</strong>
+                                                <ol>
+                                                <?php
+                                                $total = 0;
+                                                $product_query = "SELECT product_title , product_price FROM products WHERE product_id IN( SELECT product_id FROM `cart` WHERE user_id = 12393) ";
+                                                $run_query = mysqli_query($con, $product_query);
 
-                                                <p class="m-t">
-                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                                    enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                                    nisi ut aliquip ex ea commodo consequat.
-                                                </p>
+                                                if (mysqli_num_rows($run_query) > 0) {
+                                                    while ($row = mysqli_fetch_array($run_query)) {
+
+                                                        $title = $row['product_title'];
+                                                        $price = $row['product_price'];
+
+                                                        $total = $total + $price;
+                                                        echo ' 
+                                               
+                                                    <li>' . $title . '</li>
+                                             
+                                                ';
+                                                    }
+                                                }
+?>
+                                                </ol>
+
+                                                <strong>Price:</strong> <span class="text-navy">$<?php echo $total ?></span> <br>
+
+
                                                 <a href="https://www.paypal.com/us/signin" class="btn btn-success">
                                                     <i class="fa fa-cc-paypal">
                                                         Purchase via PayPal
@@ -384,31 +422,44 @@
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <h2>Summary</h2>
-                                                <strong>Product:</strong>: Name of product <br>
-                                                <strong>Price:</strong>: <span class="text-navy">$452.90</span>
+                                                <strong>Products:</strong>
+                                                <ol>
 
-                                                <p class="m-t">
-                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                                    enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                                    nisi ut aliquip ex ea commodo consequat.
+                                                    <?php
+                                                    $total = 0;
+                                                    $product_query = "SELECT product_title , product_price FROM products WHERE product_id IN( SELECT product_id FROM `cart` WHERE user_id = 12393) ";
+                                                    $run_query = mysqli_query($con, $product_query);
 
-                                                </p>
-                                                <p>
-                                                    Duis aute irure dolor
-                                                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                                    nulla pariatur. Excepteur sint occaecat cupidatat.
-                                                </p>
+                                                    if (mysqli_num_rows($run_query) > 0) {
+                                                        while ($row = mysqli_fetch_array($run_query)) {
+
+                                                            $title = $row['product_title'];
+                                                            $price = $row['product_price'];
+
+                                                            $total = $total + $price;
+                                                            echo ' 
+                                               
+                                                    <li>' . $title . '</li>
+                                             
+                                                ';
+                                                        }
+                                                    }
+                                                    ?>
+                                                </ol>
+
+                                                <strong>Price:</strong> <span class="text-navy">$<?php echo $total ?></span> <br>
+
+
                                             </div>
                                             <div class="col-md-8">
 
-                                                <form role="form" id="payment-form">
+<!--                                                <form role="form" id="payment-form" action="paymentForm.php" method="post">-->
                                                     <div class="row">
                                                         <div class="col-xs-12">
                                                             <div class="form-group">
                                                                 <label>CARD NUMBER</label>
                                                                 <div class="input-group">
-                                                                    <input type="text" class="form-control" name="Number" placeholder="Valid Card Number" required="">
+                                                                    <input type="text" class="form-control" name="vcardnum" id="vcardnum" placeholder="Valid Card Number" required="">
                                                                     <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
                                                                 </div>
                                                             </div>
@@ -418,13 +469,13 @@
                                                         <div class="col-xs-7 col-md-7">
                                                             <div class="form-group">
                                                                 <label>EXPIRATION DATE</label>
-                                                                <input type="text" class="form-control" name="Expiry" placeholder="MM / YY" required="">
+                                                                <input type="text" class="form-control" name="vexpd" id="vexpd" placeholder="MM / YY" required="">
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-5 col-md-5 pull-right">
                                                             <div class="form-group">
                                                                 <label>CV CODE</label>
-                                                                <input type="text" class="form-control" name="CVC" placeholder="CVC" required="">
+                                                                <input type="text" class="form-control" name="vcvv" id="vcvv" placeholder="CVC" required="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -432,13 +483,13 @@
                                                         <div class="col-xs-12">
                                                             <div class="form-group">
                                                                 <label>NAME OF CARD</label>
-                                                                <input type="text" class="form-control" name="nameCard" placeholder="NAME AND SURNAME">
+                                                                <input type="text" class="form-control" name="vcardname" id="vcardname" placeholder="NAME AND SURNAME">
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-xs-12">
-                                                            <button class="btn btn-primary" type="submit">Make a payment!</button>
+                                                            <button class="btn btn-primary" type="submit" name="pay" id="pay">Make a payment!</button>
                                                         </div>
                                                     </div>
                                                 </form>

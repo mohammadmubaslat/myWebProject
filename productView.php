@@ -15,6 +15,7 @@ if (isset($_POST['add_ToCart'])) {
     header("location:productView.php?p=".$_GET['p']);
 }
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -660,6 +661,64 @@ if (isset($_POST['add_ToCart'])) {
 </div>
 </div>
 
+<main  class="mt-5 pt-4" >
+<div class="container dark-grey-text mt-5">
+
+
+
+    <hr>
+
+    <!--Grid row-->
+    <div class="row d-flex justify-content-center wow fadeIn">
+
+        <!--Grid column-->
+        <div class="col-md-6 text-center">
+
+            <h4 class="my-4 h4">Additional information</h4>
+
+            <p>Design up top and sleek lines below? That's Jarrod. It's the modern way to add an industrial vibe to your home.
+                Slim metal frame, soft washed cotton, oversized cushions – on a sofa this sophisticated,
+                you won't want to be anywhere else.</p>
+
+        </div>
+        <!--Grid column-->
+
+    </div>
+    <!--Grid row-->
+
+    <!--Grid row-->
+    <div class="row wow fadeIn">
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-12 mb-4">
+
+            <img src="./mainUI/imgs/jarodSofa1_1.jfif" class="img-fluid" alt="">
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4">
+
+            <img src="./mainUI/imgs/jarodSofa1_2.jpg" class="img-fluid" alt="">
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4">
+
+            <img src="./mainUI/imgs/jarodSofa1_3.jpg" class="img-fluid" alt="">
+
+        </div>
+        <!--Grid column-->
+
+    </div>
+    <!--Grid row-->
+
+</div>
+</main>
+
 
 
 
@@ -727,7 +786,7 @@ if (isset($_POST['add_ToCart'])) {
         }
 
         else{
-            echo '<script> alert("asdf") </script>';
+
         }
 
 

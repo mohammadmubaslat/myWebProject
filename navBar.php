@@ -1,10 +1,11 @@
 
 
-
-
 <?php
 
 include "dataBase.php";
+session_start();
+ $_SESSION['userId'] = "hamzeh";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -100,7 +101,7 @@ include "dataBase.php";
                 <img class="img-profile rounded-circle" src="https://i.imgur.com/uIgDDDd.jpg"> </a>
 
 
-            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown"> <a class="dropdown-item" href="#"> <i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile </a>
+            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown"> <a class="dropdown-item" href="profilePage.php"> <i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile </a>
                 <div class="dropdown-divider"></div> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"> <i class="fa fa-sign-out fa-sm fa-fw mr-2 text-gray-400"></i> Logout </a>
             </div>
         </li>
@@ -124,12 +125,10 @@ include "dataBase.php";
                              </ul>
 
                            </div>
-                     <div   class="py-3">
-                            <h5 class="font-weight-bold">Brands</h5>
-                               <ul class="list-group">
-                                       <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Bentley <span class="badge badge-primary badge-pill"></span> </li>
-                                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Fendi <span class="badge badge-primary badge-pill"></span> </li>
-                                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center category"> Trussardi <span class="badge badge-primary badge-pill"</span> </li>
+                     <div class="py-3">
+                            <h5 class="font-weight-bold"><a href="productCategory.php"> Brands </a></h5>
+                               <ul class="list-group" id="get_brand">
+
                                </ul>
                      </div>
 

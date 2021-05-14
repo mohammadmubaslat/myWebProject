@@ -1,6 +1,9 @@
 
 <?php
 include "side_Nav_Admin.php";
+include "../dataBase.php";
+
+
 ?>
 
 
@@ -93,15 +96,27 @@ include "side_Nav_Admin.php";
                     <table cellpadding="0" cellspacing="0" border="0">
                         <tbody>
 
-                        <tr>
-                            <td> Mohammad </td>
-                            <td >22qp5</td>
-                            <td>Big Sofa</td>
-                            <td class="message_class"> hello from me </td>
+                        <?php
+                        $result=mysqli_query($con,"select * from contact_us where 1")or die ("query 1 incorrect.....");
 
-                            <td>   <a href=" "><span class="">  <i class="far fa-trash-alt"></i></span></a>
-                            </td>
-                        </tr>
+                        while(list($name,$phone,$email,$text)=mysqli_fetch_array($result))
+                        {
+
+                            echo "
+                          <tr>
+                                <td>$name</td>
+                                <td>$phone</td>
+                                <td>$email</td>
+                                <td>$text</td>
+                            
+                                <td> <a href='#'> <button type='button' class='close' aria-label='Close'>
+                                        <span aria-hidden='true'>&times;</span>
+                                    </button> </a> </td>
+                            </tr> ";
+
+                        }
+
+                        ?>
 
 
                         </tbody>

@@ -1,11 +1,15 @@
 <?php
 include "dataBase.php";
 session_start();
-if (isset($_SESSION['loged']))
-   if($_SESSION['loged'] == 1){
 
-$profile_query = "SELECT * FROM user_info , `email_info` WHERE user_id= ". $_SESSION['userId'];
+if (isset($_SESSION['loged'])){
+   if($_SESSION['loged'] == 1){
+       $t = $_SESSION['userId'] ;
+
+$profile_query = "SELECT * FROM `user_info` , `email_info` WHERE user_id = email_id and user_id=" . "$t";
 $run_query = mysqli_query($con, $profile_query);
+
+
 if (mysqli_num_rows($run_query) > 0) {
 while ($row = mysqli_fetch_array($run_query)) {
     $user_id = $row['user_id'];
@@ -13,13 +17,14 @@ while ($row = mysqli_fetch_array($run_query)) {
     $email = $row['email'];
     $password = $row['password'];
     $address = $row['address'];
-    $user_image = "./mainUI/imgs/" . $row['user_img'];
+    $countryPart = $row['country'];
+    $user_image = "mainUI/imgs/" . $row['user_img'];
     $phone1 = $row['mobile'];
 
 
     $stringParts = explode('-', $address);
-    $countryPart = $stringParts[0];
-    $cityPart = $stringParts[1];
+    $cityPart = $stringParts[0];
+    $streetPart = $stringParts[1];
 
 
 
@@ -66,8 +71,8 @@ while ($row = mysqli_fetch_array($run_query)) {
             margin: 0 0 1rem 0;
         }
         .account-settings .user-profile .user-avatar img {
-            width: 90px;
-            height: 90px;
+            width: 110px;
+            height: 110px;
             -webkit-border-radius: 100px;
             -moz-border-radius: 100px;
             border-radius: 100px;
@@ -222,7 +227,7 @@ while ($row = mysqli_fetch_array($run_query)) {
 </nav>
 
 
-<form action="profilePage.php" method="post"></form>
+<form action="profilePage.php" method="post">
 
 <div style="margin-bottom: 100px;" class="container">
     <div class="row gutters">
@@ -230,14 +235,22 @@ while ($row = mysqli_fetch_array($run_query)) {
             <div class="card h-100">
                 <div class="card-body">
                     <div class="account-settings">
-                        <div class="user-profile">
-                            <div class="user-avatar">
-                                <img src="<?php echo $user_image?>" alt="user Photo">
+                        <div class="user-profile ">
+
+
+
+                            <div class="user-avatar image" id="cancel-btn">
+                                <img id="img" src="<?php echo $user_image?>" alt="">
                             </div>
+
+
+
                             <h5 class="user-name" ><?php echo $full_name?></h5>
 
-                            <button type="button" class="btn btn-light">Edit Photo</button>
-                            <input type="file" id="img" name="img" value="Edit" class="btn btn-light" accept="image/png">
+                            <button onclick="defaultBtnActive()" type="button" id="custom-btn" class="btn btn-light">Edit Photo</button>
+                            <input type="file" id="default-btn" name="default-btn" hidden>
+
+
 
                         </div>
 
@@ -259,7 +272,7 @@ while ($row = mysqli_fetch_array($run_query)) {
 
                             <div class="form-group">
                                 <label for="fullName">Full Name</label>
-                                <input type="text" class="form-control" name="fullName" id="fullName" placeholder="<?php echo $full_name?>">
+                                <input type="text" class="form-control" name="fullName" id="fullName" placeholder="enter your name" value="<?php echo $full_name?>">
                                 <!--                                <div class="form-control" > --><?php //echo $full_name?><!-- </div>-->
                             </div>
 
@@ -268,20 +281,20 @@ while ($row = mysqli_fetch_array($run_query)) {
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="eMail">Email</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="<?php echo $email?>">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="enter your eamil" value="<?php echo $email?>">
                             </div>
                         </div>
 
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="phone">Phone</label>
-                                <input type="text" class="form-control" name="phone" id="phone" placeholder="<?php echo $phone1?>">
+                                <input type="text" class="form-control" name="phone" id="phone" placeholder="enter your phone number" value="<?php echo $phone1?>">
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="website">Password</label>
-                                <input type="password" class="form-control" name="pass" id="pass" placeholder="<?php echo $password?>">
+                                <input type="password" class="form-control" name="pass" id="pass" placeholder="password" value="<?php echo sha1($password)?>">
                             </div>
                         </div>
                     </div>
@@ -292,13 +305,13 @@ while ($row = mysqli_fetch_array($run_query)) {
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="Street">Street</label>
-                                <input type="name" class="form-control" name="street" id="street" placeholder="<?php echo $streetPart?>">
+                                <input type="name" class="form-control" name="street" id="street" placeholder="enter your street " value="<?php echo $streetPart?>">
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="ciTy">City</label>
-                                <input type="name" class="form-control" name="city" id="city" placeholder="<?php echo $cityPart?>">
+                                <input type="name" class="form-control" name="city" id="city" placeholder="enter your city" value="<?php echo $cityPart?>">
                             </div>
                         </div>
 
@@ -306,7 +319,7 @@ while ($row = mysqli_fetch_array($run_query)) {
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="ciTy">Country</label>
-                                <input type="name" class="form-control" name="counTry" id="counTry" placeholder="<?php echo $countryPart?>">
+                                <input type="name" class="form-control" name="counTry" id="counTry" placeholder="enter your country" value="<?php echo $countryPart?>">
                             </div>
                         </div>
 
@@ -332,9 +345,12 @@ while ($row = mysqli_fetch_array($run_query)) {
 
     </div>
 </div>
+</form>
 
 <?php
 }
+}
+   }
 }
 
 include "mini_Footer.php";
@@ -343,6 +359,40 @@ include "mini_Footer.php";
 
 <script src="bootstrap.js"></script>
 <script src="jquery-3.6.0.min.js"></script>
+
+
+<script>
+    const wrapper = document.querySelector(".wrapper");
+    const fileName = document.querySelector(".file-name");
+    const defaultBtn = document.querySelector("#default-btn");
+    const customBtn = document.querySelector("#custom-btn");
+    const cancelBtn = document.querySelector("#cancel-btn ");
+    const img = document.querySelector("#img");
+    let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
+    function defaultBtnActive(){
+        defaultBtn.click();
+    }
+    defaultBtn.addEventListener("change", function(){
+        const file = this.files[0];
+        if(file){
+            const reader = new FileReader();
+            reader.onload = function(){
+                const result = reader.result;
+                img.src = result;
+                wrapper.classList.add("active");
+            }
+            cancelBtn.addEventListener("click", function(){
+                img.src = "";
+                wrapper.classList.remove("active");
+            })
+            reader.readAsDataURL(file);
+        }
+        if(this.value){
+            let valueStore = this.value.match(regExp);
+            fileName.textContent = valueStore;
+        }
+    });
+</script>
 
 
 
@@ -358,7 +408,7 @@ include "mini_Footer.php";
 
 <?php
 
-}
+
 
 
 if (isset($_POST['submit_cancel'])) {
@@ -373,18 +423,19 @@ if (isset($_POST['submit_update'])) {
 
     $up_user = $_POST['fullName'];
     $up_email = $_POST['email'];
-    $phone = $_POST['phone'];
+   $phone = $_POST['phone'];
     $up_pass = $_POST['pass'];
-    $up_address = $_POST['street'] . ' ' . $_POST['city'] . ' ' . $_POST['counTry'];
-    $up_img = $_POST['img'];
+   $up_address = $_POST['street'] . '-' . $_POST['city'] ;
+   $up_country = $_POST['counTry'];
+    $up_img = $_POST['default-btn'];
 
+$u =  $_SESSION['userId'];
 
-    mysqli_query($con, "UPDATE user_info SET full_name = '$up_user' , email = '$up_email' , password = '$up_pass ', phone = '$phone' ,address = '$address' , user_img = '$up_img' WHERE user_id = " . $_SESSION['user_id']);
+   mysqli_query($con, "UPDATE user_info SET `full_name` = '$up_user' , `password` = '$up_pass ', `mobile` = '$phone' ,`address` = '$up_address', `country` = '$up_country' , `user_img` = '$up_img' WHERE `user_id` = " . "$u");
 
-    mysqli_close($con);
-
-//    header("location:profilePage.php");
-
+   mysqli_close($con);
+ // echo  $up_user .' , '. $up_email.' , '.$up_pass.' , '. $phone.'  , '.$up_address .' , '.$up_country.' , '. $up_img .' , '. $u;
+ header("location:profilePage.php");
 }
 
         ?>

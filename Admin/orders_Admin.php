@@ -1,6 +1,8 @@
 
 <?php
+
 include "side_Nav_Admin.php";
+include "../dataBase.php";
 ?>
 
 
@@ -19,15 +21,13 @@ include "side_Nav_Admin.php";
                 <div class="tbl-header">
                     <table cellpadding="0" cellspacing="0" border="0">
                         <thead>
-                        <tr >
+                        <tr>
                             <th >Customer</th>
                             <th >Products</th>
                             <th>Order ID</th>
                             <th>Email</th>
-
                             <th>Address</th>
                             <th>Price</th>
-                            <th>Size</th>
                             <th>Color</th>
                             <th>Quantity</th>
                             <th>Shipping</th>
@@ -41,6 +41,37 @@ include "side_Nav_Admin.php";
                 <div class="tbl-content">
                     <table cellpadding="0" cellspacing="0" border="0">
                         <tbody>
+
+                        <?php
+                        $result=mysqli_query($con,"select * from orders_info where 1")or die ("query 1 incorrect.....");
+
+                        while(list($id,$user_id,$f_name,$email,$city,$prod_count, $total_amt)=mysqli_fetch_array($result))
+                        {
+                            echo "
+                          <tr>
+                                <td>$f_name</td>
+                                <td>the products</td>
+                                <td>$id</td>
+                                <td>$email</td>
+                                <td>$city</td>
+                                <td>$total_amt</td>
+                                <td>red</td>
+                                <td>$prod_count</td>
+                                <td>palestine</td>
+                                <td>done</td>
+                                <td>2</td>
+                               
+                             <td>
+                                <a href=' '><span class=''>  <i class='far fa-trash-alt'></i></span></a>
+                                <a href=''><span class=''>  <i class='fas fa-check-circle'></i></span></a>
+
+
+                            </td>
+                            </tr> ";
+                        }
+
+                        ?>
+
 
                         <tr>
                             <td> Hamzeh</td>

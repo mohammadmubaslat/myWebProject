@@ -1,3 +1,13 @@
+<?php
+include "dataBase.php";
+
+if(isset($_GET['action']) && $_GET['action'] != "" && $_GET['action'] == 'delete') {
+    $product_code = $_GET['product_id'];
+    mysqli_query($con, "delete from cart where product_id='$product_code'") or die("query is incorrect...");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1128,46 +1138,54 @@
 
             </div>
 
-            <div class="d-flex flex-row justify-content-between align-items-center pt-lg-4 pt-2 pb-3 border-bottom mobile">
-                <div class="d-flex flex-row align-items-center">
+            <?php
+            $total = 0;
+
+            $product_query = "SELECT product_id , product_title , product_image , product_price FROM products WHERE product_id IN( SELECT product_id FROM `cart` WHERE user_id = 12393) ";
+            $run_query = mysqli_query($con, $product_query);
+
+            if (mysqli_num_rows($run_query) > 0) {
+                while ($row = mysqli_fetch_array($run_query)) {
+
+                    $title = $row['product_title'];
+                    $img = $row['product_image'];
+                    $price = $row['product_price'];
+                    $product_id = $row['product_id'];
+
+                    $total = $total + $price ;
+
+                    echo "
+                    
+                      <div class='d-flex flex-row justify-content-between align-items-center pt-lg-4 pt-2 pb-3 border-bottom mobile'>
+                <div class='d-flex flex-row align-items-center'>
                     <div>
-                        <img src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                             width="150" height="150" alt="" id="image"></div>
-                    <div class="d-flex flex-column pl-md-3 pl-1">
+                        <img src='mainUI/imgs/$img' '
+                             width='150' height='150' alt='' id='image'></div>
+                    <div class='d-flex flex-column pl-md-3 pl-1'>
                         <div>
-                            <h6>COTTON T-SHIRT</h6>
+                            <h6>$title</h6>
                         </div>
 
-                        <div>Color:<span class="pl-3">White</span></div>
+                        <div>Color:<span class='pl-3'>White</span></div>
 
                     </div>
                 </div>
-                <div class="pl-md-0 pl-1"><b>$9.99</b></div>
-                <div class="pl-md-0 pl-2"><span class="fa fa-minus-square text-secondary"></span><span
-                            class="px-md-3 px-1">2</span><span class="fa fa-plus-square text-secondary"></span></div>
-                <div class="pl-md-0 pl-1"><b>$19.98</b></div>
-                <div class="close">&times;</div>
+                <div class='pl-md-0 pl-1'><b>$$price</b></div>
+                <div class='pl-md-0 pl-2'><span class='fa fa-minus-square text-secondary'></span><span
+                            class='px-md-3 px-1'>1</span><span class='fa fa-plus-square text-secondary'></span></div>
+                <div class='pl-md-0 pl-1'><b>$$price</b></div>
+                  <a href='shoppingCartPage.php?product_id=$product_id&action=delete'> <button type='button' class='close'>
+                    <span aria-hidden='true'>&times;</span>
+                </button> </a>
             </div>
-            <div class="d-flex flex-row justify-content-between align-items-center pt-4 pb-3 mobile">
-                <div class="d-flex flex-row align-items-center">
-                    <div>
-                        <img src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                             width="150" height="150" alt="" id="image"></div>
-                    <div class="d-flex flex-column pl-md-3 pl-1">
-                        <div>
-                            <h6>WHITE T-SHIRT</h6>
-                        </div>
+                    
+                    ";
+                }
+            }
 
-                        <div>Color:<span class="pl-3">White</span></div>
+            ?>
 
-                    </div>
-                </div>
-                <div class="pl-md-0 pl-1"><b>$20.9</b></div>
-                <div class="pl-md-0 pl-2"><span class="fa fa-minus-square text-secondary"></span><span
-                            class="px-md-3 px-1">2</span><span class="fa fa-plus-square text-secondary"></span></div>
-                <div class="pl-md-0 pl-1"><b>$41.8</b></div>
-                <div class="close">&times;</div>
-            </div>
+
 
         </div>
     </div>
@@ -1180,14 +1198,16 @@
                     <button class="btn btn-sm bg-light border border-dark">GO BACK</button>
                 </div>
                 <div class="px-md-0 px-1" id="footer-font"><b class="pl-md-4">SUBTOTAL<span
-                                class="pl-md-4">$61.78</span></b></div>
+                                class="pl-md-4"><?php echo '$'.$total ?></span></b></div>
                 <div>
-                    <button class="btn btn-sm bg-dark text-white px-lg-5 px-3">CONTINUE</button>
+                    <a href='paymentForm.php'>
+                        <button class="btn btn-sm bg-dark text-white px-lg-5 px-3">CONTINUE</button></a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 
 
 <?php

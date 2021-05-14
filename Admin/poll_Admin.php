@@ -19,7 +19,7 @@ include "side_Nav_Admin.php";
                 labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
                 datasets: [{
                     label: 'Bently Home Chart',
-                    data: [1,2,3,4,5,6,7,8,9],
+                    data: [10,22,5,11,9,15,20,2,7,6,18,25 ,12 , 28 ],
                     backgroundColor: [
                         'rgba(120, 205, 132, 0.4)',
                         'rgba(10, 230, 100, 0.4)',
@@ -110,10 +110,9 @@ include "side_Nav_Admin.php";
 
 <div class="mainContent">
 
-
     <h3 style="padding-left: 40%"> Bently Home Chart</h3>
 
-    <div class="chart-container" >
+    <div class="chart-container" style="position: relative; height:80vh; width:80vw" >
         <canvas id="myChart" ></canvas>
     </div>
 

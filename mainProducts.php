@@ -171,35 +171,7 @@ include "navBar.php";
 
 
 
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid3">
-                    <div class="product-image3">
-                        <a href="#">
-                            <img class="pic-1" src="mainUI/imgs/storage1_1.jfif">
-                            <img class="pic-2" src="mainUI/imgs/storage1_2.jfif">
-                        </a>
-                        <ul class="social">
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                        <span class="product-new-label">New</span>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Men's Blazer</a></h3>
-                        <div class="price">
-                            $63.50
-                            <span>$75.00</span>
-                        </div>
-                        <ul class="rating">
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star disable"></li>
-                            <li class="fa fa-star disable"></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+
 
             <div class="col-md-3 col-sm-6">
                 <div class="product-grid3">
@@ -374,7 +346,7 @@ include "navBar.php";
                                                 <div class="product-grid3">
                                                     <div class="product-image3">
                                                         <a href="#">
-                                                            <img class="pic-1" src="mainUI/imgs/storage1_1.jfif">
+                                                            <img class="pic-1" src="mainUI/imgs/sofa.jpg">
                                                             <img class="pic-2" src="mainUI/imgs/storage1_2.jfif">
                                                         </a>
                                                         <ul class="social">
@@ -384,10 +356,10 @@ include "navBar.php";
                                                         <span class="product-new-label">New</span>
                                                     </div>
                                                     <div class="product-content">
-                                                        <h3 class="title"><a href="#">Men's Blazer</a></h3>
+                                                        <h3 class="title"><a href="#">Golden Sofa</a></h3>
                                                         <div class="price">
-                                                            $63.50
-                                                            <span>$75.00</span>
+                                                            $309
+                                                            <span>$441</span>
                                                         </div>
                                                         <ul class="rating">
                                                             <li class="fa fa-star"></li>
@@ -404,7 +376,7 @@ include "navBar.php";
                                                 <div class="product-grid3">
                                                     <div class="product-image3">
                                                         <a href="#">
-                                                            <img class="pic-1" src="mainUI/imgs/table1.jpg">
+                                                            <img class="pic-1" src="mainUI/imgs/reemaBed1_2.jpg">
                                                             <img class="pic-2" src="mainUI/imgs/table2.jpg">
                                                         </a>
                                                         <ul class="social">
@@ -414,10 +386,10 @@ include "navBar.php";
                                                         <span class="product-new-label">New</span>
                                                     </div>
                                                     <div class="product-content">
-                                                        <h3 class="title"><a href="#">Men's Blazer</a></h3>
+                                                        <h3 class="title"><a href="#">skye bed brand</a></h3>
                                                         <div class="price">
-                                                            $63.50
-                                                            <span>$75.00</span>
+                                                            $2000
+                                                            <span>$2150</span>
                                                         </div>
                                                         <ul class="rating">
                                                             <li class="fa fa-star"></li>
@@ -464,7 +436,7 @@ include "navBar.php";
                                                 <div class="product-grid3">
                                                     <div class="product-image3">
                                                         <a href="#">
-                                                            <img class="pic-1" src="mainUI/imgs/table1.jpg">
+                                                            <img class="pic-1" src="mainUI/imgs/bed1_2.jpg">
                                                             <img class="pic-2" src="mainUI/imgs/table2.jpg">
                                                         </a>
                                                         <ul class="social">
@@ -503,7 +475,7 @@ include "navBar.php";
                                                 <div class="product-grid3">
                                                     <div class="product-image3">
                                                         <a href="#">
-                                                            <img class="pic-1" src="mainUI/imgs/storage1_1.jfif">
+                                                            <img class="pic-1" src="mainUI/imgs/sofa1_2.jpg">
                                                             <img class="pic-2" src="mainUI/imgs/storage1_2.jfif">
                                                         </a>
                                                         <ul class="social">
@@ -533,7 +505,7 @@ include "navBar.php";
                                                 <div class="product-grid3">
                                                     <div class="product-image3">
                                                         <a href="#">
-                                                            <img class="pic-1" src="mainUI/imgs/table1.jpg">
+                                                            <img class="pic-1" src="mainUI/imgs/furniture.jpg">
                                                             <img class="pic-2" src="mainUI/imgs/table2.jpg">
                                                         </a>
                                                         <ul class="social">
