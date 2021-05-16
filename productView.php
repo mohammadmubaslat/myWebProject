@@ -1,18 +1,46 @@
+<script src="js/sweetalert.min.js"></script>
 <?php
 include "dataBase.php";
+session_start();
 
 if (isset($_POST['add_ToCart'])) {
 
-    $prod_id = $_GET['p'];
-    $color = $_POST['color'];
-    $country = $_POST['Brand_Q'];
-    $quan = $_POST['quantity'];
+    if ($_SESSION['notloged'] == 1){
+        echo '<script> alert("not loged in") </script>';
 
-    mysqli_query($con, "insert into cart(user_id,qty,product_id,color,country)
-                                        values ('12393' , '$quan' , '$prod_id' , '$color' , '$country')");
+//        echo '<script>
+//       swal({
+//        title: "Product Added",
+//        icon: "success",
+//        button: "Ok",
+//    });
+//    </script>';
+        header("location:mainProducts.php");
+    }
+    if($_SESSION['loged'] == 1){
 
-    mysqli_close($con);
-    header("location:productView.php?p=".$_GET['p']);
+        $prod_id = $_GET['p'];
+        $color = $_POST['color'];
+        $country = $_POST['Brand_Q'];
+        $quan = $_POST['quantity'];
+
+        $u = $_SESSION['userId'];
+
+        mysqli_query($con, "insert into cart(user_id,qty,product_id,color,country)
+                                        values ('$u' , '$quan' , '$prod_id' , '$color' , '$country')");
+
+        mysqli_close($con);
+
+        echo '<script>
+      swal({
+        title: "Product Added",
+        icon: "success",
+        button: "Ok",
+   });
+  </script>';
+
+        header("location:productView.php?p=".$_GET['p']);
+    }
 }
 
 
@@ -439,7 +467,7 @@ if (isset($_POST['add_ToCart'])) {
 
         <div class="topbar-divider d-none d-sm-block"></div>
         <li class="nav-item dropdown no-arrow"> <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span> <img class="img-profile rounded-circle" src="https://i.imgur.com/uIgDDDd.jpg"> </a>
-            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown"> <a class="dropdown-item" href="#"> <i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile </a> <a class="dropdown-item" href="#"> <i class="fa fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> Settings </a> <a class="dropdown-item" href="#"> <i class="fa fa-list fa-sm fa-fw mr-2 text-gray-400"></i> Activity Log </a>
+            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown"> <a class="dropdown-item" href="#"> <i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile </a>
                 <div class="dropdown-divider"></div> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"> <i class="fa fa-sign-out fa-sm fa-fw mr-2 text-gray-400"></i> Logout </a>
             </div>
         </li>
@@ -555,168 +583,168 @@ if (isset($_POST['add_ToCart'])) {
         <form action="productView.php?p=<?php echo $_GET['p']?>" method="post" >
 
             <div style="display: flex">
+                <div class="col-md-6">
+                    <label for="color">Color</label>
+                    <select id="color" name="color" class="form-control">
+                        <option>Blue</option>
+                        <option>Green</option>
+                        <option>Red</option>
+                    </select>
+                </div>
+                <div style="margin-bottom: 50px" class="col-md-6">
+                    <label for="Brand_Q">Brand country</label>
+                    <select id="Brand_Q" name="Brand_Q" class="form-control">
+                        <option>Italy</option>
+                        <option>Turkish</option>
+                        <option>UK</option>
+                    </select>
+
+                </div>
+            </div>
+
+            <!--                    <div style="margin-bottom: 50px" class="col-md-6">-->
+            <!---->
+            <!--                       <p style="margin-top: 70px; margin-left :150px  ;font-weight: 550;"> +200$ shipped</p>-->
+            <!--                    </div>-->
+
+
+    </div>
+    <div class="product-count">
+        <label for="size">Quantity</label>
+
+        <!--                    <form action="#" class="display-flex">-->
+        <div class="display-flex">
+            <div class="qtyminus">-</div>
+            <input type="text" name="quantity" id="quantity" value="1" class="qty">
+            <div class="qtyplus">+</div>
+        </div>
+        <!--                    </form>-->
+
+        <div class="add_div">
+
+            <input id="add_ToCart" name="add_ToCart" type="submit" value="Add to Cart" class="round-black-btn">
+        </div>
+
+    </div>
+    </form>
+</div>
+</div>
+</div>
+
+<div class="product-info-tabs">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Description</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Reviews (0)</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+        </div>
+        <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
+            <div class="review-heading">REVIEWS</div>
+            <p class="mb-20">There are no reviews yet.</p>
+            <form class="review-form">
+                <div class="form-group">
+                    <label>Your rating</label>
+                    <div class="reviews-counter">
+                        <div class="rate">
+                            <input type="radio" id="star5" name="rate" value="5" />
+                            <label for="star5" title="text">5 stars</label>
+                            <input type="radio" id="star4" name="rate" value="4" />
+                            <label for="star4" title="text">4 stars</label>
+                            <input type="radio" id="star3" name="rate" value="3" />
+                            <label for="star3" title="text">3 stars</label>
+                            <input type="radio" id="star2" name="rate" value="2" />
+                            <label for="star2" title="text">2 stars</label>
+                            <input type="radio" id="star1" name="rate" value="1" />
+                            <label for="star1" title="text">1 star</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Your message</label>
+                    <textarea class="form-control" rows="10"></textarea>
+                </div>
+                <div class="row">
                     <div class="col-md-6">
-                        <label for="color">Color</label>
-                        <select id="color" name="color" class="form-control">
-                            <option>Blue</option>
-                            <option>Green</option>
-                            <option>Red</option>
-                        </select>
-                    </div>
-                    <div style="margin-bottom: 50px" class="col-md-6">
-                        <label for="Brand_Q">Brand country</label>
-                        <select id="Brand_Q" name="Brand_Q" class="form-control">
-                            <option>Italy</option>
-                            <option>Turkish</option>
-                            <option>UK</option>
-                        </select>
-
-                    </div>
-            </div>
-
-                    <!--                    <div style="margin-bottom: 50px" class="col-md-6">-->
-                    <!---->
-                    <!--                       <p style="margin-top: 70px; margin-left :150px  ;font-weight: 550;"> +200$ shipped</p>-->
-                    <!--                    </div>-->
-
-
-                </div>
-                <div class="product-count">
-                    <label for="size">Quantity</label>
-
-<!--                    <form action="#" class="display-flex">-->
-                        <div class="display-flex">
-                        <div class="qtyminus">-</div>
-                        <input type="text" name="quantity" id="quantity" value="1" class="qty">
-                        <div class="qtyplus">+</div>
+                        <div class="form-group">
+                            <input type="text" name="" class="form-control" placeholder="Name*">
                         </div>
-<!--                    </form>-->
-
-                    <div class="add_div">
-
-                        <input id="add_ToCart" name="add_ToCart" type="submit" value="Add to Cart" class="round-black-btn">
                     </div>
-
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="" class="form-control" placeholder="Email Id*">
+                        </div>
+                    </div>
                 </div>
-</form>
-            </div>
+                <button class="round-black-btn">Submit Review</button>
+            </form>
         </div>
     </div>
-
-    <div class="product-info-tabs">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Description</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Reviews (0)</a>
-            </li>
-        </ul>
-        <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
-            </div>
-            <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
-                <div class="review-heading">REVIEWS</div>
-                <p class="mb-20">There are no reviews yet.</p>
-                <form class="review-form">
-                    <div class="form-group">
-                        <label>Your rating</label>
-                        <div class="reviews-counter">
-                            <div class="rate">
-                                <input type="radio" id="star5" name="rate" value="5" />
-                                <label for="star5" title="text">5 stars</label>
-                                <input type="radio" id="star4" name="rate" value="4" />
-                                <label for="star4" title="text">4 stars</label>
-                                <input type="radio" id="star3" name="rate" value="3" />
-                                <label for="star3" title="text">3 stars</label>
-                                <input type="radio" id="star2" name="rate" value="2" />
-                                <label for="star2" title="text">2 stars</label>
-                                <input type="radio" id="star1" name="rate" value="1" />
-                                <label for="star1" title="text">1 star</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Your message</label>
-                        <textarea class="form-control" rows="10"></textarea>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" name="" class="form-control" placeholder="Name*">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" name="" class="form-control" placeholder="Email Id*">
-                            </div>
-                        </div>
-                    </div>
-                    <button class="round-black-btn">Submit Review</button>
-                </form>
-            </div>
-        </div>
-    </div>
+</div>
 </div>
 </div>
 
 <main  class="mt-5 pt-4" >
-<div class="container dark-grey-text mt-5">
+    <div class="container dark-grey-text mt-5">
 
 
 
-    <hr>
+        <hr>
 
-    <!--Grid row-->
-    <div class="row d-flex justify-content-center wow fadeIn">
+        <!--Grid row-->
+        <div class="row d-flex justify-content-center wow fadeIn">
 
-        <!--Grid column-->
-        <div class="col-md-6 text-center">
+            <!--Grid column-->
+            <div class="col-md-6 text-center">
 
-            <h4 class="my-4 h4">Additional information</h4>
+                <h4 class="my-4 h4">Additional information</h4>
 
-            <p>Design up top and sleek lines below? That's Jarrod. It's the modern way to add an industrial vibe to your home.
-                Slim metal frame, soft washed cotton, oversized cushions – on a sofa this sophisticated,
-                you won't want to be anywhere else.</p>
+                <p>Design up top and sleek lines below? That's Jarrod. It's the modern way to add an industrial vibe to your home.
+                    Slim metal frame, soft washed cotton, oversized cushions – on a sofa this sophisticated,
+                    you won't want to be anywhere else.</p>
+
+            </div>
+            <!--Grid column-->
 
         </div>
-        <!--Grid column-->
+        <!--Grid row-->
+
+        <!--Grid row-->
+        <div class="row wow fadeIn">
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-12 mb-4">
+
+                <img src="./mainUI/imgs/jarodSofa1_1.jfif" class="img-fluid" alt="">
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-6 mb-4">
+
+                <img src="./mainUI/imgs/jarodSofa1_2.jpg" class="img-fluid" alt="">
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-6 mb-4">
+
+                <img src="./mainUI/imgs/jarodSofa1_3.jpg" class="img-fluid" alt="">
+
+            </div>
+            <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
 
     </div>
-    <!--Grid row-->
-
-    <!--Grid row-->
-    <div class="row wow fadeIn">
-
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-12 mb-4">
-
-            <img src="./mainUI/imgs/jarodSofa1_1.jfif" class="img-fluid" alt="">
-
-        </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-6 mb-4">
-
-            <img src="./mainUI/imgs/jarodSofa1_2.jpg" class="img-fluid" alt="">
-
-        </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-6 mb-4">
-
-            <img src="./mainUI/imgs/jarodSofa1_3.jpg" class="img-fluid" alt="">
-
-        </div>
-        <!--Grid column-->
-
-    </div>
-    <!--Grid row-->
-
-</div>
 </main>
 
 
@@ -729,28 +757,28 @@ if (isset($_POST['add_ToCart'])) {
             <div class="row">
 
 
-        <?php
-        $temp = $GLOBALS['key_word'];
+                <?php
+                $temp = $GLOBALS['key_word'];
 
-        $related_query = "SELECT * FROM `products` WHERE product_keywords = '$temp' ";
-        $run_query = mysqli_query($con, $related_query);
+                $related_query = "SELECT * FROM `products` WHERE product_keywords = '$temp' limit 4 ";
+                $run_query = mysqli_query($con, $related_query);
 
 
-        if (mysqli_num_rows($run_query) > 0) {
-            while ($row = mysqli_fetch_array($run_query)) {
-                $pro_id = $row['product_id'];
-                $pro_cat = $row['product_cat'];
-                $pro_brand = $row['product_brand'];
-                $pro_title = $row['product_title'];
-                $pro_price = $row['product_price'];
-                $pro_image = $row['product_image'];
-                $pro_image2 = $row['product_image2'];
+                if (mysqli_num_rows($run_query) > 0) {
+                    while ($row = mysqli_fetch_array($run_query)) {
+                        $pro_id = $row['product_id'];
+                        $pro_cat = $row['product_cat'];
+                        $pro_brand = $row['product_brand'];
+                        $pro_title = $row['product_title'];
+                        $pro_price = $row['product_price'];
+                        $pro_image = $row['product_image'];
+                        $pro_image2 = $row['product_image2'];
 
-                $last_price = $pro_price + 150;
+                        $last_price = $pro_price + 150;
 
-                //     echo $pro_id . '  ' . $pro_cat .'  ' . $pro_brand .'  '.$pro_title ;
+                        //     echo $pro_id . '  ' . $pro_cat .'  ' . $pro_brand .'  '.$pro_title ;
 
-                echo "
+                        echo "
   <div class='col-md-3 col-sm-6'>
        <div class='product-grid3'>
             <div class='product-image3'>
@@ -762,7 +790,7 @@ if (isset($_POST['add_ToCart'])) {
                                         <li><a href='productView.php?p=$pro_id'><i class='fa fa-shopping-bag'></i></a></li>
                                         <li><a pid='$pro_id' id='product' href='#'><i class='fa fa-shopping-cart'></i></a></li>
                                     </ul>
-                                    <span class='product-new-label'>New</span>
+                                  
                                 </div>
                                 <div class='product-content'>
                                     <h3 class='title'><a href='#'>$pro_title</a></h3>
@@ -782,75 +810,19 @@ if (isset($_POST['add_ToCart'])) {
   </div>
         
         ";
-            }
-        }
+                    }
+                }
 
-        else{
+                else{
 
-        }
-
-
-        ?>
+                }
 
 
-                <div class="col-md-3 col-sm-6">
-                    <div class="product-grid3">
-                        <div class="product-image3">
-                            <a href="#">
-                                <img class="pic-1" src="mainUI/imgs/sofa1_1.jfif">
-                                <img class="pic-2" src="mainUI/imgs/sofa1_2.jpg">
-                            </a>
-                            <ul class="social">
-                                <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                            <span class="product-new-label">New</span>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Men's Blazer</a></h3>
-                            <div class="price">
-                                $63.50
-                                <span>$75.00</span>
-                            </div>
-                            <ul class="rating">
-                                <li class="fa fa-star"></li>
-                                <li class="fa fa-star"></li>
-                                <li class="fa fa-star"></li>
-                                <li class="fa fa-star disable"></li>
-                                <li class="fa fa-star disable"></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="product-grid3">
-                        <div class="product-image3">
-                            <a href="#">
-                                <img class="pic-1" src="mainUI/imgs/table1.jpg">
-                                <img class="pic-2" src="mainUI/imgs/table2.jpg">
-                            </a>
-                            <ul class="social">
-                                <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                            <span class="product-new-label">New</span>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Men's Blazer</a></h3>
-                            <div class="price">
-                                $63.50
-                                <span>$75.00</span>
-                            </div>
-                            <ul class="rating">
-                                <li class="fa fa-star"></li>
-                                <li class="fa fa-star"></li>
-                                <li class="fa fa-star"></li>
-                                <li class="fa fa-star disable"></li>
-                                <li class="fa fa-star disable"></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                ?>
+
+
+
+
             </div>
         </div>
     </div>

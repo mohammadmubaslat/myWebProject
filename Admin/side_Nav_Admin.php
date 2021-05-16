@@ -57,7 +57,7 @@
 
             <li><a href="orders_Admin.php"><span class="fa fa-sitemap"></span>Orders</a></li>
             <li><a href="messages_Admin.php"><span class="fa fa-money"></span>Messages</a></li>
-            <li><a href=""><span class="fas fa-poll"></span>Poll</a></li>
+            <li><a href="poll_Admin.php"><span class="fas fa-poll"></span>Poll</a></li>
 
 
 
@@ -71,8 +71,9 @@
             <div class="account fr">
                 <div class="name has-submenu">Mohammad<span class="fa fa-angle-down"></span></div>
                 <ul class="accountLinks submenu">
-                    <li><a href="../IntroductionPage.php">View website</a></li>
-                    <li><a href="../mainProducts.php">Log out<span class="fa fa-sign-out fr"></span></a></li>
+                    <li><a href="../IntroductionPage.php">View Introduction</a></li>
+                    <li><a href="../mainProducts.php">View website</a></li>
+                    <li><a href="../Login.php">Log out<span class="fa fa-sign-out fr"></span></a></li>
                 </ul>
             </div>
         </nav>

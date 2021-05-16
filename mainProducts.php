@@ -119,8 +119,13 @@ include "navBar.php";
             <?php
 
 
+
              $product_query = "SELECT * FROM products where 1";
+
     $run_query = mysqli_query($con, $product_query);
+
+            $DB_Count= 16 ;
+
     if (mysqli_num_rows($run_query) > 0) {
         while ($row = mysqli_fetch_array($run_query)) {
             $pro_id = $row['product_id'];
@@ -152,7 +157,7 @@ include "navBar.php";
                                 <div class='product-content'>
                                     <h3 class='title'><a href='#'>$pro_title</a></h3>
                                     <div class='price'>
-                                        $pro_price
+                                        $$pro_price
                                        <span>$$last_price</span>
                                     </div>
                                     <ul class='rating'>
@@ -165,7 +170,14 @@ include "navBar.php";
             </div>
        </div>
   </div>
-           "; }
+           ";
+
+            $DB_Count--;
+
+            if (  $DB_Count==0)
+                break;
+
+        }
 
             }?>
 
@@ -173,95 +185,6 @@ include "navBar.php";
 
 
 
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid3">
-                    <div class="product-image3">
-                        <a href="#">
-                            <img class="pic-1" src="mainUI/imgs/table1.jpg">
-                            <img class="pic-2" src="mainUI/imgs/table2.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                        <span class="product-new-label">New</span>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Men's Blazer</a></h3>
-                        <div class="price">
-                            $63.50
-                            <span>$75.00</span>
-                        </div>
-                        <ul class="rating">
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star disable"></li>
-                            <li class="fa fa-star disable"></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid3">
-                    <div class="product-image3">
-                        <a href="#">
-                            <img class="pic-1" src="mainUI/imgs/sofa1_1.jfif">
-                            <img class="pic-2" src="mainUI/imgs/sofa1_2.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                        <span class="product-new-label">New</span>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Men's Blazer</a></h3>
-                        <div class="price">
-                            $63.50
-                            <span>$75.00</span>
-                        </div>
-                        <ul class="rating">
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star disable"></li>
-                            <li class="fa fa-star disable"></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid3">
-                    <div class="product-image3">
-                        <a href="#">
-                            <img class="pic-1" src="mainUI/imgs/table1.jpg">
-                            <img class="pic-2" src="mainUI/imgs/table2.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                        <span class="product-new-label">New</span>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Men's Blazer</a></h3>
-                        <div class="price">
-                            $63.50
-                            <span>$75.00</span>
-                        </div>
-                        <ul class="rating">
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star disable"></li>
-                            <li class="fa fa-star disable"></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
 
         </div>
     </div>
@@ -323,6 +246,7 @@ include "navBar.php";
 </div>
 
 
+
 <div id="big_Top_slider">
     <p style="margin-left: 40px; margin-top: 30px ;font-weight: bold;font-size: 22px;"> Top Selling Products</p>
     <div id="top_slider">
@@ -337,387 +261,136 @@ include "navBar.php";
                                 <li data-target="#carouselindicators" data-slide-to="1" class="active"></li>
                                 <li data-target="#carouselindicators" data-slide-to="2" class=""></li>
                             </ol>
+
                             <div class="carousel-inner">
                                 <div class="carousel-item active carousel-item-left">
 
                                     <div class="d-block w-100" alt="First slide" class="new_container">
                                         <div class="row">
-                                            <div class="col-md-3 col-sm-6">
-                                                <div class="product-grid3">
-                                                    <div class="product-image3">
-                                                        <a href="#">
-                                                            <img class="pic-1" src="mainUI/imgs/sofa.jpg">
-                                                            <img class="pic-2" src="mainUI/imgs/storage1_2.jfif">
-                                                        </a>
-                                                        <ul class="social">
-                                                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                                        </ul>
-                                                        <span class="product-new-label">New</span>
-                                                    </div>
-                                                    <div class="product-content">
-                                                        <h3 class="title"><a href="#">Golden Sofa</a></h3>
-                                                        <div class="price">
-                                                            $309
-                                                            <span>$441</span>
-                                                        </div>
-                                                        <ul class="rating">
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star disable"></li>
-                                                            <li class="fa fa-star disable"></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
 
-                                            <div class="col-md-3 col-sm-6">
-                                                <div class="product-grid3">
-                                                    <div class="product-image3">
-                                                        <a href="#">
-                                                            <img class="pic-1" src="mainUI/imgs/reemaBed1_2.jpg">
-                                                            <img class="pic-2" src="mainUI/imgs/table2.jpg">
-                                                        </a>
-                                                        <ul class="social">
-                                                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                                        </ul>
-                                                        <span class="product-new-label">New</span>
-                                                    </div>
-                                                    <div class="product-content">
-                                                        <h3 class="title"><a href="#">skye bed brand</a></h3>
-                                                        <div class="price">
-                                                            $2000
-                                                            <span>$2150</span>
-                                                        </div>
-                                                        <ul class="rating">
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star disable"></li>
-                                                            <li class="fa fa-star disable"></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <?php
 
-                                            <div class="col-md-3 col-sm-6">
-                                                <div class="product-grid3">
-                                                    <div class="product-image3">
-                                                        <a href="#">
-                                                            <img class="pic-1" src="mainUI/imgs/sofa1_1.jfif">
-                                                            <img class="pic-2" src="mainUI/imgs/sofa1_2.jpg">
-                                                        </a>
-                                                        <ul class="social">
-                                                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                                        </ul>
-                                                        <span class="product-new-label">New</span>
-                                                    </div>
-                                                    <div class="product-content">
-                                                        <h3 class="title"><a href="#">Men's Blazer</a></h3>
-                                                        <div class="price">
-                                                            $63.50
-                                                            <span>$75.00</span>
-                                                        </div>
-                                                        <ul class="rating">
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star disable"></li>
-                                                            <li class="fa fa-star disable"></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
 
-                                            <div class="col-md-3 col-sm-6">
-                                                <div class="product-grid3">
-                                                    <div class="product-image3">
-                                                        <a href="#">
-                                                            <img class="pic-1" src="mainUI/imgs/bed1_2.jpg">
-                                                            <img class="pic-2" src="mainUI/imgs/table2.jpg">
-                                                        </a>
-                                                        <ul class="social">
-                                                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                                        </ul>
-                                                        <span class="product-new-label">New</span>
-                                                    </div>
-                                                    <div class="product-content">
-                                                        <h3 class="title"><a href="#">Men's Blazer</a></h3>
-                                                        <div class="price">
-                                                            $63.50
-                                                            <span>$75.00</span>
-                                                        </div>
-                                                        <ul class="rating">
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star disable"></li>
-                                                            <li class="fa fa-star disable"></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            $product_query = "SELECT * FROM `products` WHERE product_id in(SELECT product_id from order_products) limit 4";
+                                            $run_query = mysqli_query($con, $product_query);
+                                            if (mysqli_num_rows($run_query) > 0) {
+                                                while ($row = mysqli_fetch_array($run_query)) {
+                                                    $pro_id = $row['product_id'];
+                                                    $pro_cat = $row['product_cat'];
+                                                    $pro_brand = $row['product_brand'];
+                                                    $pro_title = $row['product_title'];
+                                                    $pro_price = $row['product_price'];
+                                                    $pro_image = $row['product_image'];
+                                                    $pro_image2 = $row['product_image2'];
+
+                                                    $last_price = $pro_price + 150;
+
+                                                    //     echo $pro_id . '  ' . $pro_cat .'  ' . $pro_brand .'  '.$pro_title ;
+
+                                                    echo "
+  <div class='col-md-3 col-sm-6'>
+       <div class='product-grid3'>
+            <div class='product-image3'>
+                                    <a href='productView.php?p=$pro_id'>
+                                        <img class='pic-1' src='./mainUI/imgs/$pro_image'>
+                                        <img class='pic-2' src='./mainUI/imgs/$pro_image2'>
+                                    </a>
+                                    <ul class='social'>
+                                        <li><a href='productView.php?p=$pro_id'><i class='fa fa-shopping-bag'></i></a></li>
+                                        <li><a pid='$pro_id' id='product' href='#'><i class='fa fa-shopping-cart'></i></a></li>
+                                    </ul>
+                                    
+                                </div>
+                                <div class='product-content'>
+                                    <h3 class='title'><a href='#'>$pro_title</a></h3>
+                                    <div class='price'>
+                                        $$pro_price
+                                       <span>$$last_price</span>
+                                    </div>
+                                    <ul class='rating'>
+                                        <li class='fa fa-star'></li>
+                                        <li class='fa fa-star'></li>
+                                        <li class='fa fa-star'></li>
+                                        <li class='fa fa-star disable'></li>
+                                        <li class='fa fa-star disable'></li>
+                                    </ul>
+            </div>
+       </div>
+  </div>
+           "; }
+
+                                            }
+
+                                            ?>
 
                                         </div>
                                     </div>
 
 
                                 </div>
-                                <div class="carousel-item carousel-item-next carousel-item-left">
 
-                                    <div class="d-block w-100" alt="Second slide" class="new_container">
-                                        <div class="row">
-                                            <div class="col-md-3 col-sm-6">
-                                                <div class="product-grid3">
-                                                    <div class="product-image3">
-                                                        <a href="#">
-                                                            <img class="pic-1" src="mainUI/imgs/sofa1_2.jpg">
-                                                            <img class="pic-2" src="mainUI/imgs/storage1_2.jfif">
-                                                        </a>
-                                                        <ul class="social">
-                                                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                                        </ul>
-                                                        <span class="product-new-label">New</span>
-                                                    </div>
-                                                    <div class="product-content">
-                                                        <h3 class="title"><a href="#">Men's Blazer</a></h3>
-                                                        <div class="price">
-                                                            $63.50
-                                                            <span>$75.00</span>
-                                                        </div>
-                                                        <ul class="rating">
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star disable"></li>
-                                                            <li class="fa fa-star disable"></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
 
-                                            <div class="col-md-3 col-sm-6">
-                                                <div class="product-grid3">
-                                                    <div class="product-image3">
-                                                        <a href="#">
-                                                            <img class="pic-1" src="mainUI/imgs/furniture.jpg">
-                                                            <img class="pic-2" src="mainUI/imgs/table2.jpg">
-                                                        </a>
-                                                        <ul class="social">
-                                                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                                        </ul>
-                                                        <span class="product-new-label">New</span>
-                                                    </div>
-                                                    <div class="product-content">
-                                                        <h3 class="title"><a href="#">Men's Blazer</a></h3>
-                                                        <div class="price">
-                                                            $63.50
-                                                            <span>$75.00</span>
-                                                        </div>
-                                                        <ul class="rating">
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star disable"></li>
-                                                            <li class="fa fa-star disable"></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
 
-                                            <div class="col-md-3 col-sm-6">
-                                                <div class="product-grid3">
-                                                    <div class="product-image3">
-                                                        <a href="#">
-                                                            <img class="pic-1" src="mainUI/imgs/sofa1_1.jfif">
-                                                            <img class="pic-2" src="mainUI/imgs/sofa1_2.jpg">
-                                                        </a>
-                                                        <ul class="social">
-                                                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                                        </ul>
-                                                        <span class="product-new-label">New</span>
-                                                    </div>
-                                                    <div class="product-content">
-                                                        <h3 class="title"><a href="#">Men's Blazer</a></h3>
-                                                        <div class="price">
-                                                            $63.50
-                                                            <span>$75.00</span>
-                                                        </div>
-                                                        <ul class="rating">
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star disable"></li>
-                                                            <li class="fa fa-star disable"></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
 
-                                            <div class="col-md-3 col-sm-6">
-                                                <div class="product-grid3">
-                                                    <div class="product-image3">
-                                                        <a href="#">
-                                                            <img class="pic-1" src="mainUI/imgs/table1.jpg">
-                                                            <img class="pic-2" src="mainUI/imgs/table2.jpg">
-                                                        </a>
-                                                        <ul class="social">
-                                                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                                        </ul>
-                                                        <span class="product-new-label">New</span>
-                                                    </div>
-                                                    <div class="product-content">
-                                                        <h3 class="title"><a href="#">Men's Blazer</a></h3>
-                                                        <div class="price">
-                                                            $63.50
-                                                            <span>$75.00</span>
-                                                        </div>
-                                                        <ul class="rating">
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star disable"></li>
-                                                            <li class="fa fa-star disable"></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                </div>
                                 <div class="carousel-item">
 
                                     <div class="d-block w-100" alt="Third slide" class="new_container">
                                         <div class="row">
-                                            <div class="col-md-3 col-sm-6">
-                                                <div class="product-grid3">
-                                                    <div class="product-image3">
-                                                        <a href="#">
-                                                            <img class="pic-1" src="mainUI/imgs/storage1_1.jfif">
-                                                            <img class="pic-2" src="mainUI/imgs/storage1_2.jfif">
-                                                        </a>
-                                                        <ul class="social">
-                                                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                                        </ul>
-                                                        <span class="product-new-label">New</span>
-                                                    </div>
-                                                    <div class="product-content">
-                                                        <h3 class="title"><a href="#">Men's Blazer</a></h3>
-                                                        <div class="price">
-                                                            $63.50
-                                                            <span>$75.00</span>
-                                                        </div>
-                                                        <ul class="rating">
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star disable"></li>
-                                                            <li class="fa fa-star disable"></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
 
-                                            <div class="col-md-3 col-sm-6">
-                                                <div class="product-grid3">
-                                                    <div class="product-image3">
-                                                        <a href="#">
-                                                            <img class="pic-1" src="mainUI/imgs/table1.jpg">
-                                                            <img class="pic-2" src="mainUI/imgs/table2.jpg">
-                                                        </a>
-                                                        <ul class="social">
-                                                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                                        </ul>
-                                                        <span class="product-new-label">New</span>
-                                                    </div>
-                                                    <div class="product-content">
-                                                        <h3 class="title"><a href="#">Men's Blazer</a></h3>
-                                                        <div class="price">
-                                                            $63.50
-                                                            <span>$75.00</span>
-                                                        </div>
-                                                        <ul class="rating">
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star disable"></li>
-                                                            <li class="fa fa-star disable"></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <?php
 
-                                            <div class="col-md-3 col-sm-6">
-                                                <div class="product-grid3">
-                                                    <div class="product-image3">
-                                                        <a href="#">
-                                                            <img class="pic-1" src="mainUI/imgs/sofa1_1.jfif">
-                                                            <img class="pic-2" src="mainUI/imgs/sofa1_2.jpg">
-                                                        </a>
-                                                        <ul class="social">
-                                                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                                        </ul>
-                                                        <span class="product-new-label">New</span>
-                                                    </div>
-                                                    <div class="product-content">
-                                                        <h3 class="title"><a href="#">Men's Blazer</a></h3>
-                                                        <div class="price">
-                                                            $63.50
-                                                            <span>$75.00</span>
-                                                        </div>
-                                                        <ul class="rating">
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star disable"></li>
-                                                            <li class="fa fa-star disable"></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
 
-                                            <div class="col-md-3 col-sm-6">
-                                                <div class="product-grid3">
-                                                    <div class="product-image3">
-                                                        <a href="#">
-                                                            <img class="pic-1" src="mainUI/imgs/table1.jpg">
-                                                            <img class="pic-2" src="mainUI/imgs/table2.jpg">
-                                                        </a>
-                                                        <ul class="social">
-                                                            <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
-                                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                                        </ul>
-                                                        <span class="product-new-label">New</span>
-                                                    </div>
-                                                    <div class="product-content">
-                                                        <h3 class="title"><a href="#">Men's Blazer</a></h3>
-                                                        <div class="price">
-                                                            $63.50
-                                                            <span>$75.00</span>
-                                                        </div>
-                                                        <ul class="rating">
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star"></li>
-                                                            <li class="fa fa-star disable"></li>
-                                                            <li class="fa fa-star disable"></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            $product_query = "SELECT * FROM `products` WHERE product_id in(SELECT product_id from order_products) limit 4";
+                                            $run_query = mysqli_query($con, $product_query);
+                                            if (mysqli_num_rows($run_query) > 0) {
+                                                while ($row = mysqli_fetch_array($run_query)) {
+                                                    $pro_id = $row['product_id'];
+                                                    $pro_cat = $row['product_cat'];
+                                                    $pro_brand = $row['product_brand'];
+                                                    $pro_title = $row['product_title'];
+                                                    $pro_price = $row['product_price'];
+                                                    $pro_image = $row['product_image'];
+                                                    $pro_image2 = $row['product_image2'];
+
+                                                    $last_price = $pro_price + 150;
+
+                                                    //     echo $pro_id . '  ' . $pro_cat .'  ' . $pro_brand .'  '.$pro_title ;
+
+                                                    echo "
+  <div class='col-md-3 col-sm-6'>
+       <div class='product-grid3'>
+            <div class='product-image3'>
+                                    <a href='productView.php?p=$pro_id'>
+                                        <img class='pic-1' src='./mainUI/imgs/$pro_image'>
+                                        <img class='pic-2' src='./mainUI/imgs/$pro_image2'>
+                                    </a>
+                                    <ul class='social'>
+                                        <li><a href='productView.php?p=$pro_id'><i class='fa fa-shopping-bag'></i></a></li>
+                                        <li><a pid='$pro_id' id='product' href='#'><i class='fa fa-shopping-cart'></i></a></li>
+                                    </ul>
+                                    
+                                </div>
+                                <div class='product-content'>
+                                    <h3 class='title'><a href='#'>$pro_title</a></h3>
+                                    <div class='price'>
+                                        $$pro_price
+                                       <span>$$last_price</span>
+                                    </div>
+                                    <ul class='rating'>
+                                        <li class='fa fa-star'></li>
+                                        <li class='fa fa-star'></li>
+                                        <li class='fa fa-star'></li>
+                                        <li class='fa fa-star disable'></li>
+                                        <li class='fa fa-star disable'></li>
+                                    </ul>
+            </div>
+       </div>
+  </div>
+           "; }
+
+                                            }
+
+                                            ?>
 
                                         </div>
                                     </div>
@@ -760,7 +433,7 @@ include "mini_Footer.php";
 
 <script>
 
-    var deadline = new Date("may 15, 2021 15:37:25").getTime();
+    var deadline = new Date("may 18, 2021 15:37:25").getTime();
     var x = setInterval(function () {
         var currentTime = new Date().getTime();
         var t = deadline - currentTime;

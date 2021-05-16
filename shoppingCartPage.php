@@ -1,6 +1,17 @@
 <?php
 include "dataBase.php";
-
+session_start();
+//if($_SESSION['notloged'] == 1){
+//    echo '<script>
+//       swal({
+//        title: "Not Loged in",
+//        text: "please login or signup",
+//        icon: "error",
+//        button: "Ok",
+//    });
+//    </script>';
+//    header("location:mainProducts.php");
+//}
 if(isset($_GET['action']) && $_GET['action'] != "" && $_GET['action'] == 'delete') {
     $product_code = $_GET['product_id'];
     mysqli_query($con, "delete from cart where product_id='$product_code'") or die("query is incorrect...");
@@ -1028,7 +1039,7 @@ if(isset($_GET['action']) && $_GET['action'] != "" && $_GET['action'] == 'delete
 
 <nav id="nav_id" class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-    <img id="logo_img" style="padding-left: 70px" src="mainUI/imgs/productsLogo.png" alt="">
+    <a  href="mainProducts.php"> <img id="logo_img" style="padding-left: 70px"  src="mainUI/imgs/productsLogo.png" alt=""> </a>
     <!-- Topbar Search -->
     <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
         <div class="input-group"><input type="text" class="form-control bg-light border-0 small"
@@ -1115,13 +1126,10 @@ if(isset($_GET['action']) && $_GET['action'] != "" && $_GET['action'] == 'delete
 
 
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown"><a
-                        class="dropdown-item" href="#"> <i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Profile </a> <a class="dropdown-item" href="#"> <i
-                            class="fa fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> Settings </a> <a
-                        class="dropdown-item" href="#"> <i class="fa fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Activity Log </a>
+                        class="dropdown-item" href="profilePage.php"> <i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Profile </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"> <i
+                <a class="dropdown-item" href="Login.php" data-toggle="modal" data-target="#logoutModal"> <i
                             class="fa fa-sign-out fa-sm fa-fw mr-2 text-gray-400"></i> Logout </a>
             </div>
         </li>
@@ -1141,7 +1149,9 @@ if(isset($_GET['action']) && $_GET['action'] != "" && $_GET['action'] == 'delete
             <?php
             $total = 0;
 
-            $product_query = "SELECT product_id , product_title , product_image , product_price FROM products WHERE product_id IN( SELECT product_id FROM `cart` WHERE user_id = 12393) ";
+            $t = $_SESSION['userId'];
+
+            $product_query = "SELECT product_id , product_title , product_image , product_price FROM products WHERE product_id IN( SELECT product_id FROM `cart` WHERE user_id = $t) ";
             $run_query = mysqli_query($con, $product_query);
 
             if (mysqli_num_rows($run_query) > 0) {
@@ -1195,7 +1205,7 @@ if(isset($_GET['action']) && $_GET['action'] != "" && $_GET['action'] == 'delete
         <div class="col-lg-10 col-12">
             <div class="d-flex justify-content-between align-items-center">
                 <div>
-                    <button class="btn btn-sm bg-light border border-dark">GO BACK</button>
+                   <a  href="mainProducts.php" > <button class="btn btn-sm bg-light border border-dark" >GO BACK</button> </a>
                 </div>
                 <div class="px-md-0 px-1" id="footer-font"><b class="pl-md-4">SUBTOTAL<span
                                 class="pl-md-4"><?php echo '$'.$total ?></span></b></div>

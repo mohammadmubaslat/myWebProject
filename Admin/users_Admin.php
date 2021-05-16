@@ -17,9 +17,13 @@ if(isset($_GET['action']) && $_GET['action'] != "" && $_GET['action'] == 'delete
     {
         unlink($path);
     }
-    else
-    {}
-    mysqli_query($con,"delete from user_info where user_id='$user_code'")or die("query is incorrect...");
+
+    mysqli_query($con," delete from `email_info` where email_id='$user_code'")or die("query is incorrect...");
+    mysqli_query($con," delete from `user_info` where email_id='$user_code'")or die("query is incorrect...");
+
+
+    echo '<script>  window.location.reload(false);  </script>';
+
 
 }
 
@@ -61,7 +65,7 @@ else
                             <th >Email</th>
                             <th>Country</th>
                             <th>Address</th>
-<!--                            <th>Password</th>-->
+                            <!--                            <th>Password</th>-->
                             <th>Interests</th>
                             <th>Action</th>
                         </tr>
@@ -77,20 +81,23 @@ else
 
                             <?php
 
-                            $result=mysqli_query($con,"select * from user_info where 1 ")or die ("query 1 incorrect.....");
+                            $result=mysqli_query($con,"SELECT * FROM `email_info` , `user_info` WHERE user_id = email_id")or die ("query 1 incorrect.....");
 
-                            while(list($user_id,$name,$email,$password,$address , $img )=mysqli_fetch_array($result))
+                            while(list($email_id , $email , $user_id,$name,$password,$address,  $img  , $mobile ,$country, $interest  )=mysqli_fetch_array($result))
                             {
+
                                 echo "
 
                           <tr>
                                 <td><img style='height: 40px; width: 40px;' src='../mainUI/imgs/$img' alt='' > </td>
-                                <td>$name</td>
-                                <td>$email</td>
+                               
+            
                                 <td>$user_id</td>
-                                <td>$address</td>
-                                <td>Medium</td>
-                                <td>***</td>
+                                 <td>$name</td>
+                                 <td>$email</td>
+                                <td>$country</td>
+                                 <td>$address</td>
+                                <td>$interest</td>
               
                                 <td> <a href='users_Admin.php?user_id=$user_id&action=delete'> <button type='button' class='close' aria-label='Close'>
                                         <span aria-hidden='true'>&times;</span>
@@ -111,17 +118,14 @@ else
 
         </div>
 
-</form>
+    </form>
 
 
 
 
 
+    <?php
 
+    include "footer_Admin.php";
 
-
-<?php
-
-include "footer_Admin.php";
-
-?>
+    ?>

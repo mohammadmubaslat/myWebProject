@@ -352,10 +352,10 @@ div.text-muted {
 #products {
     width: 95%;
     padding-left: 205px;
-    padding-right: 70px;
+    padding-right: 50px;
     margin: 0;
     float: right;
-    padding-top: 30px;
+    margin-top: -25px;
     margin-right: -50px;
 
 

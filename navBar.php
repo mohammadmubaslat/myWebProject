@@ -4,7 +4,7 @@
 
 include "dataBase.php";
 session_start();
- $_SESSION['userId'] = "hamzeh";
+
 
 ?>
 <!DOCTYPE html>
@@ -86,7 +86,7 @@ session_start();
             </div>
         </li>
 
-        <li class="nav-item dropdown no-arrow mx-1"> <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item dropdown no-arrow mx-1"> <a class="nav-link dropdown-toggle" href="shoppingCartPage.php" id="" >
                 <i class="fas fa-shopping-cart"></i> <span class="badge badge-danger badge-counter"> 0 </span> </a>
 
         </li>
@@ -102,7 +102,10 @@ session_start();
 
 
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown"> <a class="dropdown-item" href="profilePage.php"> <i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile </a>
-                <div class="dropdown-divider"></div> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"> <i class="fa fa-sign-out fa-sm fa-fw mr-2 text-gray-400"></i> Logout </a>
+                <div class="dropdown-divider"></div> <a class="dropdown-item" href="Login.php"> <i class="fa fa-sign-out fa-sm fa-fw mr-2 text-gray-400"></i> Logout </a>
+
+        <!--                data-toggle="modal" data-target="#logoutModal"-->
+
             </div>
         </li>
     </ul>
@@ -143,7 +146,7 @@ session_start();
                                   <div class="login_signup_side_div">
                                       <div class="div_buttons">
 
-                                          <form method="post" action="Login_SignUP.php">
+                                          <form method="post" action="Login.php">
                                               <button type="submit" class="btn btn-secondary">Login</button>
                                           </form>
 
@@ -152,7 +155,7 @@ session_start();
 
                                       <div  class="div_buttons">
 
-                                          <form method="post" action="Login_SignUP.php">
+                                          <form method="post" action="Login.php">
                                               <button  type="submit" class="btn btn-dark">Sign Up</button>
                                           </form>
 

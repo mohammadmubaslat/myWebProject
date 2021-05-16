@@ -114,7 +114,7 @@ if(isset($_POST["getProduct"])) {
                                 <div class='product-content'>
                                     <h3 class='title'><a href='#'>$pro_title</a></h3>
                                     <div class='price'>
-                                        $pro_price
+                                        $$pro_price
                                        <span>$$last_price</span>
                                     </div>
                                     <ul class='rating'>
@@ -186,7 +186,7 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
                                 <div class='product-content'>
                                     <h3 class='title'><a href='#'>$pro_title</a></h3>
                                     <div class='price'>
-                                        $pro_price
+                                        $$pro_price
                                        <span>$$last_price</span>
                                     </div>
                                     <ul class='rating'>

@@ -7,8 +7,6 @@ include "side_Nav_Admin.php";
 session_start() ;
 include '../dataBase.php';
 
-
-
 error_reporting(0);
 if(isset($_GET['action']) && $_GET['action'] != "" && $_GET['action'] == 'delete'){
     $product_code = $_GET['product_id'];
@@ -26,7 +24,6 @@ if(isset($_GET['action']) && $_GET['action'] != "" && $_GET['action'] == 'delete
     mysqli_query($con,"delete from products where product_id='$product_code'")or die("query is incorrect...");
     mysqli_query($con,"delete from cart where product_id='$product_code'")or die("query is incorrect...");
 }
-
 
 $page=$_GET['page'];
 
@@ -56,11 +53,36 @@ if(isset($_POST['btn_save'])){
     $img3 = $_POST['img3'];
     $img4 = $_POST['img4'];
 
+    $flag = 1;
+
     if($product_id != '' && $product_cat != '' && $product_brand != '' && $product_title != '' && $product_price != '' &&
         $product_desc != '' && $color != '' && $country != '' && $keyword !='' && $img1 != '' && $img2 != '' && $img3 != '' && $img4 !='' ){
 
 
-    mysqli_query($con , "insert into products(product_id,product_cat,product_brand,product_title,
+
+        $sql = "select product_id from products";
+        $run_query = mysqli_query($con, $sql);
+        $count = mysqli_num_rows($run_query);
+        $row = mysqli_fetch_array($run_query);
+
+        for ($i = 0; $i < $count; $i++) {
+            if ($product_id == $row['product_id']) {
+                $flag = 0;
+                echo '<script>
+       swal({
+        title: "Product Code Exist",
+        text: "please enter different code",
+        icon: "error",
+        button: "Ok",
+    });
+    </script>';
+                break;
+            }
+        }
+
+        if($flag == 1){
+
+            mysqli_query($con , "insert into products(product_id,product_cat,product_brand,product_title,
                                          product_price,product_desc,product_image,product_keywords,product_image2 ,
                                         product_image3 , product_image4, country , color)
                                         values ('$product_id' , '$product_cat' , '$product_brand' ,'$product_title','$product_price',
@@ -68,21 +90,23 @@ if(isset($_POST['btn_save'])){
 
 //    mysqli_query($con , "insert into products(product_id,product_cat,product_brand,product_title, product_price,product_desc,product_image,product_keywords,product_image2 , product_image3 , product_image4, country , color) values ('2233' , '1' , 'bed' ,'test','44', 'assd' , 'im.png' ,'bed' ,'im2.png' , 'im3.pnf' ,'im4.png' ,'paa','adf')");
 
-mysqli_close($con);
+            mysqli_close($con);
 
-        echo '<script>
+            echo '<script>
        swal({
-        title: "The product added",
+        title: "Product Added",
         icon: "success",
         button: "Ok",
     });
     </script>';
 
 
-}
+        }
+
+    }
 
     else{
-echo '<script> 
+        echo '<script> 
        swal({
         title: "Missing Information",
         text: "please enter full data",
@@ -95,7 +119,12 @@ echo '<script>
     }
 
 
+    echo '<script>  window.location.replace("products_Admin.php"); </script>' ;
+
+
 }
+
+
 
 ?>
 
@@ -112,35 +141,35 @@ echo '<script>
         </div>
         <div class="formBody row">
 
-                <section>
-                    <div class="tbl-header">
-                        <table cellpadding="0" cellspacing="0" border="0">
-                            <thead>
-                            <tr >
-                                <th >Image</th>
-                                <th >Code</th>
-                                <th>Name</th>
-                                <th>Price</th>
-                                <th>Color</th>
+            <section>
+                <div class="tbl-header">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                        <tr >
+                            <th >Image</th>
+                            <th >Code</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Color</th>
 
-                                <th>Country</th>
-                                <th>Brand</th>
-                                <th>Action</th>
-                            </tr>
-                            </thead>
-                        </table>
-                    </div>
-                    <div class="tbl-content">
-                        <table cellpadding="0" cellspacing="0" border="0">
-                            <tbody>
+                            <th>Country</th>
+                            <th>Brand</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="tbl-content">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <tbody>
 
-                            <?php
+                        <?php
 
-                            $result=mysqli_query($con,"select product_image,product_id, product_title,product_price , color , COUNTRY , product_cat from products  where product_cat=1 or  product_cat=2 or product_cat=3 or product_cat=4 or product_cat=5 or product_cat=6 Limit $page1,12")or die ("query 1 incorrect.....");
+                        $result=mysqli_query($con,"select product_image,product_id, product_title,product_price , color , COUNTRY , product_cat from products  where product_cat=1 or  product_cat=2 or product_cat=3 or product_cat=4 or product_cat=5 or product_cat=6 Limit $page1,100")or die ("query 1 incorrect.....");
 
-                            while(list($product_image,$product_id,$product_title,$product_price,$color , $country ,$product_cat)=mysqli_fetch_array($result))
-                            {
-                                echo "
+                        while(list($product_image,$product_id,$product_title,$product_price,$color , $country ,$product_cat)=mysqli_fetch_array($result))
+                        {
+                            echo "
                           <tr>
                                 <td><img style='height: 40px; width: 40px;' src='../mainUI/imgs/$product_image' alt='' > </td>
                                 <td>$product_id</td>
@@ -153,23 +182,20 @@ echo '<script>
                                         <span aria-hidden='true'>&times;</span>
                                     </button> </a> </td>
                             </tr> ";
-                            }
+                        }
 
-                            ?>
+                        ?>
 
 
 
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
 
-            </div>
+        </div>
 
     </form>
-
-
-
 
 
 
@@ -206,14 +232,15 @@ echo '<script>
                     <span>َColor</span>
                     <span>
                     <select name="color">
-                        <option >White </option>
-                        <option >Brown</option>
-                        <option >Black</option>
-                        <option >Blue</option>
-                         <option>Red</option>
-                         <option>Yellow</option>
+                        <option value="White">White </option>
+                        <option value="Brown">Brown</option>
+                        <option value="Black">Black</option>
+                        <option value="Blue">Blue</option>
+                         <option value="Red">Red</option>
+                        <option value="Green">Green</option>
+                         <option value="Yellow">Yellow</option>
                     </select>
-<!--                    <i class="btnNewInput fa fa-plus bg-1 text-fff"></i>-->
+                        <!--                    <i class="btnNewInput fa fa-plus bg-1 text-fff"></i>-->
                 </span>
                 </label>
 
@@ -223,9 +250,9 @@ echo '<script>
                     <span>Country</span>
                     <span>
                     <select name="country">
-                        <option value="cate01">Italy</option>
-                        <option value="cate02">UK</option>
-                        <option value="cate02">Turkish</option>
+                        <option value="Italy">Italy</option>
+                        <option value="UK">UK</option>
+                        <option value="Turkish">Turkish</option>
 
                     </select>
                         <!--                    <i class="btnNewInput fa fa-plus bg-1 text-fff"></i>-->
@@ -245,7 +272,7 @@ echo '<script>
                          <option value="4" >Decor</option>
                          <option value="5">Study</option>
                     </select>
-<!--                    <i class="btnNewInput fa fa-plus bg-1 text-fff"></i>-->
+                        <!--                    <i class="btnNewInput fa fa-plus bg-1 text-fff"></i>-->
                 </span>
                 </label>
 
@@ -256,7 +283,6 @@ echo '<script>
                         <option value="1">Bentley</option>
                         <option value="2">Fendi</option>
                          <option value="3">Trussardi</option>
-
                     </select>
                         <!--                    <i class="btnNewInput fa fa-plus bg-1 text-fff"></i>-->
                 </span>
@@ -269,16 +295,16 @@ echo '<script>
                 </label>
 
 
-                <label class="inputGroup hide">
-                    <span>Brand</span>
-                    <span>
-                    <input type="text" name="cate">
-                    <select name="brand">
-                        <option value="cate01">Brand01</option>
-                        <option value="cate02">Brand02</option>
-                    </select>
-                </span>
-                </label>
+                <!--                <label class="inputGroup hide">-->
+                <!--                    <span>Brand</span>-->
+                <!--                    <span>-->
+                <!--                    <input type="text" name="cate">-->
+                <!--                    <select name="brand">-->
+                <!--                        <option value="cate01">Brand01</option>-->
+                <!--                        <option value="cate02">Brand02</option>-->
+                <!--                    </select>-->
+                <!--                </span>-->
+                <!--                </label>-->
 
 
                 <label class="inputGroup">
@@ -344,28 +370,28 @@ echo '<script>
     </form>
 
 
+    <!-- //////////////////////   update    ///////////////// -->
 
-
-    <form id="add_top_products" action="" method="POST"  class="form">
+    <form id="add_top_products" action="products_Admin.php" method="POST"  class="form">
         <div class="formHeader row">
             <h2 class="text-1 fl">Edit Product Info </h2>
             <div class="fr">
-                <button type="submit" class="btnSave bg-1 text-fff text-bold fr">SAVE</button>
+                <button type="submit" class="btnSave bg-1 text-fff text-bold fr" id="update_btn" name="update_btn">SAVE</button>
             </div>
         </div>
         <div class="formBody row">
             <div class="column s-6">
                 <label class="inputGroup">
                     <span>Name</span>
-                    <span><input type="text" name="name"></span>
+                    <span><input type="text" name="upname" id="upname"></span>
                 </label>
                 <label class="inputGroup">
                     <span>Code</span>
-                    <span><input type="text" name="code"></span>
+                    <span><input type="text" name="upcode" id="upcode"></span>
                 </label>
                 <label class="inputGroup">
                     <span>Price</span>
-                    <span><input type="text" name="price"></span>
+                    <span><input type="text" name="upprice" id="upprice"></span>
                 </label>
                 <label class="inputGroup">
                     <span>Note</span>
@@ -375,21 +401,31 @@ echo '<script>
                 <label class="inputGroup">
                     <span>َColor</span>
                     <span>
-                    <select name="cate">
-                        <option value="cate01">White    </option>
-                        <option value="cate02">Brown</option>
-                        <option value="cate02">Black</option>
-                        <option value="cate02">Blue</option>
-                         <option value="cate02">Red</option>
-                         <option value="cate02">Yellow</option>
+                    <select name="upcolor">
+                        <option value="White">White </option>
+                        <option value="Brown">Brown</option>
+                        <option value="Black">Black</option>
+                        <option value="Blue">Blue</option>
+                         <option value="Red">Red</option>
+                       <option value="Green">Green</option>
+                         <option value="Yellow">Yellow</option>
                     </select>
                         <!--                    <i class="btnNewInput fa fa-plus bg-1 text-fff"></i>-->
                 </span>
                 </label>
 
+                <label class="inputGroup">
+                    <span>Country</span>
+                    <span>
+                    <select name="upcountry">
+                        <option value="Italy">Italy</option>
+                        <option value="UK">UK</option>
+                        <option value="Turkish">Turkish</option>
 
-
-
+                    </select>
+                        <!--                    <i class="btnNewInput fa fa-plus bg-1 text-fff"></i>-->
+                </span>
+                </label>
 
 
             </div>
@@ -397,11 +433,24 @@ echo '<script>
                 <label class="inputGroup">
                     <span>Category</span>
                     <span>
-                    <select name="cate">
-                        <option value="cate01">Bedroom</option>
-                        <option value="cate02">Dining</option>
-                        <option value="cate02">Living</option>
-                        <option value="cate02">Storage</option>
+                     <select name="upcategory">
+                        <option value="1">Bedroom</option>
+                        <option value="2">Living</option>
+                        <option value="3">Storage</option>
+                         <option value="4" >Decor</option>
+                         <option value="5">Study</option>
+                    </select>
+                        <!--                    <i class="btnNewInput fa fa-plus bg-1 text-fff"></i>-->
+                </span>
+                </label>
+
+                <label class="inputGroup">
+                    <span>Brand</span>
+                    <span>
+                    <select name="upbrand">
+                        <option value="1">Bentley</option>
+                        <option value="2">Fendi</option>
+                         <option value="3">Trussardi</option>
                     </select>
                         <!--                    <i class="btnNewInput fa fa-plus bg-1 text-fff"></i>-->
                 </span>
@@ -412,56 +461,58 @@ echo '<script>
 
                 <label class="inputGroup">
                     <span style="padding-top: 5px;">Keywords</span>
-                    <span><input type="text" name="note"></span>
+                    <span><input type="text" name="upkeyword" id="upkeyword"></span>
                 </label>
 
 
-                <label class="inputGroup hide">
-                    <span>Brand</span>
-                    <span>
-                    <input type="text" name="cate">
-                    <select name="brand">
-                        <option value="cate01">Brand01</option>
-                        <option value="cate02">Brand02</option>
-                    </select>
-                </span>
-                </label>
+                <!--                <label class="inputGroup hide">-->
+                <!--                    <span>Brand</span>-->
+                <!--                    <span>-->
+                <!--                    <input type="text" name="cate">-->
+                <!--                    <select name="brand">-->
+                <!--                        <option value="cate01">Brand01</option>-->
+                <!--                        <option value="cate02">Brand02</option>-->
+                <!--                    </select>-->
+                <!--                </span>-->
+                <!--                </label>-->
+                <!--                -->
+
                 <label class="inputGroup">
                     <span>Image 1</span>
-                    <input type="hidden" name="img" value="src">
+                    <input type="hidden" id="upimg1" name="upimg1" value="src">
                     <span>
-                    <input type="file" name="img" onchange="getImg(this)" multiple>
-                    <img src="http://bookstore.crunchpress.com/wp-content/uploads/2013/05/b2.jpg" alt="" width="50">
+                    <input type="file" name="upimg1" id="upimg1" onchange="getImg(this)" multiple>
+                    <img src="" alt="" width="50">
                 </span>
 
                 </label>
 
                 <label class="inputGroup">
                     <span>Image 2</span>
-                    <input type="hidden" name="img" value="src">
+                    <input type="hidden" id="upimg2" name="upimg2" value="src">
                     <span>
-                    <input type="file" name="img" onchange="getImg(this)" multiple>
-                    <img src="http://bookstore.crunchpress.com/wp-content/uploads/2013/05/b2.jpg" alt="" width="50">
+                    <input type="file" name="upimg2" id="upimg2" onchange="getImg(this)" multiple>
+                    <img src="" alt="" width="50">
                 </span>
 
                 </label>
 
                 <label class="inputGroup">
                     <span>Image 3</span>
-                    <input type="hidden" name="img" value="src">
+                    <input type="hidden" id="upimg3" name="upimg3" value="src">
                     <span>
-                    <input type="file" name="img" onchange="getImg(this)" multiple>
-                    <img src="http://bookstore.crunchpress.com/wp-content/uploads/2013/05/b2.jpg" alt="" width="50">
+                    <input type="file" name="upimg3" id="upimg3" onchange="getImg(this)" multiple>
+                    <img src="" alt="" width="50">
                 </span>
 
                 </label>
 
                 <label class="inputGroup">
                     <span>Image 4</span>
-                    <input type="hidden" name="img" value="src">
+                    <input type="hidden" id="upimg4" name="upimg4" value="src">
                     <span>
-                    <input type="file" name="img" onchange="getImg(this)" multiple>
-                    <img src="http://bookstore.crunchpress.com/wp-content/uploads/2013/05/b2.jpg" alt="" width="50">
+                    <input type="file" name="upimg4" id="upimg4" onchange="getImg(this)" multiple>
+                    <img src="" alt="" width="50">
                 </span>
 
                 </label>
@@ -471,7 +522,7 @@ echo '<script>
             <div class="column">
                 <label class="inputGroup">
                     <span>Description</span>
-                    <textarea class="textArea_products_class" name="description"></textarea>
+                    <textarea class="textArea_products_class" name="updescription"></textarea>
                 </label>
             </div>
 
@@ -485,14 +536,65 @@ echo '<script>
 
 
 
-
-
     </form>
 
+    <?php
+
+
+    if(isset($_POST['update_btn'])){
+
+        $product_id = $_POST['upcode'];
+        $product_cat = $_POST['upcategory'];
+        $product_brand = $_POST['upbrand'];
+        $product_title =$_POST['upname'];
+        $product_price = $_POST['upprice'];
+        $product_desc = $_POST['updescription'];
+        $color = $_POST['upcolor'];
+        $country = $_POST['upcountry'];
+        $keyword = $_POST['upkeyword'];
+        $img1 = $_POST['upimg1'];
+        $img2 = $_POST['upimg2'];
+        $img3 = $_POST['upimg3'];
+        $img4 = $_POST['upimg4'];
+
+
+        if($product_id != '' && $product_cat != '' && $product_brand != '' && $product_title != '' && $product_price != '' &&
+            $product_desc != '' && $color != '' && $country != '' && $keyword !='' && $img1 != '' && $img2 != '' && $img3 != '' && $img4 !='' ){
+
+
+            mysqli_query($con , "UPDATE `products` SET `product_cat`='$product_cat',`product_brand`='$product_brand',
+            `product_title`='$product_title',`product_price`='$product_price',
+            `product_desc`='$product_desc',`product_image`='$img1',`product_keywords`='$keyword',
+            `product_image2`='$img2',`product_image3`='$img3',`product_image4`='$img4',`COUNTRY`='$country',`color`='$color' where `product_id`='$product_id'");
+
+
+
+
+//    mysqli_query($con , "insert into products(product_id,product_cat,product_brand,product_title, product_price,product_desc,product_image,product_keywords,product_image2 , product_image3 , product_image4, country , color) values ('2233' , '1' , 'bed' ,'test','44', 'assd' , 'im.png' ,'bed' ,'im2.png' , 'im3.pnf' ,'im4.png' ,'paa','adf')");
+
+            mysqli_close($con);
+
+            echo '<script>
+       swal({
+        title: "Product updated",
+        icon: "success",
+        button: "Ok",
+    });
+    </script>';
+
+
+        }
+
+    }
+
+
+
+
+    ?>
 
 
 
     <?php
-include "footer_Admin.php";
-?>
+    include "footer_Admin.php";
+    ?>
 

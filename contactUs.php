@@ -1,21 +1,8 @@
+<script src="js/sweetalert.min.js"></script>
+
 <?php
 include "dataBase.php";
 
-if(isset($_POST['submit'])){
-
-    $name = $_POST['name'];
-    $phone= $_POST['phone'];
-    $email = $_POST['email'];
-    $text = $_POST['text'];
-
-mysqli_query($con , "INSERT INTO `contact_us` (`name`, `phone`, `email`, `messege`) 
-                       VALUES ('$name', '$phone', '$email', '$text');");
-
-    mysqli_close($con);
-
-    header("location:contactUs.php");
-
-}
 ?>
 
 <!DOCTYPE html>
@@ -49,6 +36,8 @@ mysqli_query($con , "INSERT INTO `contact_us` (`name`, `phone`, `email`, `messeg
         {
             margin-bottom: 15px;
         }
+
+
     </style>
 
 
@@ -104,8 +93,35 @@ mysqli_query($con , "INSERT INTO `contact_us` (`name`, `phone`, `email`, `messeg
 
 </div>
 
+<?php
+if(isset($_POST['submit'])){
+
+    $name = $_POST['name'];
+    $phone= $_POST['phone'];
+    $email = $_POST['email'];
+    $text = $_POST['text'];
+
+mysqli_query($con , "INSERT INTO `contact_us` (`name`, `phone`, `email`, `messege`)
+     VALUES ('$name', '$phone', '$email', '$text');");
+
+     mysqli_close($con);
+
+    echo '<script>
+       swal({
+        title: "Your message sent ",
+        icon: "success",
+        button: "Ok",
+    });
+    </script>';
+
+    //header("location:mainProducts.php");
+
+    echo '<script>  window.location.replace("IntroductionPage.php"); </script>' ;
 
 
+}
+
+?>
 
 
 

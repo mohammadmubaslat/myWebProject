@@ -1,27 +1,9 @@
 <?php
 include "dataBase.php";
+session_start();
 
 //$p = $_GET['product_id'];
 //echo $p;
-
-if(isset($_POST['pay'])){
-    $name = $_POST['vname'];
-    $phone = $_POST['vphone'];
-    $country = $_POST['vcountry'];
-    $address = $_POST['vaddress'];
-    $card_num = $_POST['vcardnum'];
-    $expd = $_POST['vexpd'];
-    $cv = $_POST['vcvv'];
-    $cardName = $_POST['vcardname'];
-
-    mysqli_query($con, "insert into orders_info(user_id,f_name,address,city,cardname , cardnumber,expdate , cvv )
-                                              values ('12393' , '$name' , '$address' , '$country' , '$cardName' , '$card_num' , '$expd','$cv')");
-
-    mysqli_close($con);
-    header("location:mainProducts.php");
-}
-
-
 
 
 ?>
@@ -372,7 +354,8 @@ if(isset($_POST['pay'])){
                                                 <ol>
                                                 <?php
                                                 $total = 0;
-                                                $product_query = "SELECT product_title , product_price FROM products WHERE product_id IN( SELECT product_id FROM `cart` WHERE user_id = 12393) ";
+                                                $u = $_SESSION['userId'];
+                                                $product_query = "SELECT product_id,product_title , product_price FROM products WHERE product_id IN( SELECT product_id FROM `cart` WHERE user_id = '.$u.') ";
                                                 $run_query = mysqli_query($con, $product_query);
 
                                                 if (mysqli_num_rows($run_query) > 0) {
@@ -427,7 +410,8 @@ if(isset($_POST['pay'])){
 
                                                     <?php
                                                     $total = 0;
-                                                    $product_query = "SELECT product_title , product_price FROM products WHERE product_id IN( SELECT product_id FROM `cart` WHERE user_id = 12393) ";
+                                                    $p_id = " ";
+                                                    $product_query = "SELECT product_id,product_title , product_price FROM products WHERE product_id IN( SELECT product_id FROM `cart` WHERE user_id= '$u') ";
                                                     $run_query = mysqli_query($con, $product_query);
 
                                                     if (mysqli_num_rows($run_query) > 0) {
@@ -435,6 +419,7 @@ if(isset($_POST['pay'])){
 
                                                             $title = $row['product_title'];
                                                             $price = $row['product_price'];
+                                                            $GLOBALS['p_id'] = $row['product_id'];
 
                                                             $total = $total + $price;
                                                             echo ' 
@@ -505,6 +490,42 @@ if(isset($_POST['pay'])){
         </div>
     </div>
 </div>
+<?php
+
+if(isset($_POST['pay'])){
+    $name = $_POST['vname'];
+    $phone = $_POST['vphone'];
+    $country = $_POST['vcountry'];
+    $address = $_POST['vaddress'];
+    $card_num = $_POST['vcardnum'];
+    $expd = $_POST['vexpd'];
+    $cv = $_POST['vcvv'];
+    $cardName = $_POST['vcardname'];
+    $order_id = rand(0,999);
+    $order_pro_id = rand(0,999);
+    $p = $GLOBALS['p_id'];
+
+    mysqli_query($con, "insert into orders_info(order_id,user_id,f_name,address,city,cardname , cardnumber,expdate , cvv )
+                                              values ('$order_id','12393' , '$name' , '$address' , '$country' , '$cardName' , '$card_num' , '$expd','$cv')");
+
+    mysqli_query($con, "insert into order_products(order_pro_id,order_id,product_id,qty,amt)
+                                              values ('$order_pro_id','$order_id', '$p' , '4' , '4')");
+
+
+    mysqli_query($con, "delete from cart where product_id = '$p'");
+
+
+    mysqli_close($con);
+
+
+
+    echo '<script>  window.location.replace("mainProducts.php"); </script>' ;
+
+//    header("location:mainProducts.php");
+}
+
+
+?>
 
 
 
