@@ -26,11 +26,13 @@ if(isset($_POST["category"])){
 
 					<a href='#' style='text-decoration: none;'  >
 					<span ></span>
-                   <li class='list-group-item list-group-item-action d-flex justify-content-between align-items-center '> $cat_name <span>$count</span> </li>
+                   <li class='list-group-item list-group-item-action d-flex justify-content-between align-items-center '> $cat_name <span class='fas fa-arrow-right'></span> </li>
                     </a>
                     
                     </div>
 			";
+
+
 
         }
 
@@ -57,9 +59,9 @@ if(isset($_POST["brand"])){
                     
                     <div type='button' class='selectBrand' bid='$bid'>
 									
-									<a href='#'>
+									<a href='#' style='text-decoration: none;'>
 										<span ></span>
-										  <li class='list-group-item list-group-item-action d-flex justify-content-between align-items-center '> $brand_name <span>$count</span> </li>
+										  <li class='list-group-item list-group-item-action d-flex justify-content-between align-items-center '> $brand_name <span class='fas fa-arrow-right'></span> </li>
 										
 									</a>
 								</div>

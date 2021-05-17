@@ -3,68 +3,75 @@
 include "side_Nav_Admin.php";
 include "../dataBase.php";
 
+if(isset($_GET['action']) && $_GET['action'] != "" && $_GET['action'] == 'delete'){
+    $m_id = $_GET['m_id'];
+
+
+    mysqli_query($con,"delete from contact_us where m_id='$m_id'")or die("query is incorrect...");
+
+}
+
 
 ?>
-
 
 
 <div class="mainContent">
 
 
     <form id="messages_id" action="" method="POST" enctype="multipart/form-data" class="form">
-    <div class="formHeader row">
-        <h2 style="padding-left: 50%" class="text-1 fl">Messages</h2>
-        <!--            <div class="fr">-->
-        <!--                <button type="submit" class="btnSave bg-1 text-fff text-bold fr">SAVE</button>-->
-        <!--            </div>-->
-    </div>
-    <div class="formBody row">
+        <div class="formHeader row">
+            <h2 style="padding-left: 50%" class="text-1 fl">Messages</h2>
+            <!--            <div class="fr">-->
+            <!--                <button type="submit" class="btnSave bg-1 text-fff text-bold fr">SAVE</button>-->
+            <!--            </div>-->
+        </div>
+        <div class="formBody row">
 
-        <section id="messages_section">
+            <section id="messages_section">
 
                 <div id="messages_div">
 
 
-                     <div class="message">
-                           <div class="message_header">
-                                 <span>  Mohammad Mubaslat </span>
-                               <span class="offline_class"> Offline</span>
-                           </div>
+                    <div class="message">
+                        <div class="message_header">
+                            <span>  Mohammad Mubaslat </span>
+                            <span class="offline_class"> Offline</span>
+                        </div>
 
-                           <div class="message_body">
+                        <div class="message_body">
 
-                                 <p class="my_message">
+                            <p class="my_message">
 
-                                           hello form me
-                                 </p>
+                                hello form me
+                            </p>
 
-                                 <p class="his_message">
+                            <p class="his_message">
 
-                                     hello , how are you  ?
-                                 </p>
+                                hello , how are you  ?
+                            </p>
 
-                           </div>
+                        </div>
 
-                         <div class="send_div">
+                        <div class="send_div">
 
 
-                                 <label class="text_group">
-                                      <textarea   class="message_textArea" name="description"></textarea>
-                                 </label>
+                            <label class="text_group">
+                                <textarea   class="message_textArea" name="description"></textarea>
+                            </label>
 
-                               <div class="send_icon">
+                            <div class="send_icon">
 
-                                   <a  href=" "><span   class="far fa-paper-plane">  </span></a>
-                               </div>
+                                <a  href=" "><span   class="far fa-paper-plane">  </span></a>
+                            </div>
 
-                         </div>
-                      </div>
+                        </div>
+                    </div>
 
                 </div>
 
-        </section>
+            </section>
 
-    </div>
+        </div>
 
     </form>
 
@@ -99,7 +106,7 @@ include "../dataBase.php";
                         <?php
                         $result=mysqli_query($con,"select * from contact_us where 1")or die ("query 1 incorrect.....");
 
-                        while(list($name,$phone,$email,$text)=mysqli_fetch_array($result))
+                        while(list($m_id ,$name,$phone,$email,$text)=mysqli_fetch_array($result))
                         {
 
                             echo "
@@ -108,8 +115,9 @@ include "../dataBase.php";
                                 <td>$phone</td>
                                 <td>$email</td>
                                 <td>$text</td>
+                         
                             
-                                <td> <a href='#'> <button type='button' class='close' aria-label='Close'>
+                                <td> <a href='messages_Admin.php?m_id=$m_id&action=delete'> <button type='button' class='close' aria-label='Close'>
                                         <span aria-hidden='true'>&times;</span>
                                     </button> </a> </td>
                             </tr> ";
@@ -130,6 +138,6 @@ include "../dataBase.php";
 
 
 
-    <?php
-    include "footer_Admin.php";
-    ?>
+<?php
+include "footer_Admin.php";
+?>

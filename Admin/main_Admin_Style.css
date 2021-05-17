@@ -517,11 +517,11 @@ body {
 }
 
 .bg-1 {
-    background: #557daa;
+    background: #cb951f;
 }
 
 .text-1 {
-    color: #557daa;
+    color: #cb951f;
 }
 
 /* ADMIN PAGE */
@@ -680,7 +680,7 @@ label {
 .sideArea {
     width: 200px;
     min-width: 200px;
-    background: #2A3F54;
+    background:#cb951f;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -736,7 +736,7 @@ label {
     padding: 0 1em;
 }
 .name{
-    color: #2A3F54;
+    color: #cb951f;
     padding: 1em 0;
     cursor: pointer;
 }
@@ -1352,7 +1352,7 @@ table{
     table-layout: fixed;
 }
 .tbl-header{
-    background-color: #557daa;
+    background-color: #cb951f;
 }
 .tbl-content{
     height:300px;
@@ -1594,3 +1594,7 @@ color: red;
     margin-right: 10px;
 }
 
+.fa-bars::before {
+    content: "\f0c9";
+    color: #cb951f;
+}

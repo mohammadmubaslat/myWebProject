@@ -3,15 +3,11 @@ include "dataBase.php";
 session_start();
 //if($_SESSION['notloged'] == 1){
 //    echo '<script>
-//       swal({
-//        title: "Not Loged in",
-//        text: "please login or signup",
-//        icon: "error",
-//        button: "Ok",
-//    });
+//       alert("You must Login!");
 //    </script>';
-//    header("location:mainProducts.php");
+//    echo '<script>  window.location.replace("mainProducts.php"); </script>' ;
 //}
+
 if(isset($_GET['action']) && $_GET['action'] != "" && $_GET['action'] == 'delete') {
     $product_code = $_GET['product_id'];
     mysqli_query($con, "delete from cart where product_id='$product_code'") or die("query is incorrect...");
@@ -424,9 +420,9 @@ if(isset($_GET['action']) && $_GET['action'] != "" && $_GET['action'] == 'delete
         }
 
         #bar_search_button {
-            background-color: #071f38;
+            background-color: #cb951f;
             color: #fff;
-            border: 1px solid #071f38;
+            border: 1px solid #cb951f;
             border-radius: 10px;
             font-weight: 800
         }
@@ -1028,6 +1024,11 @@ if(isset($_GET['action']) && $_GET['action'] != "" && $_GET['action'] == 'delete
             #heading {
                 padding-top: 15px
             }
+        }
+
+
+        .bg-dark {
+            background-color: #cb951f!important;
         }
 
     </style>

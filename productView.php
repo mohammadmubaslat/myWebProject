@@ -6,16 +6,10 @@ session_start();
 if (isset($_POST['add_ToCart'])) {
 
     if ($_SESSION['notloged'] == 1){
-        echo '<script> alert("not loged in") </script>';
-
-//        echo '<script>
-//       swal({
-//        title: "Product Added",
-//        icon: "success",
-//        button: "Ok",
-//    });
-//    </script>';
-        header("location:mainProducts.php");
+        echo '<script>
+       alert("You must Login!");
+    </script>';
+        echo '<script>  window.location.replace("mainProducts.php"); </script>' ;
     }
     if($_SESSION['loged'] == 1){
 
@@ -355,12 +349,12 @@ if (isset($_POST['add_ToCart'])) {
 
         #related_products
         {
-            margin-left: 200px;
+            margin-left: 175px;
             margin-bottom: 100px;
 
             text-align: center;
             margin-top: 70px;
-            height: 420px;
+            height: 430px;
             padding-top: 50px;
             box-shadow: 0 2px 10px #BCBCBC;
             width: 1100px;
@@ -379,7 +373,7 @@ if (isset($_POST['add_ToCart'])) {
 
         .product-image3
         {
-            height: 100%;
+            height: 235px;
 
         }
 
@@ -401,7 +395,7 @@ if (isset($_POST['add_ToCart'])) {
 <nav id="nav_id" class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
 
-    <img  id="logo_img" style="padding-left: 70px" src="mainUI/imgs/productsLogo.png" alt="" >
+    <a  href="mainProducts.php"> <img  id="logo_img" style="padding-left: 70px" src="mainUI/imgs/productsLogo.png" alt="" > </a>
     <!-- Topbar Search -->
     <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
         <div class="input-group"> <input type="text" class="form-control bg-light border-0 small" placeholder="Search for...">
@@ -456,7 +450,7 @@ if (isset($_POST['add_ToCart'])) {
 
 
 
-        <li class="nav-item dropdown no-arrow mx-1"> <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item dropdown no-arrow mx-1"> <a class="nav-link dropdown-toggle" href="shoppingCartPage.php" id="" >
                 <i class="fas fa-shopping-cart"></i> <span class="badge badge-danger badge-counter"> 0 </span> </a>
 
         </li>
@@ -466,7 +460,7 @@ if (isset($_POST['add_ToCart'])) {
 
 
         <div class="topbar-divider d-none d-sm-block"></div>
-        <li class="nav-item dropdown no-arrow"> <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span> <img class="img-profile rounded-circle" src="https://i.imgur.com/uIgDDDd.jpg"> </a>
+        <li class="nav-item dropdown no-arrow"> <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  <img class="img-profile rounded-circle" src="https://i.imgur.com/uIgDDDd.jpg"> </a>
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown"> <a class="dropdown-item" href="#"> <i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile </a>
                 <div class="dropdown-divider"></div> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"> <i class="fa fa-sign-out fa-sm fa-fw mr-2 text-gray-400"></i> Logout </a>
             </div>
@@ -576,7 +570,18 @@ if (isset($_POST['add_ToCart'])) {
 <!--                        </select>-->
 <!--                    </div>-->
 
-'; }
+';
+
+
+         $img1 =    $row['product_image'];
+         $img2 =    $row['product_image2'];
+         $img3 =    $row['product_image3'];
+         $img4 =    $row['product_image4'];
+
+
+
+            }
+
         }
         ?>
 
@@ -720,7 +725,7 @@ if (isset($_POST['add_ToCart'])) {
             <!--Grid column-->
             <div class="col-lg-4 col-md-12 mb-4">
 
-                <img src="./mainUI/imgs/jarodSofa1_1.jfif" class="img-fluid" alt="">
+                <img src="./mainUI/imgs/<?php  echo $img2;   ?> " class="img-fluid" alt="">
 
             </div>
             <!--Grid column-->
@@ -728,7 +733,7 @@ if (isset($_POST['add_ToCart'])) {
             <!--Grid column-->
             <div class="col-lg-4 col-md-6 mb-4">
 
-                <img src="./mainUI/imgs/jarodSofa1_2.jpg" class="img-fluid" alt="">
+                <img src="./mainUI/imgs/<?php  echo $img3;   ?>" class="img-fluid" alt="">
 
             </div>
             <!--Grid column-->
@@ -736,7 +741,7 @@ if (isset($_POST['add_ToCart'])) {
             <!--Grid column-->
             <div class="col-lg-4 col-md-6 mb-4">
 
-                <img src="./mainUI/imgs/jarodSofa1_3.jpg" class="img-fluid" alt="">
+                <img src="./mainUI/imgs/<?php  echo $img4;   ?>" class="img-fluid" alt="">
 
             </div>
             <!--Grid column-->
@@ -795,7 +800,7 @@ if (isset($_POST['add_ToCart'])) {
                                 <div class='product-content'>
                                     <h3 class='title'><a href='#'>$pro_title</a></h3>
                                     <div class='price'>
-                                        $pro_price
+                                        $$pro_price
                                        <span>$$last_price</span>
                                     </div>
                                     <ul class='rating'>

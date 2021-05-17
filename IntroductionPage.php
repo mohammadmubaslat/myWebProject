@@ -90,7 +90,7 @@
 
         <ul class="Navcontainer">
 
-            <li class="box"><a href="contactUs.php"><span ></span>Home</a></li>
+            <li class="box"><a href="IntroductionPage.php"><span ></span>Home</a></li>
             <li class="box"><a href="mainProducts.php"><span ></span>Products</a></li>
             <li class="box"><a href="mainProducts.php"><span ></span>Accessories</a></li>
 

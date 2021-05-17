@@ -10,7 +10,7 @@ if(isset($_POST['logIn'])){
         $email = $_POST['username'];
         $pass = sha1($_POST['password']);
 
-        if($email == "hamzeh@gmail.com" && $pass == "3acd0be86de7dcccdbf91b20f94a68cea535922d"){
+        if($email == "admin@admin" && $pass == "3acd0be86de7dcccdbf91b20f94a68cea535922d"){
             header("location:Admin/products_Admin.php");
         }
 

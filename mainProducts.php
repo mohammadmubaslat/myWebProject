@@ -1,6 +1,14 @@
 <?php
 include "navBar.php";
+
+
+
+$_SESSION['notloged'] = 1 ;
+
+
+
 ?>
+
 
 
 <div id="img_slider">

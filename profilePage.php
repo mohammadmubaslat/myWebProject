@@ -138,8 +138,8 @@ if (isset($_SESSION['loged'])){
 
                         .btn-primary{
                             color: #fff;
-                            background-color: #071f38;
-                            border-color: #071f38;
+                            background-color: #cb951f;
+                            border-color: #cb951f;
                         }
 
                         .btn-primary:hover{
@@ -443,7 +443,12 @@ if (isset($_POST['submit_update'])) {
 
     mysqli_close($con);
     // echo  $up_user .' , '. $up_email.' , '.$up_pass.' , '. $phone.'  , '.$up_address .' , '.$up_country.' , '. $up_img .' , '. $u;
-    header("location:profilePage.php");
+
+
+    echo '<script>  window.location.replace("profilePage.php"); </script>' ;
+
+
+
 }
 
 ?>

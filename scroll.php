@@ -101,6 +101,13 @@
         /*    padding-top: 100px;*/
         /*}*/
 
+
+        .para_desc {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
     </style>
 
     <script>
@@ -128,7 +135,7 @@
         <img class="simg" src="./mainUI/imgs/livingRoom.jpg" alt="" />
         <div class="scroll_means_div_1_3" style="text-align: center">
             <h3>Living Rooms</h3>
-            <p>
+            <p class="para_desc">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod error
                 enim laudantium, animi veniam libero eveniet culpa unde perferendis
                 illo fugit corporis, voluptatibus totam dolorum, maiores magnam
@@ -143,7 +150,7 @@
         <img class="simg" src="./mainUI/imgs/offices.jpg" alt="" />
         <div class="scroll_means_div_2_4" style="text-align: center">
             <h3>Offices</h3>
-            <p>
+            <p class="para_desc">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod error
                 enim laudantium, animi veniam libero eveniet culpa unde perferendis
                 illo fugit corporis, voluptatibus totam dolorum, maiores magnam
@@ -158,7 +165,7 @@
         <img class="simg" src="./mainUI/imgs/bedRooms.jpg" alt="" />
         <div class="scroll_means_div_1_3" style="text-align: center">
             <h3>Bed Rooms </h3>
-            <p>
+            <p class="para_desc">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod error
                 enim laudantium, animi veniam libero eveniet culpa unde perferendis
                 illo fugit corporis, voluptatibus totam dolorum, maiores magnam
@@ -172,7 +179,7 @@
         <img class="simg" src="./mainUI/imgs/homeAcess.jpg" alt="" />
         <div class="scroll_means_div_2_4" style="text-align: center">
             <h3>Home Accessories </h3>
-            <p>
+            <p class="para_desc">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod error
                 enim laudantium, animi veniam libero eveniet culpa unde perferendis
                 illo fugit corporis, voluptatibus totam dolorum, maiores magnam

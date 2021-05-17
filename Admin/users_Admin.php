@@ -19,10 +19,13 @@ if(isset($_GET['action']) && $_GET['action'] != "" && $_GET['action'] == 'delete
     }
 
     mysqli_query($con," delete from `email_info` where email_id='$user_code'")or die("query is incorrect...");
-    mysqli_query($con," delete from `user_info` where email_id='$user_code'")or die("query is incorrect...");
+    mysqli_query($con," delete from `user_info` where user_id='$user_code'")or die("query is incorrect 22 ...");
 
 
-    echo '<script>  window.location.reload(false);  </script>';
+
+
+    echo '<script>  window.location.replace("users_Admin.php"); </script>' ;
+
 
 
 }
